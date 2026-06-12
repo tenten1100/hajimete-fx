@@ -1,0 +1,108 @@
+/*
+ * tools.css — 計算ツール専用ウィジェットのスタイル（site.css を補完）
+ * site.css の配色変数（--navy/--paper/--accent 等）を流用する。外部CDNは読み込まない。
+ */
+
+/* フォーム */
+.tool-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.field label {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+.field input, .field select {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 15px;
+  background: #fff;
+  color: var(--ink);
+}
+.field .hint { font-size: 11px; color: var(--ink-soft); margin-top: 3px; }
+.field.invalid input { border-color: var(--accent); }
+.field .error { font-size: 11px; color: var(--accent); margin-top: 3px; display: none; }
+.field.invalid .error { display: block; }
+.inline-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* ツールのカード（site.cssのarticleと別物のパネル） */
+.tool-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+.tool-card h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  color: var(--navy);
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+}
+.tool-card h3 { font-size: 15px; color: var(--navy-soft); margin: 20px 0 8px; }
+
+/* 結果ボックス */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.result-box {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 12px 14px;
+  background: #fff;
+}
+.result-box .label { font-size: 12px; color: var(--ink-soft); }
+.result-box .value {
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+.result-box .sub { font-size: 11px; color: var(--ink-soft); margin-top: 2px; }
+
+/* 警告リスト */
+.warnings { list-style: none; padding: 0; margin: 0; }
+.warnings li {
+  padding: 9px 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.warnings li.danger { background: #fbeaea; color: #842629; border: 1px solid #e3a9aa; }
+.warnings li.warn { background: #fdf6ec; color: #8a5a00; border: 1px solid #e6d3a8; }
+.warnings li.info { background: #eef1f7; color: var(--navy); border: 1px solid #c8d2e6; }
+
+/* ボタン */
+button.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 9px 18px;
+  font-size: 15px;
+  cursor: pointer;
+}
+button.btn:hover { background: #842629; }
+button.btn.danger { background: #fff; color: var(--accent); border: 1px solid #e3a9aa; }
+button.btn.danger:hover { background: #fbeaea; }
+
+/* tracker一覧・グラフ */
+.daily-list td button { font-size: 12px; padding: 3px 10px; }
+canvas#progressChart { width: 100%; height: 240px; display: block; background: #fff; border: 1px solid var(--line); border-radius: 4px; }
+
+.fineprint { font-size: 11px; color: var(--ink-soft); margin: 8px 0 0; }
+
+@media (max-width: 680px) {
+  .tool-form-grid, .results-grid { grid-template-columns: 1fr; }
+  .result-box .value { font-size: 21px; }
+}

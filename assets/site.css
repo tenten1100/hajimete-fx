@@ -1,0 +1,410 @@
+/*
+ * site.css — プロップナビ 共通スタイル（雑誌風・依存ゼロ）
+ *
+ * 方針（PROJECT.md ピボット指示「AIらしくない高品質UI」）:
+ *   - 外部フォント/CSSのCDN読み込みはしない。システム/ローカルフォントのみ。
+ *   - 配色は 紺(--navy) × 生成り(--paper) × アクセント1色(--accent=えんじ)。
+ *   - 見出しは明朝（游明朝等のローカル指定+フォールバック）、本文はゴシック。
+ *   - 絵文字箇条書き・紫グラデ・カード乱発などのAI典型デザインを避ける。
+ */
+
+:root {
+  --navy: #1b2a4a;        /* 主役の紺 */
+  --navy-soft: #2f4068;
+  --paper: #f6f2e9;       /* 生成り（背景） */
+  --paper-card: #fbf9f3;  /* 生成りの明るい面 */
+  --accent: #9b2d30;      /* えんじ（アクセント1色） */
+  --ink: #20242c;         /* 本文色 */
+  --ink-soft: #555b66;
+  --line: #ddd6c6;        /* 罫線（生成り系） */
+  --line-soft: #ece7da;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Meiryo, system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.85;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 見出しは明朝（ローカル指定） */
+h1, h2, h3, h4,
+.serif {
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "HG明朝E", "MS PMincho", serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; height: auto; }
+
+/* -------------------------------------------------------------------------
+ * ヘッダ（サイト名 + ナビ）
+ * ---------------------------------------------------------------------- */
+.site-header {
+  background: var(--navy);
+  color: var(--paper);
+  border-bottom: 3px solid var(--accent);
+}
+.site-header .bar {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.site-header .brand {
+  font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--paper);
+  letter-spacing: 0.04em;
+}
+.site-header .brand:hover { text-decoration: none; }
+.site-header .brand .tagline {
+  display: block;
+  font-family: inherit;
+  font-size: 11px;
+  color: #c9d2e4;
+  letter-spacing: 0.02em;
+  margin-top: 2px;
+}
+.site-header nav {
+  font-size: 14px;
+}
+.site-header nav a {
+  color: #dfe5f1;
+  margin-left: 18px;
+}
+.site-header nav a:first-child { margin-left: 0; }
+.site-header nav a:hover { color: #fff; }
+
+/* -------------------------------------------------------------------------
+ * パンくず
+ * ---------------------------------------------------------------------- */
+.breadcrumb {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+.breadcrumb a { color: var(--ink-soft); }
+.breadcrumb span.sep { margin: 0 6px; color: var(--line); }
+
+/* -------------------------------------------------------------------------
+ * レイアウト
+ * ---------------------------------------------------------------------- */
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 8px 20px 56px;
+}
+main.wide { max-width: 1000px; }
+
+article header.article-head {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+  margin-bottom: 26px;
+}
+article h1 {
+  font-size: 30px;
+  line-height: 1.4;
+  margin: 6px 0 10px;
+  color: var(--navy);
+}
+.article-meta {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+.article-meta time { font-variant-numeric: tabular-nums; }
+
+article h2 {
+  font-size: 22px;
+  color: var(--navy);
+  margin: 40px 0 14px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+}
+article h3 {
+  font-size: 18px;
+  color: var(--navy-soft);
+  margin: 28px 0 10px;
+}
+article p { margin: 0 0 16px; }
+article ul, article ol { margin: 0 0 18px; padding-left: 1.4em; }
+article li { margin-bottom: 6px; }
+
+.lead {
+  font-size: 17px;
+  color: var(--ink);
+  background: var(--paper-card);
+  border-left: 4px solid var(--navy);
+  padding: 14px 18px;
+  margin: 0 0 28px;
+}
+
+/* 出典・脚注 */
+.source { font-size: 13px; color: var(--ink-soft); }
+.source-list {
+  font-size: 13px;
+  color: var(--ink-soft);
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin-top: 32px;
+}
+.source-list ol { padding-left: 1.4em; }
+.source-list li { margin-bottom: 6px; word-break: break-word; }
+
+/* 注記・注意ボックス（誇張防止の正確な記述など） */
+.note-box {
+  background: #fdf6ec;
+  border: 1px solid #e6d3a8;
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin: 22px 0;
+  font-size: 14.5px;
+}
+.note-box .tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #8a5a00;
+  background: #f3e3c2;
+  padding: 1px 8px;
+  border-radius: 3px;
+  margin-bottom: 6px;
+}
+
+/* 編集部メモ（人間味の一言コラム） */
+.editor-memo {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  padding: 16px 18px;
+  margin: 26px 0;
+  font-size: 15px;
+}
+.editor-memo .tag {
+  display: inline-block;
+  font-family: "Yu Mincho", serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.editor-memo p { margin: 0 0 8px; }
+.editor-memo p:last-child { margin-bottom: 0; }
+
+/* 比較・データ表 */
+.tbl-wrap { overflow-x: auto; margin: 20px 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  background: var(--paper-card);
+}
+caption {
+  caption-side: top;
+  text-align: left;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 9px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+thead th {
+  background: var(--navy);
+  color: var(--paper);
+  font-family: inherit;
+  font-weight: 600;
+}
+tbody th { background: var(--paper); font-weight: 600; }
+table.num td:not(:first-child), table.num th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* FAQ */
+.faq dt {
+  font-weight: 700;
+  color: var(--navy);
+  margin-top: 18px;
+  font-size: 15.5px;
+}
+.faq dt::before { content: "Q. "; color: var(--accent); }
+.faq dd { margin: 6px 0 0; padding-left: 1.4em; }
+.faq dd::before { content: "A. "; color: var(--ink-soft); font-weight: 700; margin-left: -1.4em; }
+
+/* 記事間の内部リンク（関連記事） */
+.related {
+  margin: 36px 0 0;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.related h2 { border: none; padding: 0; font-size: 18px; margin: 0 0 12px; }
+.related ul { list-style: none; padding: 0; }
+.related li { margin-bottom: 10px; }
+.related a { font-weight: 600; }
+.related .desc { display: block; font-size: 13px; color: var(--ink-soft); font-weight: 400; }
+
+/* -------------------------------------------------------------------------
+ * ハブ（index）の記事カード一覧
+ * ---------------------------------------------------------------------- */
+.hub-hero {
+  background: var(--navy);
+  color: var(--paper);
+  text-align: center;
+  padding: 44px 20px 40px;
+}
+.hub-hero h1 {
+  color: var(--paper);
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+.hub-hero p { max-width: 600px; margin: 0 auto; color: #d7dcea; font-size: 16px; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 24px 0;
+}
+.guide-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 20px;
+  display: block;
+  color: var(--ink);
+}
+.guide-card:hover { border-color: var(--accent); text-decoration: none; box-shadow: 0 2px 10px rgba(27,42,74,.06); }
+.guide-card .kicker { font-size: 11.5px; color: var(--accent); letter-spacing: .04em; font-weight: 700; }
+.guide-card h3 { font-size: 18px; color: var(--navy); margin: 6px 0 6px; }
+.guide-card p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+
+.section-title {
+  font-size: 20px;
+  color: var(--navy);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 4px;
+  margin: 36px 0 4px;
+}
+
+/* -------------------------------------------------------------------------
+ * 免責バー / PR / アフィリ導線
+ * ---------------------------------------------------------------------- */
+.disclaimer-bar {
+  background: #fdf6ec;
+  border-bottom: 1px solid #e6d3a8;
+  color: #7a5400;
+  font-size: 12.5px;
+  text-align: center;
+  padding: 7px 16px;
+}
+.disclaimer-bar a { color: #7a5400; text-decoration: underline; }
+
+.pr-inline {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--ink-soft);
+  padding: 1px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+.promo-block {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 20px;
+  margin: 28px 0;
+}
+.promo-block > .head {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+.promo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+  border-top: 1px solid var(--line-soft);
+}
+.promo-row:first-of-type { border-top: none; }
+.promo-row .promo-main { flex: 1; min-width: 180px; }
+.promo-row .promo-label { font-weight: 700; color: var(--navy); }
+.promo-row .promo-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; }
+.promo-row .promo-cta {
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.promo-row .promo-cta:hover { text-decoration: none; background: #842629; }
+.promo-row .promo-cta.disabled {
+  background: var(--line);
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+.promo-block .basis {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin: 12px 0 0;
+}
+
+/* -------------------------------------------------------------------------
+ * フッタ
+ * ---------------------------------------------------------------------- */
+.site-footer {
+  background: var(--navy);
+  color: #c9d2e4;
+  font-size: 13px;
+  margin-top: 40px;
+}
+.site-footer .inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 28px 20px 36px;
+}
+.site-footer a { color: #dfe5f1; }
+.site-footer .foot-nav a { margin-right: 18px; }
+.site-footer .foot-disclaimer {
+  font-size: 12px;
+  color: #aab4cb;
+  margin-top: 14px;
+  border-top: 1px solid var(--navy-soft);
+  padding-top: 14px;
+}
+.site-footer .updated { font-variant-numeric: tabular-nums; }
+
+/* -------------------------------------------------------------------------
+ * スマホ幅: 1カラム
+ * ---------------------------------------------------------------------- */
+@media (max-width: 680px) {
+  body { font-size: 15.5px; }
+  .card-grid { grid-template-columns: 1fr; }
+  article h1 { font-size: 25px; }
+  .hub-hero h1 { font-size: 26px; }
+  .site-header nav a { margin-left: 12px; }
+}

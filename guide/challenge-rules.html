@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>チャレンジルール完全ガイド｜利益目標・日次DD・最大DDの計算｜プロップナビ</title>
+  <meta name="description" content="プロップファームのチャレンジルール（利益目標・日次ドローダウン・最大ドローダウン）の計算の仕組みを図解的に解説。合格率約10.6%の現実と、損失上限の試算方法をまとめます。" />
+  <link rel="canonical" href="https://tenten1100.github.io/prop-navi/guide/challenge-rules.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="チャレンジルール完全ガイド｜利益目標・日次DD・最大DDの計算" />
+  <meta property="og:description" content="利益目標・日次DD・最大DDの計算の仕組みと合格率10.6%の現実を解説。" />
+  <meta property="og:url" content="https://tenten1100.github.io/prop-navi/guide/challenge-rules.html" />
+  <meta property="og:site_name" content="プロップナビ" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "チャレンジルール完全ガイド｜利益目標・日次DD・最大DDの計算",
+    "description": "利益目標・日次DD・最大DDの計算の仕組みと合格率10.6%の現実を解説。",
+    "inLanguage": "ja",
+    "author": { "@type": "Organization", "name": "プロップナビ編集部" },
+    "publisher": { "@type": "Organization", "name": "プロップナビ" },
+    "datePublished": "2026-06-12",
+    "dateModified": "2026-06-12",
+    "mainEntityOfPage": "https://tenten1100.github.io/prop-navi/guide/challenge-rules.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://tenten1100.github.io/prop-navi/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "チャレンジルール完全ガイド", "item": "https://tenten1100.github.io/prop-navi/guide/challenge-rules.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "日次ドローダウンと最大ドローダウンの違いは？", "acceptedAnswer": { "@type": "Answer", "text": "日次ドローダウンは1営業日内に許される損失の上限、最大ドローダウンはチャレンジ全体を通して許される累計損失の上限です。どちらか一方でも超えると失格になるのが一般的です。" } },
+      { "@type": "Question", "name": "プロップの合格率はどのくらいですか？", "acceptedAnswer": { "@type": "Answer", "text": "小売プロップ全体で約10.6%とされています。多くの受験者は利益目標に届く前に、日次または最大ドローダウンのルールに抵触して失格します。" } },
+      { "@type": "Question", "name": "ドローダウンは含み損も対象ですか？", "acceptedAnswer": { "@type": "Answer", "text": "多くの業者で、確定損益だけでなく含み損（オープンポジションの評価損）も含めて判定されます。トレーリング型か固定型かなど計算方式は業者ごとに異なるため、必ず公式ルールを確認してください。" } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+  <nav class="breadcrumb" aria-label="パンくず">
+    <a href="../index.html">ホーム</a><span class="sep">›</span>チャレンジルール完全ガイド
+  </nav>
+
+  <main>
+    <article>
+      <header class="article-head">
+        <h1>チャレンジルール完全ガイド｜利益目標・日次DD・最大DDの計算の仕組み</h1>
+        <div class="article-meta">
+          公開: <time datetime="2026-06-12">2026年6月12日</time> ／ 更新: <time datetime="2026-06-12">2026年6月12日</time> ／ プロップナビ編集部
+        </div>
+      </header>
+
+      <p class="lead">
+        プロップのチャレンジは「利益目標」「日次ドローダウン上限」「最大ドローダウン上限」という3つの数字で合否が決まります。
+        小売プロップ全体の合格率は約10.6%とされ<a href="#src-1">［1］</a>、落ちる人の多くは利益目標に届く前にドローダウンのルールに抵触します。
+        本記事は<strong>各ルールの計算の仕組み</strong>を具体的な数字で整理します。売買手法やエントリーの助言は含みません。
+      </p>
+
+      <h2>1. 利益目標</h2>
+      <p>
+        利益目標は、チャレンジ期間内に達成すべき利益額です。口座サイズに対する割合で示され、一般的には<strong>+10%</strong>が多く見られます（業者・プラン・フェーズで異なる）。
+      </p>
+      <p>
+        計算は単純です。口座サイズ100万円・利益目標10%なら、目標利益額は<strong>100万円 × 10% = 10万円</strong>。
+        残り日数が30日なら、1日あたり平均で約3,333円の純利益が必要、という逆算ができます。この逆算は <a href="../tools/calculator.html">リスク管理計算ツール</a> で自動計算できます。
+      </p>
+
+      <h2>2. 日次ドローダウン上限（日次DD）</h2>
+      <p>
+        日次DDは<strong>1営業日内に許される損失の上限</strong>です。口座サイズの5%が典型例です。
+      </p>
+      <div class="tbl-wrap">
+        <table class="num">
+          <caption>日次DD上限の計算例（口座サイズ別・上限5%の場合）</caption>
+          <thead>
+            <tr><th>口座サイズ</th><th>日次DD上限(5%)</th><th>1トレード1%なら、あと何回負けられるか</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>1,000,000円</th><td>50,000円</td><td>5回</td></tr>
+            <tr><th>2,000,000円</th><td>100,000円</td><td>5回</td></tr>
+            <tr><th>5,000,000円</th><td>250,000円</td><td>5回</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        「あと何回負けられるか」は <strong>日次DD上限 ÷ 1トレードの許容リスク額</strong> で出ます。
+        上限5%・1トレード1%なら、単純計算で1日あたり5回まで。これを超えると日次ルールに抵触し失格します。
+        日次DDは多くの場合、その日の取引開始時の残高（または前日終値の残高）を基準に判定されます。
+      </p>
+
+      <h2>3. 最大ドローダウン上限（最大DD）</h2>
+      <p>
+        最大DDは<strong>チャレンジ全体を通して許される累計損失の上限</strong>です。口座サイズの10%が典型例です。
+        日次DDが「1日のリセットされる枠」なのに対し、最大DDは「チャレンジ全体の最後の砦」です。
+      </p>
+      <p>
+        最大DDには大きく2種類あります。
+      </p>
+      <ul>
+        <li><strong>固定（スタティック）型:</strong> 初期残高を基準に、下限ライン（例: 初期残高 −10%）が固定されるタイプ。</li>
+        <li><strong>トレーリング型:</strong> 利益が伸びると下限ラインも一緒に切り上がるタイプ。含み益が乗った後に戻すと、想定より早く下限に当たることがあります。</li>
+      </ul>
+      <div class="note-box">
+        <span class="tag">最重要</span>
+        <p style="margin:0">
+          ドローダウンが<strong>確定損益だけで判定されるのか、含み損（オープンポジションの評価損）も含むのか</strong>、また固定型かトレーリング型かは、業者・プランで異なります。
+          この一点を読み違えると、ルールを守っているつもりで失格します。必ず受験する業者の公式ルールで確認してください。
+        </p>
+      </div>
+
+      <h2>4. なぜ約10.6%しか受からないのか</h2>
+      <p>
+        合格率が低い主因は、利益目標（攻め）と2つのドローダウン（守り）を同時に満たす必要がある点にあります。
+        利益を急いでロットを上げれば日次DDに当たりやすく、慎重にしすぎれば残り日数で利益目標に届かない。
+        この綱引きの中で、<strong>多くの受験者が「今日あと何回負けられるか」を一度も計算しないまま受験して、審査料を失います</strong><a href="#src-1">［1］</a>。
+      </p>
+      <p>
+        本サイトが計算ツールを無料で置いているのは、この守りの数字を可視化するためです。
+        <a href="../tools/calculator.html">リスク管理計算ツール</a> に口座サイズと各DDを入れれば、損失上限額・安全な1トレードのリスク額・あと何回負けられるかが即座に出ます（売買タイミングの指示は一切ありません）。
+      </p>
+
+      <!-- 編集部メモ -->
+      <div class="editor-memo">
+        <span class="tag">編集部メモ</span>
+        <p>
+          受験して落ちた人の話を聞くと「最大DDがトレーリングだと知らなかった」「含み損も対象だと思っていなかった」という計算方式の読み違いが本当に多いです。
+          ルールは各社の公式に必ず書いてあります。受ける前にそこだけは熟読する、という地味な作業が合否を分けます。
+        </p>
+      </div>
+
+      <section class="faq">
+        <h2>よくある質問</h2>
+        <dl>
+          <dt>日次ドローダウンと最大ドローダウンの違いは？</dt>
+          <dd>日次DDは1営業日内に許される損失の上限、最大DDはチャレンジ全体を通した累計損失の上限です。どちらか一方でも超えると失格になるのが一般的です。</dd>
+          <dt>プロップの合格率はどのくらいですか？</dt>
+          <dd>小売プロップ全体で約10.6%とされています<a href="#src-1">［1］</a>。多くは利益目標に届く前にドローダウンのルールに抵触します。</dd>
+          <dt>ドローダウンは含み損も対象ですか？</dt>
+          <dd>多くの業者で確定損益だけでなく含み損も含めて判定されます。トレーリング型か固定型かなど計算方式は業者ごとに異なるため、必ず公式ルールを確認してください。</dd>
+          <dt>1日に何回まで負けられますか？</dt>
+          <dd>「日次DD上限 ÷ 1トレードの許容リスク額」で計算できます。上限5%・1トレード1%なら単純計算で5回までです。<a href="../tools/calculator.html">計算ツール</a>で自分の数字を試算できます。</dd>
+        </dl>
+      </section>
+
+      <div id="promos"></div>
+
+      <nav class="related">
+        <h2>関連記事</h2>
+        <ul>
+          <li><a href="../tools/calculator.html">リスク管理計算ツール（無料）</a><span class="desc">損失上限額・あと何回負けられるかを試算</span></li>
+          <li><a href="ftmo.html">FTMO徹底ガイド</a><span class="desc">最大手のルールと運営実績</span></li>
+          <li><a href="erabikata.html">プロップファームの選び方と比較</a><span class="desc">飛ばない業者を3軸で見抜く</span></li>
+        </ul>
+      </nav>
+
+      <div class="source-list">
+        <strong>出典</strong>
+        <ol>
+          <li id="src-1">合格率約10.6%・受験の実態: チャレンジ受験に関する各種集計より（数値は調査時点。最新は各社公式・一次情報を要確認）。各社のルール（利益目標・日次DD・最大DD）の具体値は受験する業者の公式ルールを参照のこと。</li>
+        </ol>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="../assets/links.js"></script>
+  <script src="../assets/site.js" data-root="../"></script>
+  <script>
+    PropNavi.init({ promos: "promos", includeNote: true });
+  </script>
+</body>
+</html>

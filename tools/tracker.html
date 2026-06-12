@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>進捗トラッキング（無料）｜日次損益とDD余地の推移｜プロップナビ</title>
+  <meta name="description" content="プロップチャレンジの日次損益を記録し、利益目標までの残り・ドローダウン余地の推移をグラフで可視化する無料ツール。ルール抵触の事前警告つき。投資助言は行いません。" />
+  <link rel="canonical" href="https://tenten1100.github.io/prop-navi/tools/tracker.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="進捗トラッキング（無料）｜プロップナビ" />
+  <meta property="og:description" content="日次損益を記録し、目標までの残り・DD余地の推移をグラフで可視化。投資助言なし。" />
+  <meta property="og:url" content="https://tenten1100.github.io/prop-navi/tools/tracker.html" />
+  <meta property="og:site_name" content="プロップナビ" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="assets/tools.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://tenten1100.github.io/prop-navi/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "進捗トラッキング", "item": "https://tenten1100.github.io/prop-navi/tools/tracker.html" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+  <nav class="breadcrumb" aria-label="パンくず">
+    <a href="../index.html">ホーム</a><span class="sep">›</span>進捗トラッキング
+  </nav>
+
+  <main>
+    <h1 style="font-size:26px;color:var(--navy);margin:6px 0 8px">進捗トラッキング</h1>
+    <p style="color:var(--ink-soft);margin:0 0 22px">
+      日次損益を記録すると、累計損益・利益目標までの残り・ドローダウン余地の推移をグラフで確認できます。ルール抵触の接近を事前に警告します。
+      記録は端末内（ブラウザのローカルストレージ）にのみ保存され、サーバーへは送信されません。売買の指示は行いません。
+    </p>
+
+    <!-- ルール設定 -->
+    <section class="tool-card">
+      <h2>ルール設定</h2>
+      <p style="font-size:12px;color:var(--ink-soft);margin-top:0">
+        計算ツールで入力した値を引き継ぎます。必要ならここで上書きしてください。
+      </p>
+      <div class="tool-form-grid">
+        <div class="field">
+          <label for="accountSize">口座サイズ</label>
+          <div class="inline-row">
+            <input type="number" id="accountSize" min="0" step="1000" value="1000000" style="flex:1" />
+            <select id="currency" style="width:90px">
+              <option value="JPY">JPY</option>
+              <option value="USD">USD</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="profitTargetPct">利益目標 %</label>
+          <input type="number" id="profitTargetPct" min="0" max="100" step="0.1" value="10" />
+        </div>
+        <div class="field">
+          <label for="dailyDdPct">日次DD上限 %</label>
+          <input type="number" id="dailyDdPct" min="0" max="100" step="0.1" value="5" />
+        </div>
+        <div class="field">
+          <label for="maxDdPct">最大DD上限 %</label>
+          <input type="number" id="maxDdPct" min="0" max="100" step="0.1" value="10" />
+        </div>
+        <div class="field">
+          <label for="riskPerTradePct">1トレード許容リスク %</label>
+          <input type="number" id="riskPerTradePct" min="0" max="100" step="0.1" value="1" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 日次損益の入力 -->
+    <section class="tool-card">
+      <h2>日次損益の入力</h2>
+      <div class="tool-form-grid">
+        <div class="field">
+          <label for="entryDate">日付</label>
+          <input type="date" id="entryDate" />
+        </div>
+        <div class="field">
+          <label for="entryPnl">損益（利益は+、損失は-）</label>
+          <input type="number" id="entryPnl" step="1" placeholder="例: -15000" />
+          <div class="error">数値を入力してください</div>
+        </div>
+      </div>
+      <div style="margin-top:12px">
+        <button class="btn" id="addEntry">記録に追加</button>
+      </div>
+    </section>
+
+    <!-- 進捗サマリ -->
+    <section class="tool-card">
+      <h2>進捗（目安）</h2>
+      <div class="results-grid">
+        <div class="result-box">
+          <div class="label">累計損益</div>
+          <div class="value" id="pCumulative">—</div>
+        </div>
+        <div class="result-box">
+          <div class="label">利益目標までの残り</div>
+          <div class="value" id="pRemaining">—</div>
+          <div class="sub" id="pReached"></div>
+        </div>
+        <div class="result-box">
+          <div class="label">最大DDの残り余地</div>
+          <div class="value" id="pMaxDd">—</div>
+          <div class="sub">使用 <span id="pMaxDdPct">0</span>%</div>
+        </div>
+        <div class="result-box">
+          <div class="label">直近の日（当日扱い）の日次DD余地</div>
+          <div class="value" id="pDailyDd">—</div>
+          <div class="sub">使用 <span id="pDailyDdPct">0</span>% / あと負け <span id="pLossesLeft">0</span> 回</div>
+        </div>
+      </div>
+
+      <h3>ルール抵触の事前警告</h3>
+      <ul class="warnings" id="warnings"></ul>
+    </section>
+
+    <!-- 推移グラフ -->
+    <section class="tool-card">
+      <h2>累計損益の推移</h2>
+      <canvas id="progressChart"></canvas>
+      <p class="fineprint">
+        緑の破線＝利益目標ライン、赤の破線＝最大DD下限ライン。グラフは入力した記録の推移を表示するだけで、売買判断の指示は行いません。
+      </p>
+    </section>
+
+    <!-- 記録一覧 -->
+    <section class="tool-card">
+      <h2>記録一覧</h2>
+      <div class="tbl-wrap">
+        <table class="daily-list num">
+          <thead>
+            <tr><th>日付</th><th>損益</th><th>累計</th><th></th></tr>
+          </thead>
+          <tbody id="dailyTableBody"></tbody>
+        </table>
+      </div>
+      <p id="emptyNote" style="font-size:13px;color:var(--ink-soft)">まだ記録がありません。上のフォームから追加してください。</p>
+    </section>
+
+    <div id="promos"></div>
+
+    <nav class="related">
+      <h2>関連記事</h2>
+      <ul>
+        <li><a href="calculator.html">リスク管理計算ツール（無料）</a><span class="desc">損失上限額・あと何回負けられるかを試算</span></li>
+        <li><a href="../guide/challenge-rules.html">チャレンジルール完全ガイド</a><span class="desc">日次DD・最大DDの計算の仕組み</span></li>
+        <li><a href="../guide/ftmo.html">FTMO徹底ガイド</a><span class="desc">最大手の運営実績と報酬体系</span></li>
+      </ul>
+    </nav>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="../assets/links.js"></script>
+  <script src="../assets/site.js" data-root="../"></script>
+  <script src="assets/tool-config.js"></script>
+  <script src="assets/calc.js"></script>
+  <script src="assets/storage.js"></script>
+  <script src="assets/chart.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      PropNavi.init({ promos: "promos", includeNote: true });
+
+      var cfg = window.PROP_TOOL_BENCHMARKS || {};
+      var ruleIds = ["accountSize", "profitTargetPct", "dailyDdPct", "maxDdPct", "riskPerTradePct"];
+
+      restoreRules();
+      document.getElementById("entryDate").value = todayStr();
+
+      ruleIds.forEach(function (id) {
+        document.getElementById(id).addEventListener("input", render);
+      });
+      document.getElementById("currency").addEventListener("change", render);
+      document.getElementById("addEntry").addEventListener("click", addEntry);
+
+      render();
+
+      function money(value, currency) {
+        var n = Number(value);
+        if (!isFinite(n)) n = 0;
+        var sign = currency === "USD" ? "$" : "¥";
+        return sign + Math.round(n).toLocaleString();
+      }
+
+      function loadDaily() {
+        var list = PropStore.get(PropStore.KEYS.DAILY, []);
+        return Array.isArray(list) ? list : [];
+      }
+      function saveDaily(list) {
+        PropStore.set(PropStore.KEYS.DAILY, list);
+      }
+
+      function addEntry() {
+        var dateEl = document.getElementById("entryDate");
+        var pnlEl = document.getElementById("entryPnl");
+        var pnlWrap = pnlEl.closest(".field");
+        var pnl = Number(pnlEl.value);
+        var valid = pnlEl.value !== "" && isFinite(pnl);
+        pnlWrap.classList.toggle("invalid", !valid);
+        if (!valid) return;
+
+        var list = loadDaily();
+        list.push({ date: dateEl.value || todayStr(), pnl: pnl });
+        list.sort(function (a, b) {
+          return String(a.date).localeCompare(String(b.date));
+        });
+        saveDaily(list);
+        pnlEl.value = "";
+        render();
+      }
+
+      function deleteEntry(index) {
+        var list = loadDaily();
+        list.splice(index, 1);
+        saveDaily(list);
+        render();
+      }
+      window.__propDeleteEntry = deleteEntry;
+
+      function readRules() {
+        return {
+          accountSize: Number(document.getElementById("accountSize").value),
+          currency: document.getElementById("currency").value,
+          profitTargetPct: Number(document.getElementById("profitTargetPct").value),
+          dailyDdPct: Number(document.getElementById("dailyDdPct").value),
+          maxDdPct: Number(document.getElementById("maxDdPct").value),
+          riskPerTradePct: Number(document.getElementById("riskPerTradePct").value),
+        };
+      }
+
+      function saveRules() {
+        var prev = PropStore.get(PropStore.KEYS.INPUTS, {}) || {};
+        var r = readRules();
+        prev.accountSize = r.accountSize;
+        prev.currency = r.currency;
+        prev.profitTargetPct = r.profitTargetPct;
+        prev.dailyDdPct = r.dailyDdPct;
+        prev.maxDdPct = r.maxDdPct;
+        prev.riskPerTradePct = r.riskPerTradePct;
+        PropStore.set(PropStore.KEYS.INPUTS, prev);
+      }
+
+      function restoreRules() {
+        var saved = PropStore.get(PropStore.KEYS.INPUTS, null);
+        if (!saved) return;
+        ruleIds.forEach(function (id) {
+          if (saved[id] !== undefined && saved[id] !== null) document.getElementById(id).value = saved[id];
+        });
+        if (saved.currency) document.getElementById("currency").value = saved.currency;
+      }
+
+      function render() {
+        saveRules();
+        var rules = readRules();
+        var cur = rules.currency;
+
+        var basics = PropCalc.computeBasics(
+          {
+            accountSize: rules.accountSize,
+            profitTargetPct: rules.profitTargetPct,
+            dailyDdPct: rules.dailyDdPct,
+            maxDdPct: rules.maxDdPct,
+            daysLeft: 0,
+            riskPerTradePct: rules.riskPerTradePct,
+          },
+          cfg
+        );
+
+        var list = loadDaily();
+        var pnls = list.map(function (e) { return Number(e.pnl) || 0; });
+        var todayPnl = pnls.length ? pnls[pnls.length - 1] : 0;
+        var progress = PropCalc.computeProgress(pnls, basics, todayPnl);
+
+        document.getElementById("pCumulative").textContent = money(progress.cumulative, cur);
+        document.getElementById("pRemaining").textContent = money(progress.remainingToTarget, cur);
+        document.getElementById("pReached").textContent = progress.targetReached ? "利益目標に到達" : "";
+        document.getElementById("pMaxDd").textContent = money(progress.maxDdRemaining, cur);
+        document.getElementById("pMaxDdPct").textContent = progress.maxDdUsedPctOfLimit;
+        document.getElementById("pDailyDd").textContent = money(progress.dailyDdRemaining, cur);
+        document.getElementById("pDailyDdPct").textContent = progress.dailyDdUsedPctOfLimit;
+        document.getElementById("pLossesLeft").textContent = progress.lossesLeftToday;
+
+        var warnings = PropCalc.buildWarnings(progress, basics);
+        document.getElementById("warnings").innerHTML = warnings
+          .map(function (w) {
+            return '<li class="' + w.level + '">' + PropNavi.esc(w.message) + "</li>";
+          })
+          .join("");
+
+        renderTable(list, cur);
+
+        var cumulativeSeries = [];
+        var running = 0;
+        pnls.forEach(function (v) {
+          running += v;
+          cumulativeSeries.push(running);
+        });
+        PropChart.drawLine(document.getElementById("progressChart"), {
+          series: cumulativeSeries,
+          targetLine: basics.profitTargetAmount,
+          maxDdLine: -basics.maxLossLimit,
+        });
+      }
+
+      function renderTable(list, cur) {
+        var body = document.getElementById("dailyTableBody");
+        var empty = document.getElementById("emptyNote");
+        empty.style.display = list.length ? "none" : "block";
+
+        var running = 0;
+        body.innerHTML = list
+          .map(function (e, i) {
+            running += Number(e.pnl) || 0;
+            return (
+              "<tr><td>" + PropNavi.esc(e.date) + "</td><td>" +
+              money(e.pnl, cur) + "</td><td>" +
+              money(running, cur) + "</td><td>" +
+              '<button class="btn danger" onclick="window.__propDeleteEntry(' + i + ')">削除</button>' +
+              "</td></tr>"
+            );
+          })
+          .join("");
+      }
+
+      function todayStr() {
+        var d = new Date();
+        var m = String(d.getMonth() + 1).padStart(2, "0");
+        var day = String(d.getDate()).padStart(2, "0");
+        return d.getFullYear() + "-" + m + "-" + day;
+      }
+    })();
+  </script>
+</body>
+</html>
