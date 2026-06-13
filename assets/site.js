@@ -11,6 +11,11 @@
  *   外部CDN/解析タグは読み込まない（依存ゼロ・APIコストゼロ）。
  *
  * 注意: 売買助言・通貨ペア・タイミングに類する文言は一切置かない（R1ハード条件）。
+ *
+ * アフィリ導線の出し分け（サイト戦略v2 §4「全ページ同一羅列をやめる」）:
+ *   各ページは PropNavi.init({ promos:"...", page:"<ページキー>" }) でページキーを渡す。
+ *   renderPromos は links.js の各枠の pages 配列と突き合わせ、そのページに関連する枠だけを描画する。
+ *   page を渡さない（旧呼び出し）場合は従来どおり全枠を描画する（後方互換）。
  */
 
 (function (root) {
@@ -35,13 +40,16 @@
   function escAttr(s) { return esc(s).replace(/"/g, "&quot;"); }
 
   // ナビ項目（href はルート相対で持ち、ROOT を前置して各階層から正しく解決する）。
+  // 戦略v2: プロップ集客＋実務インフラ（VPS/国内口座/チャート）＋計算ツールへ導く構成。
   var NAV = [
     { href: "index.html", label: "ホーム" },
-    { href: "guide/ftmo.html", label: "FTMO" },
-    { href: "guide/erabikata.html", label: "選び方" },
-    { href: "guide/challenge-rules.html", label: "ルール" },
-    { href: "guide/shikin-kessai-hou.html", label: "資金決済法" },
+    { href: "guide/vps.html", label: "VPS" },
+    { href: "guide/kokunai-kouza.html", label: "国内口座" },
+    { href: "guide/tradingview.html", label: "チャート" },
+    { href: "guide/shikin-kanri.html", label: "資金管理" },
     { href: "tools/calculator.html", label: "計算ツール" },
+    { href: "guide/erabikata.html", label: "選び方" },
+    { href: "guide/prop-yougo.html", label: "用語集" },
     { href: "about.html", label: "運営者" },
   ];
 
@@ -81,6 +89,7 @@
       '<div class="inner">' +
       '<div class="foot-nav">' +
       '<a href="' + ROOT + 'about.html">運営者情報・編集方針</a>' +
+      '<a href="' + ROOT + 'guide/koushin-log.html">更新ログ</a>' +
       '<a href="' + ROOT + 'legal/disclaimer.html">免責事項</a>' +
       '<a href="' + ROOT + 'legal/pr-policy.html">広告掲載ポリシー</a>' +
       "</div>" +
@@ -96,37 +105,63 @@
       "</div>";
   }
 
+  /** 枠 a がページ key を対象にしているか（pages に "*" か key を含むか）。 */
+  function affiliateMatchesPage(a, page) {
+    if (!page) return true;                       // ページ指定なし=従来どおり全枠（後方互換）
+    var pages = a.pages;
+    if (!Array.isArray(pages) || pages.length === 0) return true; // pages未設定は全ページ扱い
+    return pages.indexOf("*") !== -1 || pages.indexOf(page) !== -1;
+  }
+
   /**
    * アフィリ/note導線を描画する。引数のidの要素へ。
    * links.js（window.PROPNAVI）のプレースホルダを読む。URL未設定枠は「準備中」表示。
+   *
+   * opts.page を渡すと、各枠の pages 配列に一致する枠だけを描画する（全ページ同一羅列をやめる）。
+   * slot="primary" を先に、slot="always"（TradingView等の常設サブ）を後に並べる。
    */
   function renderPromos(elId, opts) {
     var el = document.getElementById(elId || "promos");
     if (!el) return;
     opts = opts || {};
     var includeNote = opts.includeNote !== false;
+    var page = opts.page || "";
+
+    // ページに関連する枠だけを抽出し、primary→always の順に並べる。
+    var matched = (CFG.affiliates || []).filter(function (a) {
+      return affiliateMatchesPage(a, page);
+    });
+    var ordered = matched
+      .filter(function (a) { return a.slot !== "always"; })
+      .concat(matched.filter(function (a) { return a.slot === "always"; }));
 
     var rows = "";
-    (CFG.affiliates || []).forEach(function (a) {
-      rows += promoRow(a.label, a.note, a.url);
+    ordered.forEach(function (a) {
+      rows += promoRow(a.label, a.note, a.url, a.bannerHtml);
     });
     if (includeNote && CFG.note) {
       rows += promoRow(CFG.note.label, CFG.note.note, CFG.note.url);
     }
+    if (!rows) return;   // 対象枠が皆無なら何も描画しない（空のブロックを出さない）
 
     el.className = "promo-block";
     el.innerHTML =
-      '<div class="head">関連リンク</div>' +
+      '<div class="head">このページに関連するサービス</div>' +
       rows +
-      '<p class="basis">掲載先は「親会社が規制ブローカー・支払い実績が透明・運営3年以上」を満たす社のみを選定しています。' +
+      '<p class="basis">国内で合法に扱える高単価サービス（FX用VPS・国内FX/CFD・チャートツール等）を中心に、' +
+      "プロップは審査済みの社のみを掲載しています。海外FXブローカーのアフィリは扱いません。" +
       "リンクは広告（PR）です。各社の利用は自己責任でご判断ください。</p>";
   }
 
-  function promoRow(label, note, url) {
+  function promoRow(label, note, url, bannerHtml) {
     var hasUrl = url && String(url).trim() !== "";
     var cta = hasUrl
       ? '<a class="promo-cta" href="' + escAttr(url) + '" target="_blank" rel="nofollow sponsored noopener">公式サイト</a>'
       : '<span class="promo-cta disabled">準備中</span>';
+    // ASPバナー（リンクコード改変禁止のため、貼られた広告コードは無加工で出す）
+    var banner = bannerHtml && String(bannerHtml).trim() !== ""
+      ? '<div class="promo-banner">' + bannerHtml + "</div>"
+      : "";
     return (
       '<div class="promo-row">' +
       '<span class="pr-inline">PR</span>' +
@@ -135,7 +170,8 @@
       '<div class="promo-note">' + esc(note) + "</div>" +
       "</div>" +
       cta +
-      "</div>"
+      "</div>" +
+      banner
     );
   }
 

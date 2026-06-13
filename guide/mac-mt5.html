@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MacでMT4/MT5を使う3つの方法｜公式Mac版・仮想化・VPSを客観比較｜プロップナビ</title>
+  <meta name="description" content="「MT5 Macで使えない」を解決する3つの方法を客観比較。①公式Mac版の現状 ②Parallels等の仮想化 ③VPS＋リモートデスクトップ（安定・電源不要で推奨）を、長所短所とプロップ用途の向き不向きで整理します。投資助言は行いません。" />
+  <link rel="canonical" href="https://tenten1100.github.io/prop-navi/guide/mac-mt5.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="MacでMT4/MT5を使う3つの方法｜公式Mac版・仮想化・VPSを客観比較" />
+  <meta property="og:description" content="MacでMT5を使う3つの方法（公式Mac版・仮想化・VPS）を長所短所とプロップ用途で客観比較。安定運用はVPSが有力。" />
+  <meta property="og:url" content="https://tenten1100.github.io/prop-navi/guide/mac-mt5.html" />
+  <meta property="og:site_name" content="プロップナビ" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "MacでMT4/MT5を使う3つの方法｜公式Mac版・仮想化・VPSを客観比較",
+    "description": "MacでMT5を使う3つの方法（公式Mac版・仮想化・VPS）を長所短所とプロップ用途で客観比較。安定運用はVPSが有力。",
+    "inLanguage": "ja",
+    "author": { "@type": "Organization", "name": "プロップナビ編集部" },
+    "publisher": { "@type": "Organization", "name": "プロップナビ" },
+    "datePublished": "2026-06-13",
+    "dateModified": "2026-06-13",
+    "mainEntityOfPage": "https://tenten1100.github.io/prop-navi/guide/mac-mt5.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://tenten1100.github.io/prop-navi/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "MacでMT4/MT5を使う3つの方法", "item": "https://tenten1100.github.io/prop-navi/guide/mac-mt5.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "MT5はMacで使えないのですか？", "acceptedAnswer": { "@type": "Answer", "text": "MT4/MT5はもともとWindows向けのソフトで、Macではそのままは動きません。ただし回避策はあり、①ブローカーが配布する公式Mac版（提供有無は業者により異なる）②Parallels等の仮想化ソフトでWindowsを動かす ③WindowsのVPSを借りてリモートデスクトップで使う、の3通りが一般的です。安定して動かしたい・EAを24時間稼働させたいならVPSが有力です。" } },
+      { "@type": "Question", "name": "MacでEAを24時間動かすならどの方法がいいですか？", "acceptedAnswer": { "@type": "Answer", "text": "VPS＋リモートデスクトップが向いています。EAをMac本体ではなくクラウド上のWindowsで動かすため、Macを閉じても・電源を切っても稼働が続きます。仮想化はMacを起動し続ける必要があり、停電や持ち運びで止まります。公式Mac版はEAの動作が限定的な場合があります。最終的な向き不向きは用途次第です。" } },
+      { "@type": "Question", "name": "Apple SiliconのMacでも仮想化でWindowsは動きますか？", "acceptedAnswer": { "@type": "Answer", "text": "Apple Silicon（M系チップ）のMacでも、対応した仮想化ソフトでWindowsを動かすことは可能ですが、動作するWindowsの種類や周辺ソフトの互換性に制約が出る場合があります。要件はお使いのMacのチップと仮想化ソフトの最新の対応状況で確認してください。確実性と常時稼働を重視するならVPSが選択肢になります。" } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+  <nav class="breadcrumb" aria-label="パンくず">
+    <a href="../index.html">ホーム</a><span class="sep">›</span>MacでMT4/MT5を使う3つの方法
+  </nav>
+
+  <main>
+    <article>
+      <header class="article-head">
+        <h1>MacでMT4/MT5を使う3つの方法｜公式Mac版・仮想化・VPSを客観比較</h1>
+        <div class="article-meta">
+          公開: <time datetime="2026-06-13">2026年6月13日</time> ／ 更新: <time datetime="2026-06-13">2026年6月13日</time> ／ プロップナビ編集部
+        </div>
+      </header>
+
+      <p class="lead">
+        「MT5をダウンロードしたのにMacで開けない」――MT4/MT5はもともとWindows向けのソフトで、<strong>Macではそのままは動きません</strong>。
+        本記事は、Macで使うための<strong>3つの方法（①公式Mac版 ②仮想化 ③VPS＋リモートデスクトップ）を、長所短所とプロップ用途の向き不向きで客観比較</strong>します。
+        結論を先に言うと、<strong>EAを安定して24時間動かすならVPS＋リモートデスクトップが有力</strong>ですが、用途によって最適解は変わります。本サイトは売買手法やタイミングの助言は行いません。
+      </p>
+
+      <div class="note-box">
+        <span class="tag">先に結論（用途別）</span>
+        <p style="margin:0">
+          <strong>たまにチャートを見る・裁量で短時間だけ</strong>なら公式Mac版や仮想化で十分。<strong>EAを24時間止めずに動かす／プロップのドローダウン事故を避けたい</strong>なら、Macを閉じても動き続けるVPS＋リモートデスクトップが向きます。
+          「どれが優れているか」ではなく「自分の使い方に合うのはどれか」で選ぶのが正解です。
+        </p>
+      </div>
+
+      <nav class="toc" aria-label="目次">
+        <span class="toc-title">この記事の内容</span>
+        <ol>
+          <li><a href="#why">0. なぜMacでそのまま動かないのか</a></li>
+          <li><a href="#m1">1. 方法①：ブローカー公式のMac版</a></li>
+          <li><a href="#m2">2. 方法②：Parallels等の仮想化</a></li>
+          <li><a href="#m3">3. 方法③：VPS＋リモートデスクトップ（推奨）</a></li>
+          <li><a href="#compare">4. 3方法の比較表</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="why">0. なぜMacでそのまま動かないのか</h2>
+      <p>
+        MT4/MT5を提供するMetaQuotes社は、長くWindows向けにこのソフトを配布してきました。MacのOS（macOS）はWindowsと仕組みが異なるため、<strong>Windows用の実行ファイルはMac上では直接動きません</strong>。
+        そこで「Mac上で何らかの形でWindowsの実行環境を用意する」か「Macが操作できるWindowsを別に用意する」必要があります。これが下の3方法の出発点です。
+      </p>
+
+      <!-- 3方法の関係図（自作インラインSVG） -->
+      <figure class="figure" aria-label="MacでMT4/MT5を使う3つの方法の関係図">
+        <svg viewBox="0 0 720 200" role="img" preserveAspectRatio="xMidYMid meet">
+          <rect class="fig-bg" x="0" y="0" width="720" height="200" rx="4" />
+          <!-- Mac -->
+          <rect class="fig-box" x="20" y="80" width="120" height="50" rx="6" />
+          <text class="fig-text" x="80" y="110" text-anchor="middle">あなたのMac</text>
+          <!-- branch lines -->
+          <line class="fig-line" x1="140" y1="105" x2="180" y2="50" />
+          <line class="fig-line" x1="140" y1="105" x2="180" y2="105" />
+          <line class="fig-line-accent" x1="140" y1="105" x2="180" y2="160" />
+          <!-- m1 -->
+          <rect class="fig-box" x="180" y="28" width="240" height="44" rx="6" />
+          <text class="fig-text" x="300" y="46" text-anchor="middle">① 公式Mac版を直接インストール</text>
+          <text class="fig-text-sm" x="300" y="63" text-anchor="middle">手軽だが提供有無・EA対応に差</text>
+          <!-- m2 -->
+          <rect class="fig-box" x="180" y="84" width="240" height="44" rx="6" />
+          <text class="fig-text" x="300" y="102" text-anchor="middle">② 仮想化でMac内にWindows</text>
+          <text class="fig-text-sm" x="300" y="119" text-anchor="middle">自由度高いがMacを起動し続ける</text>
+          <!-- m3 -->
+          <rect class="fig-box-accent" x="180" y="140" width="240" height="44" rx="6" />
+          <text class="fig-text-accent" x="300" y="158" text-anchor="middle">③ VPS＋リモートデスクトップ</text>
+          <text class="fig-text-sm" x="300" y="175" text-anchor="middle">Macを閉じても24時間稼働（推奨）</text>
+          <!-- arrow to cloud for m3 -->
+          <line class="fig-line-accent" x1="420" y1="162" x2="470" y2="162" />
+          <polygon class="fig-box-accent" points="470,156 482,162 470,168" />
+          <rect class="fig-box-navy" x="482" y="140" width="216" height="44" rx="6" />
+          <text class="fig-text-on-navy" x="590" y="158" text-anchor="middle">クラウド上のWindowsで</text>
+          <text class="fig-text-on-navy" x="590" y="175" text-anchor="middle">MT5・EAが常時稼働</text>
+        </svg>
+        <figcaption>3方法の関係。①②はMac本体に依存し、③だけがMacの電源・持ち運びから独立して24時間動く。</figcaption>
+      </figure>
+
+      <h2 id="m1">1. 方法①：ブローカー公式のMac版</h2>
+      <p>
+        一部のブローカー／プロップは、<strong>Mac向けのMT4/MT5を配布</strong>しています。提供されていれば、Macにそのままインストールして使える手軽さがあります。
+      </p>
+      <ul>
+        <li><strong>長所</strong>：追加の有料ソフトやVPS契約が不要。導入が最も簡単で、裁量でチャートを見る用途には十分。</li>
+        <li><strong>短所</strong>：<strong>提供しているかは業者により異なり</strong>、Windows版より機能や動作が限定的な場合がある。<strong>EAの動作が制限される・不安定なことがある</strong>ため、自動売買を本格運用するには不向きなケースがある。</li>
+        <li><strong>向く人</strong>：Macで裁量トレード・チャート確認が中心で、EAの24時間稼働は要らない人。</li>
+      </ul>
+      <p>提供有無・対応状況は、利用する業者の公式案内で確認してください（業者ごとに差があります）。</p>
+
+      <h2 id="m2">2. 方法②：Parallels等の仮想化</h2>
+      <p>
+        Parallels Desktop などの<strong>仮想化ソフトでMacの中にWindowsを動かし</strong>、そのWindows上にWindows版MT5を入れる方法です。Windows版の機能をほぼそのまま使えます。
+      </p>
+      <ul>
+        <li><strong>長所</strong>：Windows版MT5をフルに使え、EAやインジケーターの自由度が高い。Mac1台で完結する。</li>
+        <li><strong>短所</strong>：<strong>仮想化ソフトが有料</strong>のことが多く、Macのメモリ・CPUを消費する。EAを動かし続けるには<strong>Macを起動したままにする必要</strong>があり、停電・スリープ・持ち運びで止まる。Apple Silicon（M系）では動かせるWindowsの種類や周辺互換に制約が出る場合がある。</li>
+        <li><strong>向く人</strong>：Macで作業しつつWindows環境も併用したい人。常時稼働より自由度と一体運用を優先する人。</li>
+      </ul>
+
+      <h2 id="m3">3. 方法③：VPS＋リモートデスクトップ（推奨）</h2>
+      <p>
+        <strong>WindowsのVPSを借りて、MacからリモートデスクトップでそのWindowsを操作</strong>する方法です。MT5とEAはMac本体ではなく<strong>クラウド上のWindowsで動く</strong>ため、Macを閉じても・電源を切っても稼働が続きます。
+      </p>
+      <ul>
+        <li><strong>長所</strong>：<strong>Macの電源・回線から独立して24時間稼働</strong>。停電・スリープ・持ち運びの影響を受けない。取引サーバに近いリージョンを選べば約定遅延も抑えられる。Mac本体のスペックを消費しない。</li>
+        <li><strong>短所</strong>：<strong>VPSの月額費用</strong>がかかる。初回の接続設定（IP・ユーザー・パスワードでの接続）に少し手間がある。</li>
+        <li><strong>向く人</strong>：<strong>EAを24時間止めずに動かしたい人</strong>。プロップでドローダウン事故（PCが落ちて建玉放置）を避けたい人。</li>
+      </ul>
+      <div class="note-box">
+        <span class="tag">プロップ用途で推す理由</span>
+        <p style="margin:0">
+          プロップは日次・最大ドローダウンで合否が決まるため、<strong>EAが止まって損切りが効かない事故が致命傷</strong>になります（→ <a href="shikin-kanri.html">資金管理ガイド</a>）。
+          仮想化はMacを起動し続ける前提なので、Macを持ち歩く人や停電リスクのある環境では不安が残ります。Macから独立して動くVPSが、常時稼働の安定性では有利です。具体的な設定は <a href="vps-setup.html">ConoHa VPSでMT5を24時間動かす設定手順</a> に、選び方は <a href="vps.html">プロップ向けVPS比較</a> にまとめています。
+        </p>
+      </div>
+
+      <h2 id="compare">4. 3方法の比較表</h2>
+      <p>用途で選べるよう、3方法を並べます。優劣の断定ではなく、自分の使い方に当てはめてください。</p>
+      <div class="tbl-wrap scroll">
+        <p class="scroll-hint">表は横にスクロールできます</p>
+        <table>
+          <caption>MacでMT4/MT5を使う3方法の整理（2026年時点・各社/各ソフトの最新仕様は要確認）</caption>
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th>① 公式Mac版</th>
+              <th>② 仮想化（Parallels等）</th>
+              <th class="reco">③ VPS＋リモート<span class="reco-tag">EA常時稼働なら</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>導入の手軽さ</th><td>最も簡単</td><td>中（ソフト導入が必要）</td><td class="reco">中（接続設定が必要）</td></tr>
+            <tr><th>費用感</th><td>追加費用なしの場合あり</td><td>仮想化ソフトが有料の傾向</td><td class="reco">VPS月額（要公式確認）</td></tr>
+            <tr><th>EAの自由度</th><td>限定的な場合あり</td><td>高い（Windows版相当）</td><td class="reco">高い（Windows版相当）</td></tr>
+            <tr><th>24時間稼働</th><td>Mac次第</td><td>Macを起動し続ける必要</td><td class="reco">Macを閉じても継続</td></tr>
+            <tr><th>停電・持ち運び耐性</th><td>弱い</td><td>弱い</td><td class="reco">強い（Macに非依存）</td></tr>
+            <tr><th>向いている人</th><td>裁量・チャート確認中心</td><td>Mac内でWindows併用したい</td><td class="reco">EAを安定して常時稼働したい</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box">
+        <span class="tag">表の読み方</span>
+        <p style="margin:0">
+          ①は手軽さ、②は自由度と一体運用、③は常時稼働の安定性が強みです。「EAを24時間動かすか」を軸にすると選びやすく、止めたくないなら③が無難です。料金・対応状況は各社/各ソフトの最新情報で確認してください。
+        </p>
+      </div>
+
+      <!-- 編集部メモ（意見・観察。トレード実績の主張はしない） -->
+      <div class="editor-memo">
+        <span class="tag">編集部メモ</span>
+        <p>
+          Mac×MT5の記事は「公式Mac版を入れれば解決」で締めるものが目立ちますが、編集部が引っかかるのは「EAを動かすか」を区別していない点です。
+          チャートを見るだけなら確かに公式Mac版で足りますが、自動売買を回したい人にそれを勧めると、Macを閉じた瞬間にEAが止まって肩透かしになります。用途を分けずに「これでOK」と言わないようにしているのは、そこで読み手が無駄足を踏むのを見てきたからです。
+        </p>
+        <!-- TODO(Founder): Mac実機での検証メモ（事実）があれば追記可。誇張・捏造は書かない。 -->
+      </div>
+
+      <section class="faq" id="faq">
+        <h2>よくある質問</h2>
+        <dl>
+          <dt>MT5はMacで使えないのですか？</dt>
+          <dd>MT4/MT5はWindows向けで、Macではそのままは動きません。回避策として①公式Mac版（提供有無は業者次第）②仮想化ソフトでWindowsを動かす ③WindowsのVPSをリモートで使う、の3通りが一般的です。安定運用・EAの24時間稼働を重視するならVPSが有力です。</dd>
+          <dt>MacでEAを24時間動かすならどの方法がいいですか？</dt>
+          <dd>VPS＋リモートデスクトップが向きます。EAをMac本体でなくクラウド上のWindowsで動かすため、Macを閉じても稼働が続きます。仮想化はMacを起動し続ける必要があり、停電や持ち運びで止まります。最終的な向き不向きは用途次第です。</dd>
+          <dt>Apple SiliconのMacでも仮想化でWindowsは動きますか？</dt>
+          <dd>対応した仮想化ソフトで動かすことは可能ですが、動作するWindowsの種類や周辺ソフトの互換性に制約が出る場合があります。要件はMacのチップと仮想化ソフトの最新対応状況で確認してください。確実性と常時稼働を重視するならVPSが選択肢になります。</dd>
+        </dl>
+      </section>
+
+      <!-- 主CTA: 結論直後の文脈配置（このページに関連するサービス＝VPS） -->
+      <div id="promos"></div>
+
+      <nav class="related">
+        <h2>関連記事</h2>
+        <ul>
+          <li><a href="vps-setup.html">ConoHa VPSでMT5を24時間動かす設定手順</a><span class="desc">方法③の具体的なセットアップ手順</span></li>
+          <li><a href="vps.html">プロップ向けVPS比較</a><span class="desc">VPSの選定基準（稼働率・メモリ・リージョン）</span></li>
+          <li><a href="shikin-kanri.html">プロップの資金管理 実務ガイド</a><span class="desc">EA放置事故が直撃するDD管理の基礎</span></li>
+          <li><a href="prop-yougo.html">プロップファーム用語集</a><span class="desc">EA・リモートデスクトップ等の用語を確認</span></li>
+        </ul>
+      </nav>
+
+      <div class="source-list">
+        <strong>出典</strong>
+        <ol>
+          <li id="src-1">MT4/MT5のMac対応の一般情報: 公式Mac版の提供有無・対応状況は利用するブローカー／プロップの公式案内で確認してください（業者ごとに差があります）。MetaTrader 4/5 はMetaQuotes社の製品です。</li>
+          <li id="src-2">仮想化ソフトの対応（Apple Silicon等）: Parallels等の仮想化ソフトの最新の対応状況・動作要件は各ソフトの公式情報で要確認。</li>
+          <li id="src-3">VPSの選定・設定: 本サイト <a href="vps.html">プロップ向けVPS比較</a> ／ <a href="vps-setup.html">ConoHa VPSでMT5を24時間動かす設定手順</a>（料金・スペックは各社公式で要確認）。</li>
+          <li id="src-4">本記事は環境構築の一般的な比較であり、利益・勝率・合格を保証するものではありません。EAの選定・取引判断は本記事の対象外です。</li>
+        </ol>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="../assets/links.js"></script>
+  <script src="../assets/site.js" data-root="../"></script>
+  <script>
+    PropNavi.init({ promos: "promos", includeNote: true, page: "mac-mt5" });
+  </script>
+</body>
+</html>

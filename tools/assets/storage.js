@@ -57,7 +57,8 @@
     set: set,
     // 画面間で共有するキー名は1か所に集約しておく（タイプミス事故防止）。
     KEYS: {
-      INPUTS: "prop_tools_inputs_v1",     // index.html の入力値
+      INPUTS: "prop_tools_inputs_v1",     // calculator.html 資金管理の入力値
+      ROI: "prop_tools_roi_v1",           // calculator.html ROIシミュレータの入力値
       DAILY: "prop_tools_daily_v1",       // tracker.html の日次損益ログ
     },
   };

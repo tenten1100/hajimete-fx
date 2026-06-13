@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>リスク管理計算ツール（無料）｜損失上限・あと何回負けられるか｜プロップナビ</title>
-  <meta name="description" content="プロップファームのチャレンジ向け資金管理の無料計算ツール。口座サイズと各ドローダウンから、損失上限額・安全な1トレードのリスク額・あと何回負けられるかを算出します。投資助言は行いません。" />
+  <title>プロップ資金管理＆チャレンジROI計算ツール（無料）｜FTMO ロット計算｜プロップナビ</title>
+  <meta name="description" content="プロップファームのチャレンジ向け無料計算ツール。口座サイズと各ドローダウンから損失上限額・安全な1トレードのロット目安・あと何回負けられるかを算出。さらに審査料・想定合格率・利益分配率からチャレンジ費用回収の期待値（ROI）も試算します。投資助言は行いません。" />
   <link rel="canonical" href="https://tenten1100.github.io/prop-navi/tools/calculator.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="リスク管理計算ツール（無料）｜プロップナビ" />
-  <meta property="og:description" content="損失上限額・安全な1トレードのリスク額・あと何回負けられるかを算出。投資助言なし。" />
+  <meta property="og:title" content="プロップ資金管理＆チャレンジROI計算ツール（無料）｜プロップナビ" />
+  <meta property="og:description" content="損失上限額・安全な1トレードのロット目安・あと何回負けられるか、加えてチャレンジ費用回収の期待値（ROI）を算出。投資助言なし。" />
   <meta property="og:url" content="https://tenten1100.github.io/prop-navi/tools/calculator.html" />
   <meta property="og:site_name" content="プロップナビ" />
   <meta name="twitter:card" content="summary" />
@@ -32,15 +32,24 @@
   </nav>
 
   <main>
-    <h1 style="font-size:26px;color:var(--navy);margin:6px 0 8px">リスク管理計算ツール</h1>
-    <p style="color:var(--ink-soft);margin:0 0 22px">
-      口座サイズと各ルール（利益目標・日次DD・最大DD・許容リスク）を入れると、損失上限額・安全な1トレードのリスク額・「今日あと何回負けられるか」を算出します。
-      売買タイミングや通貨ペアの推奨は一切行いません。ルールの計算の仕組みは <a href="../guide/challenge-rules.html">チャレンジルール完全ガイド</a> を参照してください。
+    <h1 style="font-size:26px;color:var(--navy);margin:6px 0 8px">プロップ資金管理＆チャレンジROI計算ツール</h1>
+    <p style="color:var(--ink-soft);margin:0 0 16px">
+      口座サイズと各ルール（利益目標・日次DD・最大DD・許容リスク）を入れると、損失上限額・安全な1トレードのリスク額（ロット目安）・「今日あと何回負けられるか」を算出します。
+      さらに下部の<strong>ROIシミュレータ</strong>で、審査料・想定合格率・利益分配率からチャレンジ費用回収の期待値を試算できます。
+      売買タイミングや通貨ペアの推奨は一切行いません。ルールの計算の仕組みは <a href="../guide/challenge-rules.html">チャレンジルール完全ガイド</a>、資金管理の考え方は <a href="../guide/shikin-kanri.html">プロップの資金管理ガイド</a> を参照してください。
     </p>
+    <nav class="toc" aria-label="目次">
+      <span class="toc-title">このページの内容</span>
+      <ol>
+        <li><a href="#input">資金管理の入力</a></li>
+        <li><a href="#result">計算結果（損失上限・ロット目安・必要勝率）</a></li>
+        <li><a href="#roi">チャレンジ費用回収 ROIシミュレータ</a></li>
+      </ol>
+    </nav>
 
     <!-- 入力 -->
-    <section class="tool-card">
-      <h2>入力</h2>
+    <section class="tool-card" id="input">
+      <h2>資金管理の入力</h2>
       <div class="tool-form-grid">
         <div class="field">
           <label for="accountSize">口座サイズ</label>
@@ -84,7 +93,7 @@
     </section>
 
     <!-- 結果 -->
-    <section class="tool-card">
+    <section class="tool-card" id="result">
       <h2>計算結果（目安）</h2>
       <div class="results-grid">
         <div class="result-box">
@@ -131,14 +140,78 @@
       <ul class="warnings" id="warnings"></ul>
     </section>
 
+    <!-- ROIシミュレータ（独自ブロック・competitor欠落機能） -->
+    <section class="tool-card" id="roi">
+      <h2>チャレンジ費用回収 ROIシミュレータ</h2>
+      <p style="color:var(--ink-soft);font-size:14px;margin:0 0 14px">
+        審査料・<strong>あなたが置く想定合格率</strong>・到達を想定する利益額・利益分配率から、1回挑戦あたりの<strong>期待値（算術）</strong>を試算します。
+        これは合格や利益を予測・保証するものではなく、入力した前提が正しい場合に成り立つ計算にすぎません。売買タイミングや手法は一切扱いません。
+      </p>
+      <div class="tool-form-grid">
+        <div class="field">
+          <label for="challengeFee">審査料（1回分）</label>
+          <input type="number" id="challengeFee" min="0" step="1000" value="50000" />
+          <div class="hint">プランの審査料（チャレンジ料）</div>
+          <div class="error">0以上の数値を入力してください</div>
+        </div>
+        <div class="field">
+          <label for="passRatePct">想定合格率 %</label>
+          <input type="number" id="passRatePct" min="0" max="100" step="0.1" value="10.6" />
+          <div class="hint">あなたの前提（小売全体の集計値は約10.6%）</div>
+          <div class="error">0〜100の数値を入力してください</div>
+        </div>
+        <div class="field">
+          <label for="fundedProfitAmount">合格後に到達を想定する利益額</label>
+          <input type="number" id="fundedProfitAmount" min="0" step="1000" value="500000" />
+          <div class="hint">口座での利益（あなたの前提）</div>
+          <div class="error">0以上の数値を入力してください</div>
+        </div>
+        <div class="field">
+          <label for="payoutSplitPct">利益分配率 %（取り分）</label>
+          <input type="number" id="payoutSplitPct" min="0" max="100" step="1" value="80" />
+          <div class="hint">トレーダー取り分（例80〜90%）</div>
+          <div class="error">0〜100の数値を入力してください</div>
+        </div>
+      </div>
+
+      <div class="results-grid" style="margin-top:16px">
+        <div class="result-box">
+          <div class="label">合格1回で得られる手取り</div>
+          <div class="value" id="rPayoutOnPass">—</div>
+          <div class="sub">到達利益 × 利益分配率</div>
+        </div>
+        <div class="result-box">
+          <div class="label">1回挑戦あたりの期待損益</div>
+          <div class="value" id="rExpectedNet">—</div>
+          <div class="sub">期待手取り − 審査料（前提が正しい場合の算術値）</div>
+        </div>
+        <div class="result-box">
+          <div class="label">損益分岐に必要な合格率</div>
+          <div class="value" id="rBreakeven">—</div>
+          <div class="sub">これを下回ると期待値はマイナス</div>
+        </div>
+        <div class="result-box">
+          <div class="label">合格1回までの期待受験回数</div>
+          <div class="value" id="rAttempts">—</div>
+          <div class="sub">1 ÷ 合格率（リトライ前提）。累計審査料の期待値 <span id="rFeeUntilPass">—</span></div>
+        </div>
+      </div>
+      <ul class="warnings" id="roiNote" style="margin-top:14px"></ul>
+      <p class="fineprint">
+        合格率は実績ではなく「あなたが置く前提」です。前提が楽観的だと期待値も楽観に振れます。本ツールは資金計画の前提整理のための算術であり、合格・利益を保証しません。
+      </p>
+    </section>
+
+    <!-- 主CTA: 高意図地点（計算ツール直下）にこのページ関連のサービスを文脈配置 -->
     <div id="promos"></div>
 
     <nav class="related">
       <h2>関連記事</h2>
       <ul>
+        <li><a href="../guide/shikin-kanri.html">プロップの資金管理 実務ガイド</a><span class="desc">DD・ロット・撤退ラインの考え方を本ツールと連動して解説</span></li>
         <li><a href="tracker.html">進捗トラッキング（無料）</a><span class="desc">日次損益を記録し、DD余地の推移をグラフ化</span></li>
         <li><a href="../guide/challenge-rules.html">チャレンジルール完全ガイド</a><span class="desc">日次DD・最大DDの計算の仕組み</span></li>
-        <li><a href="../guide/erabikata.html">プロップファームの選び方と比較</a><span class="desc">飛ばない業者を3軸で見抜く</span></li>
+        <li><a href="../guide/vps.html">プロップ向けVPS比較</a><span class="desc">EA・自動売買の安定稼働に必要な環境の選び方</span></li>
       </ul>
     </nav>
   </main>
@@ -155,7 +228,7 @@
     (function () {
       "use strict";
 
-      PropNavi.init({ promos: "promos", includeNote: true });
+      PropNavi.init({ promos: "promos", includeNote: true, page: "calculator" });
 
       var cfg = window.PROP_TOOL_BENCHMARKS || {};
 
@@ -168,25 +241,46 @@
         { id: "riskPerTradePct", min: 0, max: 100, integer: false },
       ];
 
+      // ROIシミュレータの入力欄（資金管理本体とは独立に検証・再計算する）。
+      var roiFields = [
+        { id: "challengeFee", min: 0, max: Infinity, integer: false },
+        { id: "passRatePct", min: 0, max: 100, integer: false },
+        { id: "fundedProfitAmount", min: 0, max: Infinity, integer: false },
+        { id: "payoutSplitPct", min: 0, max: 100, integer: false },
+      ];
+
       restoreInputs();
+      restoreRoiInputs();
 
       fields.forEach(function (f) {
         document.getElementById(f.id).addEventListener("input", onChange);
       });
       document.getElementById("currency").addEventListener("change", onChange);
+      roiFields.forEach(function (f) {
+        document.getElementById(f.id).addEventListener("input", onRoiChange);
+      });
 
       onChange();
+      onRoiChange();
 
       function onChange() {
-        if (validateAll()) {
+        if (validate(fields)) {
           recalc();
           saveInputs();
         }
       }
 
-      function validateAll() {
+      function onRoiChange() {
+        if (validate(roiFields)) {
+          recalcRoi();
+          saveRoiInputs();
+        }
+      }
+
+      // 指定フィールド群を検証し、不正欄に .invalid を付ける。全て妥当なら true。
+      function validate(list) {
         var ok = true;
-        fields.forEach(function (f) {
+        list.forEach(function (f) {
           var el = document.getElementById(f.id);
           var wrap = el.closest(".field");
           var v = Number(el.value);
@@ -245,8 +339,54 @@
           .join("");
       }
 
+      function readRoiInput() {
+        return {
+          challengeFee: Number(document.getElementById("challengeFee").value),
+          passRatePct: Number(document.getElementById("passRatePct").value),
+          fundedProfitAmount: Number(document.getElementById("fundedProfitAmount").value),
+          payoutSplitPct: Number(document.getElementById("payoutSplitPct").value),
+        };
+      }
+
+      function recalcRoi() {
+        var cur = document.getElementById("currency").value;  // 上の通貨選択を共有
+        var roi = PropCalc.computeChallengeRoi(readRoiInput());
+
+        document.getElementById("rPayoutOnPass").textContent = money(roi.payoutOnPass, cur);
+        document.getElementById("rExpectedNet").textContent = money(roi.expectedNetPerAttempt, cur);
+        document.getElementById("rBreakeven").textContent = roi.breakevenPassRatePct + " %";
+        document.getElementById("rAttempts").textContent =
+          roi.expectedAttemptsToPass > 0 ? roi.expectedAttemptsToPass + " 回" : "—";
+        document.getElementById("rFeeUntilPass").textContent =
+          roi.expectedAttemptsToPass > 0 ? money(roi.expectedFeeUntilPass, cur) : "—";
+
+        // 期待値の符号を機械的に通知（助言ではなく前提依存の算術結果の提示）。
+        var note;
+        if (roi.payoutOnPass <= 0) {
+          note = { level: "info", message: "到達利益または分配率が0のため、期待値を試算できません（前提を入力してください）。" };
+        } else if (roi.positiveExpectation) {
+          note = {
+            level: "info",
+            message: "入力した前提では、想定合格率（" + readRoiInput().passRatePct + "%）が損益分岐（" +
+              roi.breakevenPassRatePct + "%）を上回り、1回挑戦の期待値はプラスです。これは前提が正しい場合の算術であり、合格・利益を保証しません。",
+          };
+        } else {
+          note = {
+            level: "warn",
+            message: "入力した前提では、想定合格率（" + readRoiInput().passRatePct + "%）が損益分岐（" +
+              roi.breakevenPassRatePct + "%）を下回り、1回挑戦の期待値はマイナスです。前提を見直す材料としてください（助言ではありません）。",
+          };
+        }
+        document.getElementById("roiNote").innerHTML =
+          '<li class="' + note.level + '">' + PropNavi.esc(note.message) + "</li>";
+      }
+
       function saveInputs() {
         PropStore.set(PropStore.KEYS.INPUTS, readInput());
+      }
+
+      function saveRoiInputs() {
+        PropStore.set(PropStore.KEYS.ROI, readRoiInput());
       }
 
       function restoreInputs() {
@@ -256,6 +396,14 @@
           if (saved[k] !== undefined && saved[k] !== null) document.getElementById(k).value = saved[k];
         });
         if (saved.currency) document.getElementById("currency").value = saved.currency;
+      }
+
+      function restoreRoiInputs() {
+        var saved = PropStore.get(PropStore.KEYS.ROI, null);
+        if (!saved) return;
+        ["challengeFee", "passRatePct", "fundedProfitAmount", "payoutSplitPct"].forEach(function (k) {
+          if (saved[k] !== undefined && saved[k] !== null) document.getElementById(k).value = saved[k];
+        });
       }
     })();
   </script>

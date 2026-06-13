@@ -80,7 +80,7 @@
 }
 .warnings li.danger { background: #fbeaea; color: #842629; border: 1px solid #e3a9aa; }
 .warnings li.warn { background: #fdf6ec; color: #8a5a00; border: 1px solid #e6d3a8; }
-.warnings li.info { background: #eef1f7; color: var(--navy); border: 1px solid #c8d2e6; }
+.warnings li.info { background: #f6eef5; color: var(--navy); border: 1px solid #ddc9dd; }
 
 /* ボタン */
 button.btn {

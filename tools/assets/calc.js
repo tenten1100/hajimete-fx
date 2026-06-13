@@ -117,6 +117,67 @@
   }
 
   /**
+   * チャレンジ費用回収のROI（期待値）を試算する。
+   *
+   * これは「ユーザーが入力した前提（合格率・到達利益・分配率）の下での算術的な期待値」であり、
+   * 合格や利益を予測・保証するものではない（出力ラベルにも前提依存である旨を必ず明示する）。
+   * 売買タイミング・手法には一切踏み込まない（R1ハード条件）。
+   *
+   * 計算の考え方:
+   *   1回の挑戦コスト    = challengeFee（審査料）
+   *   合格時の手取り     = fundedProfitAmount × payoutSplitPct/100 （到達利益 × 利益分配率）
+   *   1回挑戦の期待手取り = passRatePct/100 × 合格時手取り
+   *   1回挑戦の期待損益   = 期待手取り − challengeFee
+   *   損益分岐の必要合格率 = challengeFee / 合格時手取り （これを下回ると期待値はマイナス）
+   *
+   * リトライ前提（任意）: 合格まで平均何回受験するかの期待回数を 1/合格率 で出し、
+   *   合格1回を得るための累計審査料の期待値も併記する（リトライで費用が積み上がる現実を可視化）。
+   *
+   * @param {Object} input
+   *   challengeFee        審査料（1回分。通貨はUI側）
+   *   passRatePct         想定合格率%（ユーザーの前提。0〜100）
+   *   fundedProfitAmount  合格後に到達を想定する利益額（口座での利益。ユーザーの前提）
+   *   payoutSplitPct      利益分配率%（トレーダー取り分。例80）
+   * @returns {Object} すべて有限値を保証する。
+   */
+  function computeChallengeRoi(input) {
+    var fee = Math.max(0, num(input.challengeFee));
+    var passRate = Math.min(100, Math.max(0, num(input.passRatePct))) / 100;   // 0〜1にクランプ
+    var profit = Math.max(0, num(input.fundedProfitAmount));
+    var split = Math.min(100, Math.max(0, num(input.payoutSplitPct))) / 100;   // 0〜1にクランプ
+
+    // 合格1回で得られる手取り（到達利益 × 分配率）。
+    var payoutOnPass = profit * split;
+
+    // 1回挑戦あたりの期待手取りと期待損益。
+    var expectedPayoutPerAttempt = passRate * payoutOnPass;
+    var expectedNetPerAttempt = expectedPayoutPerAttempt - fee;
+
+    // 損益分岐に必要な合格率: fee / payoutOnPass（手取り0なら分岐不能=Infinity回避し1=100%超扱い）。
+    var breakevenPassRatePct = payoutOnPass > 0 ? round((fee / payoutOnPass) * 100, 1) : 100;
+
+    // 合格1回に必要な期待受験回数（リトライ前提）。合格率0なら不能なので0を返す。
+    var expectedAttemptsToPass = passRate > 0 ? round(1 / passRate, 2) : 0;
+    // 合格1回を得るための累計審査料の期待値（リトライで費用が積み上がる現実）。
+    var expectedFeeUntilPass = passRate > 0 ? fee / passRate : 0;
+    // 合格1回ベースの正味期待損益（手取り − 累計審査料）。
+    var expectedNetUntilPass = payoutOnPass - expectedFeeUntilPass;
+
+    return {
+      challengeFee: fee,
+      payoutOnPass: payoutOnPass,
+      expectedPayoutPerAttempt: expectedPayoutPerAttempt,
+      expectedNetPerAttempt: expectedNetPerAttempt,
+      // 期待値がプラスか（前提が正しい場合に限る算術的判定。勝てる保証ではない）。
+      positiveExpectation: expectedNetPerAttempt > 0,
+      breakevenPassRatePct: breakevenPassRatePct,
+      expectedAttemptsToPass: expectedAttemptsToPass,
+      expectedFeeUntilPass: expectedFeeUntilPass,
+      expectedNetUntilPass: expectedNetUntilPass,
+    };
+  }
+
+  /**
    * tracker用: 日次損益ログから現在の進捗とDD余地を算出する。
    *
    * @param {number[]} dailyPnls 日次損益の配列（古い順。利益+/損失-）
@@ -222,6 +283,7 @@
     round: round,
     computeBasics: computeBasics,
     winRateTable: winRateTable,
+    computeChallengeRoi: computeChallengeRoi,
     computeProgress: computeProgress,
     buildWarnings: buildWarnings,
   };
