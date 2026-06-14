@@ -37,7 +37,7 @@ window.PROPNAVI = {
   site: {
     name: "FXコンパス",                            // サイト名（表示名。URL/リポジトリ名 prop-navi は不変）
     tagline: "FXの、迷わない地図。",
-    baseUrl: "https://tenten1100.github.io/prop-navi", // ← 公開URLに差し替え（末尾スラッシュなし）
+    baseUrl: "https://example.github.io/prop-navi", // ← 公開URLに差し替え（末尾スラッシュなし）
     updated: "2026-06-13",                         // サイト全体の最終更新日（フッタ表示用）
   },
 
@@ -52,7 +52,7 @@ window.PROPNAVI = {
     {
       key: "ftmo",
       label: "FTMO（公式アフィリエイト）",
-      url: "https://trader.ftmo.com/?affiliates=ttxsZHweBHbKLUSIciUu",   // ← FounderのFTMO直アフィリ登録後にURLを差し替え（ftmo.com/affiliate-programme）
+      url: "",   // ← FounderのFTMO直アフィリ登録後にURLを差し替え（ftmo.com/affiliate-programme）
       bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
       note: "2015年設立・運営11年。親会社が規制ブローカーOANDA（2025年買収完了）。プロップの第1指名。",
       category: "prop",
@@ -74,24 +74,44 @@ window.PROPNAVI = {
     {
       key: "conoha",
       label: "ConoHa VPS（FX自動売買向け）",
-      url: "https://px.a8.net/svt/ejp?a8mat=4B5UW4+DXB04Y+50+4YNYXD",   // ← FounderがA8.net/もしもアフィリで提携後にURLを差し替え
-      bannerHtml: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B5UW4+DXB04Y+50+4YNYXD\" rel=\"nofollow\">\n<img border=\"0\" width=\"320\" height=\"50\" alt=\"\" src=\"https://www23.a8.net/svt/bgt?aid=260613796842&wid=001&eno=01&mid=s00000000018030009000&mc=1\"></a>\n<img border=\"0\" width=\"1\" height=\"1\" src=\"https://www11.a8.net/0.gif?a8mat=4B5UW4+DXB04Y+50+4YNYXD\" alt=\"\">",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
+      url: "",   // ← FounderがA8.net/もしもアフィリで提携後にURLを差し替え
+      bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
       note: "国内サービス・合法。アフィリ単価は最大53,900円/件（ConoHa公式・要ASP管理画面で確定）。",
       category: "vps",
       slot: "primary",
-      pages: ["vps", "vps-setup", "mac-mt5", "shikin-kanri", "calculator", "tracker", "fx-hajimekata"],
+      pages: ["vps", "vps-setup", "mac-mt5", "shikin-kanri", "calculator", "tracker", "fx-hajimekata", "fx-vps-hikaku", "ea-hajimekata", "mac-vps"],
+    },
+    {
+      key: "xserver",
+      label: "XServer VPS for FX",
+      url: "",   // ← FounderがA8.net/もしもアフィリ等で提携後にURLを差し替え（未提携なら空=「準備中」）
+      bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
+      note: "国内サービス・合法。FX自動売買向けプランを用意。料金・スペックは公式で要確認。複数ASP併用での取りこぼし回収枠。",
+      category: "vps",
+      slot: "primary",
+      pages: ["fx-vps-hikaku", "vps", "vps-setup"],
+    },
+    {
+      key: "onamae",
+      label: "お名前.com デスクトップクラウド",
+      url: "",   // ← FounderがA8.net/もしもアフィリ等で提携後にURLを差し替え（未提携なら空=「準備中」）
+      bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
+      note: "国内サービス・合法。Windowsデスクトップ型でMT4/MT5導入を想定した設計。料金・スペックは公式で要確認。",
+      category: "vps",
+      slot: "primary",
+      pages: ["fx-vps-hikaku", "vps", "vps-setup"],
     },
 
     // --- 国内FX/CFD（収益エンジン・合法高単価。ASP=A8等経由） ---
     {
       key: "dmmfx",
       label: "DMM FX（国内FX口座）",
-      url: "https://px.a8.net/svt/ejp?a8mat=4B5UW4+EOOXYQ+1WP2+NY1Y9",   // ← FounderがA8.net等で提携後にURLを差し替え
-      bannerHtml: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B5UW4+EOOXYQ+1WP2+NY1Y9\" rel=\"nofollow\">\n<img border=\"0\" width=\"468\" height=\"60\" alt=\"\" src=\"https://www27.a8.net/svt/bgt?aid=260613796888&wid=001&eno=01&mid=s00000008903004022000&mc=1\"></a>\n<img border=\"0\" width=\"1\" height=\"1\" src=\"https://www16.a8.net/0.gif?a8mat=4B5UW4+EOOXYQ+1WP2+NY1Y9\" alt=\"\">",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
+      url: "",   // ← FounderがA8.net等で提携後にURLを差し替え
+      bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
       note: "国内登録業者・合法。単価は通常1〜1.5万円・キャンペーン時2〜3万円（afbで27,500円実績／要ASP確認）。",
       category: "kokunai-fx",
       slot: "primary",
-      pages: ["kokunai-kouza", "fx-hajimekata"],
+      pages: ["kokunai-kouza", "fx-hajimekata", "kouza-ranking", "ikura-kara"],
     },
     {
       key: "gmoclick",
@@ -101,13 +121,13 @@ window.PROPNAVI = {
       note: "国内登録業者・合法。単価は約1〜1.1万円（公開まとめベース・要ASP確認）。",
       category: "kokunai-fx",
       slot: "primary",
-      pages: ["kokunai-kouza", "fx-hajimekata"],
+      pages: ["kokunai-kouza", "fx-hajimekata", "kouza-ranking", "ikura-kara"],
     },
     {
       key: "dmmcfd",
       label: "DMM CFD（国内CFD）",
-      url: "https://px.a8.net/svt/ejp?a8mat=4B5UW4+EOOXYQ+1WP2+NYHDT",   // ← FounderがA8.net等で提携後にURLを差し替え
-      bannerHtml: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B5UW4+EOOXYQ+1WP2+NYHDT\" rel=\"nofollow\">\n<img border=\"0\" width=\"728\" height=\"90\" alt=\"\" src=\"https://www29.a8.net/svt/bgt?aid=260613796888&wid=001&eno=01&mid=s00000008903004024000&mc=1\"></a>\n<img border=\"0\" width=\"1\" height=\"1\" src=\"https://www19.a8.net/0.gif?a8mat=4B5UW4+EOOXYQ+1WP2+NYHDT\" alt=\"\">",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
+      url: "",   // ← FounderがA8.net等で提携後にURLを差し替え
+      bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
       note: "国内・合法。単価は14,200円（新規登録＋1回取引／A8.net高額ランキング・要ASP確認）。",
       category: "kokunai-cfd",
       slot: "primary",
@@ -118,12 +138,12 @@ window.PROPNAVI = {
     {
       key: "tradingview",
       label: "TradingView（チャートツール）",
-      url: "https://jp.tradingview.com/?aff_id=167608",   // ← FounderがTradingViewパートナー登録後にURLを差し替え
+      url: "",   // ← FounderがTradingViewパートナー登録後にURLを差し替え
       bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
       note: "海外SaaSだが金融商品でない・合法。報酬は購入額の30%・ライフタイム継続（要パートナー管理画面で確定）。",
       category: "chart",
       slot: "always",
-      pages: ["index", "vps", "vps-setup", "mac-mt5", "kokunai-kouza", "tradingview", "shikin-kanri", "challenge-rules", "calculator", "tracker", "fx-hajimekata"],
+      pages: ["index", "vps", "vps-setup", "mac-mt5", "kokunai-kouza", "tradingview", "shikin-kanri", "challenge-rules", "calculator", "tracker", "fx-hajimekata", "fx-vps-hikaku", "ea-hajimekata", "mac-vps", "kouza-ranking", "ikura-kara", "tradingview-plan"],
     },
 
     // --- 暗号資産取引所（補完・CFD/暗号資産トレーダー向け。ASP=A8/アクセストレード等） ---

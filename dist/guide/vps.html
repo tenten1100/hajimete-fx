@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>プロップ向けVPS比較｜EA・自動売買を24時間落とさない選び方｜FXコンパス</title>
+  <meta name="description" content="プロップファームでEA・自動売買を使うならVPSが要る理由、選定基準（稼働率・スペック・低遅延・料金）、比較表を実務目線で整理。チャレンジのDD管理を環境面から守るための解説です。投資助言は行いません。" />
+  <link rel="canonical" href="https://tenten1100.github.io/prop-navi/guide/vps.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="プロップ向けVPS比較｜EA・自動売買を24時間落とさない選び方" />
+  <meta property="og:description" content="プロップでVPSが要る理由・選定基準・比較表を実務目線で整理。チャレンジのDD管理を環境面から守る。" />
+  <meta property="og:url" content="https://tenten1100.github.io/prop-navi/guide/vps.html" />
+  <meta property="og:site_name" content="FXコンパス" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://tenten1100.github.io/prop-navi/images/og-default.png" />
+  <meta name="twitter:image" content="https://tenten1100.github.io/prop-navi/images/og-default.png" />
+  <meta name="theme-color" content="#2f54eb" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../images/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/site.css?v=20260614" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "プロップ向けVPS比較｜EA・自動売買を24時間落とさない選び方",
+    "description": "プロップでVPSが要る理由・選定基準・比較表を実務目線で整理。チャレンジのDD管理を環境面から守る。",
+    "inLanguage": "ja",
+    "author": { "@type": "Organization", "name": "FXコンパス編集部" },
+    "publisher": { "@type": "Organization", "name": "FXコンパス" },
+    "datePublished": "2026-06-13",
+    "dateModified": "2026-06-13",
+    "mainEntityOfPage": "https://tenten1100.github.io/prop-navi/guide/vps.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://tenten1100.github.io/prop-navi/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "プロップ向けVPS比較", "item": "https://tenten1100.github.io/prop-navi/guide/vps.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "プロップファームにVPSは必要ですか？", "acceptedAnswer": { "@type": "Answer", "text": "裁量トレードのみで自宅PCを開いている時間しか取引しないなら必須ではありません。一方、EA（自動売買）を24時間動かす、または海外サーバとの距離による約定遅延を抑えたい場合はVPSが実質的に必要です。自宅PCの電源断・回線切断・Windows更新の再起動で建玉が放置されると、日次・最大ドローダウンのルールに抵触する事故につながるためです。" } },
+      { "@type": "Question", "name": "VPS選びで最初に見るべき項目は何ですか？", "acceptedAnswer": { "@type": "Answer", "text": "稼働率（SLA）・メモリとCPUのスペック・取引サーバまでの遅延（リージョン）・料金の4点です。EAの本数とチャート枚数からメモリを決め、24時間止めない用途では稼働率の保証を確認します。最新の正確なスペックと料金は各社公式で確認してください。" } },
+      { "@type": "Question", "name": "FX用VPSと普通のVPSは違いますか？", "acceptedAnswer": { "@type": "Answer", "text": "技術的には同じVPSですが、FX自動売買向けに「MT4/MT5導入済み」「Windows環境」「取引サーバ近接リージョン」をうたう専用プランがあります。一般的なLinux VPSはWeb用途向けで、MT4/MT5を動かすにはWindowsが必要になる点に注意してください。" } },
+      { "@type": "Question", "name": "VPSを使えばチャレンジに合格できますか？", "acceptedAnswer": { "@type": "Answer", "text": "いいえ。VPSはあくまで取引環境を安定させる手段で、合格や利益を保証しません。本サイトは売買手法・タイミングの助言を行いません。" } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+  <nav class="breadcrumb" aria-label="パンくず">
+    <a href="../index.html">ホーム</a><span class="sep">›</span>プロップ向けVPS比較
+  </nav>
+
+  <main>
+    <article>
+      <header class="article-head">
+        <h1>プロップ向けVPS比較｜EA・自動売買を24時間落とさないための選び方</h1>
+        <div class="article-meta">
+          公開: <time datetime="2026-06-13">2026年6月13日</time> ／ 更新: <time datetime="2026-06-13">2026年6月13日</time> ／ FXコンパス編集部
+        </div>
+      </header>
+
+      <p class="lead">
+        プロップのチャレンジで意外と多い脱落理由が、手法ではなく<strong>「EAを動かすPCが落ちて建玉が放置された」「回線が切れて決済できなかった」</strong>という運用面の事故です。
+        VPS（仮想専用サーバ）はこの事故を環境面から防ぐ手段です。本記事は<strong>なぜプロップ／EAにVPSが要るのか・何で選ぶのか・どう比較するのか</strong>を実務目線で整理します。売買手法やタイミングの助言は扱いません。
+      </p>
+
+      <nav class="toc" aria-label="目次">
+        <span class="toc-title">この記事の内容</span>
+        <ol>
+          <li><a href="#why">1. なぜプロップ／EAにVPSが要るのか</a></li>
+          <li><a href="#criteria">2. VPSの選定基準（4つ）</a></li>
+          <li><a href="#compare">3. VPSプラン比較表</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="why">1. なぜプロップ／EAにVPSが要るのか</h2>
+      <p>
+        VPSは、クラウド上に常時稼働する仮想的なWindows/Linuxマシンを借りる仕組みです。MT4/MT5やEA（自動売買プログラム）をその上で動かせば、<strong>自宅のPCを閉じても・自宅の回線が切れても、取引環境はクラウド側で動き続けます</strong>。
+        裁量で自宅PCを開いている時間だけ取引する人には必須ではありません。一方、次のいずれかに当てはまるなら、VPSは実質的に必要になります。
+      </p>
+      <ul>
+        <li><strong>EA（自動売買）を24時間稼働させる</strong>：自宅PCの電源断・スリープ・Windows更新の再起動でEAが止まると、建玉が放置されます。</li>
+        <li><strong>約定遅延を抑えたい</strong>：取引サーバの多くは海外にあり、自宅回線からの物理的距離が遅延（レイテンシ）を生みます。サーバ近接リージョンのVPSなら遅延を縮められます。</li>
+        <li><strong>停電・回線障害のリスクを切り離したい</strong>：家庭の電源・回線に依存しない環境にトレードを載せ替えられます。</li>
+      </ul>
+      <div class="note-box">
+        <span class="tag">プロップ特有の注意</span>
+        <p style="margin:0">
+          プロップは<strong>日次ドローダウン・最大ドローダウンという損失上限ルール</strong>で合否が決まります。PCが落ちて損切りが効かず含み損が膨らむと、ルール抵触で一発失格になり得ます。VPSは「勝つための道具」ではなく「事故で失格しないための保険」として捉えるのが正確です。DDの計算は <a href="challenge-rules.html">チャレンジルール完全ガイド</a> と <a href="../tools/calculator.html">資金管理＆ROI計算ツール</a> を参照してください。
+        </p>
+      </div>
+
+      <!-- VPS構成図（自作インラインSVG） -->
+      <figure class="figure" aria-label="VPSを使った取引環境の構成図">
+        <svg viewBox="0 0 720 220" role="img" preserveAspectRatio="xMidYMid meet">
+          <rect class="fig-bg" x="0" y="0" width="720" height="220" rx="4" />
+          <!-- 自宅 -->
+          <rect class="fig-box" x="20" y="80" width="150" height="64" rx="6" />
+          <text class="fig-text" x="95" y="108" text-anchor="middle">自宅PC・スマホ</text>
+          <text class="fig-text-sm" x="95" y="126" text-anchor="middle">監視・設定のみ</text>
+          <!-- 双方向矢印 -->
+          <line class="fig-line" x1="170" y1="112" x2="250" y2="112" />
+          <polygon class="fig-box-navy" points="250,106 262,112 250,118" />
+          <polygon class="fig-box-navy" points="182,106 170,112 182,118" />
+          <text class="fig-text-sm" x="216" y="100" text-anchor="middle">リモート接続</text>
+          <!-- VPS -->
+          <rect class="fig-box-accent" x="262" y="56" width="190" height="112" rx="6" />
+          <text class="fig-text" x="357" y="84" text-anchor="middle">VPS（クラウド上で常時稼働）</text>
+          <text class="fig-text-sm" x="357" y="106" text-anchor="middle">MT4 / MT5 ＋ EA</text>
+          <text class="fig-text-accent" x="357" y="130" text-anchor="middle">24時間 電源・回線が安定</text>
+          <text class="fig-text-sm" x="357" y="150" text-anchor="middle">自宅を閉じても動き続ける</text>
+          <!-- 矢印 -->
+          <line class="fig-line-accent" x1="452" y1="112" x2="540" y2="112" />
+          <polygon class="fig-box-accent" points="540,106 552,112 540,118" />
+          <text class="fig-text-sm" x="496" y="100" text-anchor="middle">低遅延</text>
+          <!-- 取引サーバ -->
+          <rect class="fig-box-navy" x="552" y="80" width="148" height="64" rx="6" />
+          <text class="fig-text-on-navy" x="626" y="108" text-anchor="middle">取引サーバ</text>
+          <text class="fig-text-on-navy" x="626" y="126" text-anchor="middle">（多くは海外）</text>
+        </svg>
+        <figcaption>VPSはトレードをクラウド側に載せ、自宅の電源・回線から切り離す。サーバ近接リージョンを選ぶと約定遅延も縮まる。</figcaption>
+      </figure>
+
+      <h2 id="criteria">2. VPSの選定基準（4つ）</h2>
+      <p>FX用VPSは数が多く迷いやすいので、見るべき項目を4つに絞ります。優劣の断定ではなく、自分の用途に合わせる軸として使ってください。</p>
+      <h3>基準1. 稼働率（SLA）</h3>
+      <p>
+        24時間EAを止めない用途では、サービスの稼働率保証（SLA）が最重要です。一般にFX用途では99.9%以上をうたうプランが目安とされますが、<strong>正確な保証値は各社公式の規約で必ず確認してください</strong>。停止時間が長いサービスは、肝心の場面でEAが止まるリスクが上がります。
+      </p>
+      <h3>基準2. メモリ・CPUスペック</h3>
+      <p>
+        必要スペックはEAの本数とチャート枚数で決まります。目安として、MT4/MT5を1〜2インスタンス・EA少数なら軽量プラン、複数通貨ペア×多数EAなら上位プランが要ります。メモリ不足はEAの動作不安定の主因なので、迷ったら一段上を選ぶのが安全側です。
+      </p>
+      <h3>基準3. 取引サーバまでの遅延（リージョン）</h3>
+      <p>
+        約定スピードを重視するなら、利用するブローカーの取引サーバに近いリージョンを選びます。スキャルピング系のEAほど遅延の影響が出やすい一方、長期保有主体なら優先度は下がります。<strong>どのリージョンが近いかはブローカー側の所在に依存する</strong>ため、自分の使う口座に合わせて判断してください。
+      </p>
+      <h3>基準4. 料金とWindows対応</h3>
+      <p>
+        MT4/MT5はWindowsで動かすのが一般的です。一般的なLinux VPS（Web用途向け）は安価ですが、MT4/MT5を動かすにはWindows環境が要る点に注意してください。「FX自動売買専用」「Windowsデスクトップ」をうたうプランは導入の手間が少ない反面、料金は上がる傾向です。月額と性能のバランスで選びます。
+      </p>
+
+      <div data-mascot-say="VPS選びは『落ちにくさ（稼働率）→スペック→遅延→料金』の順で見ると迷いにくいよ。数値は各社公式が最新だから、必ず確認してね。"></div>
+
+      <h2 id="compare">3. VPSプラン比較表</h2>
+      <p>下表は代表的な選択肢の整理です。スペック・料金は変動するため、<strong>最新値は必ず各社公式で確認</strong>してください（本サイトは数値の保証をしません）。</p>
+      <div class="tbl-wrap scroll">
+        <p class="scroll-hint">表は横にスクロールできます</p>
+        <table>
+          <caption>FX用VPSの選択肢の整理（2026年時点・スペック/料金は要・公式確認）</caption>
+          <thead>
+            <tr>
+              <th>項目</th>
+              <th class="reco">ConoHa VPS<span class="reco-tag">本記事の主軸</span></th>
+              <th>お名前.com デスクトップクラウド</th>
+              <th>一般的なLinux VPS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>主な用途</th><td class="reco">汎用VPS（FX自動売買にも利用）</td><td>FX自動売買専用（Windows）</td><td>Web・開発用途中心</td></tr>
+            <tr><th>OS</th><td class="reco">Windows/Linux 選択可</td><td>Windows（MT4/MT5前提）</td><td>Linux中心（MT4/MT5は要Windows追加）</td></tr>
+            <tr><th>MT4/MT5</th><td class="reco">Windowsプランで導入可</td><td>導入を想定した設計</td><td>そのままでは不可</td></tr>
+            <tr><th>料金感</th><td class="reco">用途・プランで幅（要公式）</td><td>FX専用ぶん上がる傾向（要公式）</td><td>安価な傾向（要公式）</td></tr>
+            <tr><th>向いている人</th><td class="reco">スペックと料金を自分で調整したい人</td><td>設定の手間を最小にしたい人</td><td>自分でWindowsを構築できる人</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box">
+        <span class="tag">表の読み方</span>
+        <p style="margin:0">
+          この表は「どれが優れているか」ではなく、用途の違いを並べたものです。EAを安定して動かすことが目的なら、稼働率・メモリ・リージョンを自分のEA構成に合わせて選ぶのが本筋で、ブランド名は二の次です。料金・スペックの数値は流動的なので必ず公式の最新情報で確認してください。
+        </p>
+      </div>
+
+      <!-- 編集部メモ（意見・観察。トレード実績の主張はしない） -->
+      <div class="editor-memo">
+        <span class="tag">編集部メモ</span>
+        <p>
+          VPSの比較記事は「最安はどこか」に寄りがちですが、プロップ用途で本当に効くのは安さではなく「肝心なときに落ちないか」です。
+          月数百円の差で稼働率の低いサービスを選び、EAが止まって日次DDに抵触したら、節約した額をはるかに超える審査料を失います。編集部が料金より稼働率とメモリを上に置くのはこのためです。
+        </p>
+        <!-- TODO(Founder): VPSの実利用メモ（事実）があればここに追記可。誇張・捏造は書かない。 -->
+      </div>
+
+      <section class="faq" id="faq">
+        <h2>よくある質問</h2>
+        <dl>
+          <dt>プロップファームにVPSは必要ですか？</dt>
+          <dd>裁量のみで自宅PCを開いている時間しか取引しないなら必須ではありません。EAを24時間動かす、または約定遅延を抑えたい場合は実質的に必要です。PCの電源断・回線切断で建玉が放置されると、DDルール抵触で失格になり得るためです。</dd>
+          <dt>VPS選びで最初に見るべき項目は何ですか？</dt>
+          <dd>稼働率（SLA）・メモリとCPU・取引サーバまでの遅延（リージョン）・料金の4点です。EAの本数とチャート枚数からメモリを決め、24時間止めない用途では稼働率の保証を確認します。最新値は各社公式で確認してください。</dd>
+          <dt>FX用VPSと普通のVPSは違いますか？</dt>
+          <dd>技術的には同じVPSですが、FX向けに「MT4/MT5前提」「Windows」「取引サーバ近接」をうたう専用プランがあります。一般的なLinux VPSはWeb用途向けで、MT4/MT5にはWindowsが要る点に注意してください。</dd>
+          <dt>VPSを使えばチャレンジに合格できますか？</dt>
+          <dd>いいえ。VPSは取引環境を安定させる手段で、合格や利益を保証しません。本サイトは売買手法・タイミングの助言を行いません。</dd>
+        </dl>
+      </section>
+
+      <!-- 主CTA: 結論直後の文脈配置（このページに関連するサービス＝VPS） -->
+      <div id="promos"></div>
+
+      <nav class="related">
+        <h2>関連記事</h2>
+        <ul>
+          <li><a href="fx-vps-hikaku.html">FX VPSはどれが最安？料金・スペックを実数で客観比較【2026年6月】</a><span class="desc">ConoHa/XServer/お名前.com等を月額・メモリ・回線で横並び比較</span></li>
+          <li><a href="ea-hajimekata.html">FX自動売買（EA）の始め方｜国内で合法に始める手順とVPS環境</a><span class="desc">EAを国内で合法に始める流れとVPSの位置づけ</span></li>
+          <li><a href="vps-setup.html">ConoHa VPSでMT5を24時間動かす設定手順</a><span class="desc">選んだ後の具体的なセットアップ（接続→導入→自動再起動）</span></li>
+          <li><a href="mac-mt5.html">MacでMT4/MT5を使う3つの方法</a><span class="desc">Macユーザーの接続・運用の選択肢</span></li>
+          <li><a href="../tools/calculator.html">資金管理＆ROI計算ツール（無料）</a><span class="desc">DDの損失上限・ロット目安・あと何回負けられるかを試算</span></li>
+          <li><a href="shikin-kanri.html">プロップの資金管理 実務ガイド</a><span class="desc">環境と並んで脱落を防ぐ、資金面の管理</span></li>
+          <li><a href="tradingview.html">TradingView活用ガイド</a><span class="desc">DD管理に効くアラート設計とプラン比較</span></li>
+          <li><a href="tradingview-plan.html">TradingView有料プランは必要？無料との違いと一番お得な買い方</a><span class="desc">無料/有料の違い・年払い・セール時期</span></li>
+        </ul>
+      </nav>
+
+      <div data-author-card></div>
+
+      <div class="source-list">
+        <strong>出典</strong>
+        <ol>
+          <li id="src-1">ConoHa VPS（プラン・FX自動売買用途・アフィリ）: ConoHa公式 <a href="https://www.conoha.jp/vps/" target="_blank" rel="nofollow noopener">https://www.conoha.jp/vps/</a> ／ ConoHaアフィリエイト <a href="https://vps.conoha.jp/affiliate/" target="_blank" rel="nofollow noopener">https://vps.conoha.jp/affiliate/</a></li>
+          <li id="src-2">お名前.com デスクトップクラウド（FX自動売買専用VPS）: 公式 <a href="https://www.onamae-desktop.com/" target="_blank" rel="nofollow noopener">https://www.onamae-desktop.com/</a></li>
+          <li id="src-3">稼働率・スペック・リージョン・料金の各数値は流動的なため本文では具体値を断定せず「公式で要確認」としています。最新は各社公式の規約・料金ページを参照してください。</li>
+        </ol>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="../assets/links.js?v=20260614"></script>
+  <script src="../assets/site.js?v=20260614" data-root="../"></script>
+  <script>
+    PropNavi.init({ promos: "promos", includeNote: true, page: "vps" });
+  </script>
+</body>
+</html>
