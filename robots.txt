@@ -5,4 +5,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tenten1100.github.io/prop-navi/sitemap.xml
+Sitemap: https://example.github.io/prop-navi/sitemap.xml
