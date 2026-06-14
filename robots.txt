@@ -1,8 +1,0 @@
-# robots.txt — プロップナビ
-# 公開ドメインが決まったら Sitemap 行のベースURLを実URLに差し替える
-# （assets/links.js の site.baseUrl と一致させること）。
-
-User-agent: *
-Allow: /
-
-Sitemap: https://example.github.io/prop-navi/sitemap.xml
