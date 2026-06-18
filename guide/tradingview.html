@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TradingView活用ガイド｜プロップのDD管理に効くアラート設計とプラン比較｜FXコンパス</title>
+  <meta name="description" content="TradingViewをプロップの実務に使う方法を整理。日次・最大ドローダウンの監視に効く価格アラートの設計、複数チャート・端末同期、無料/有料プランの違いを実務目線で比較。投資助言は行いません。" />
+  <link rel="canonical" href="https://hajimete-fx.com/guide/tradingview.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="TradingView活用ガイド｜プロップのDD管理に効くアラート設計とプラン比較" />
+  <meta property="og:description" content="DDの監視に効くアラート設計、複数チャート・端末同期、無料/有料プランの違いを実務目線で整理。" />
+  <meta property="og:url" content="https://hajimete-fx.com/guide/tradingview.html" />
+  <meta property="og:site_name" content="FXコンパス" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://hajimete-fx.com/images/og-default.png" />
+  <meta name="twitter:image" content="https://hajimete-fx.com/images/og-default.png" />
+  <meta name="theme-color" content="#2f54eb" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../images/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/site.css?v=20260618" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "TradingView活用ガイド｜プロップのDD管理に効くアラート設計とプラン比較",
+    "description": "DDの監視に効くアラート設計、複数チャート・端末同期、無料/有料プランの違いを実務目線で整理。",
+    "inLanguage": "ja",
+    "author": { "@type": "Organization", "name": "FXコンパス編集部" },
+    "publisher": { "@type": "Organization", "name": "FXコンパス" },
+    "datePublished": "2026-06-13",
+    "dateModified": "2026-06-13",
+    "mainEntityOfPage": "https://hajimete-fx.com/guide/tradingview.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "TradingView活用ガイド", "item": "https://hajimete-fx.com/guide/tradingview.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "TradingViewはプロップに役立ちますか？", "acceptedAnswer": { "@type": "Answer", "text": "値動きの監視・記録・アラート用途で役立ちます。特に、日次ドローダウンや最大ドローダウンの基準にあたる価格に到達したら通知する価格アラートを設定しておくと、ルール抵触の手前で気づきやすくなります。ただしこれは監視の補助であり、勝てる手法やタイミングを示すものではありません。" } },
+      { "@type": "Question", "name": "無料プランでも使えますか？", "acceptedAnswer": { "@type": "Answer", "text": "無料プランでも基本的なチャートと一定数のアラートは使えます。一方、同時に出せるアラート数・チャート分割数・広告の有無などに制限があり、複数通貨ペアを常時監視する用途では有料プランが候補になります。最新の制限内容は公式の料金ページで確認してください。" } },
+      { "@type": "Question", "name": "DD管理のアラートはどう作りますか？", "acceptedAnswer": { "@type": "Answer", "text": "自分の口座サイズと各ドローダウン率から、抵触ラインにあたる価格（または含み損の目安）を計算し、その手前の価格に到達したら通知するアラートを設定します。計算は当サイトの資金管理ツールが使えます。アラートはあくまで気づきの補助で、自動で損失を止めるものではありません。" } },
+      { "@type": "Question", "name": "TradingViewで発注できますか？", "acceptedAnswer": { "@type": "Answer", "text": "対応ブローカーと連携すれば発注できる場合がありますが、プロップ側が指定する取引プラットフォーム（MT4/MT5等）が別にあることも多いです。発注経路は利用するプロップ・ブローカーの規約に従ってください。本サイトは売買タイミングや手法の助言は行いません。" } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+  <nav class="breadcrumb" aria-label="パンくず">
+    <a href="../index.html">ホーム</a><span class="sep">›</span>TradingView活用ガイド
+  </nav>
+
+  <main>
+    <article>
+      <header class="article-head">
+        <h1>TradingView活用ガイド｜プロップのDD管理に効くアラート設計とプラン比較</h1>
+        <div class="article-meta">
+          公開: <time datetime="2026-06-13">2026年6月13日</time> ／ 更新: <time datetime="2026-06-13">2026年6月13日</time> ／ FXコンパス編集部
+        </div>
+      </header>
+
+      <p class="lead">
+        TradingViewはチャート・分析・<strong>アラート</strong>のツールです。プロップ実務でとくに効くのは、<strong>日次・最大ドローダウンの抵触ラインの手前で通知を飛ばすアラート設計</strong>です。
+        本記事は、TradingViewをプロップのDD管理にどう使うか・無料/有料プランで何が変わるかを実務目線で整理します。発注の自動化や売買タイミングの助言は扱いません。
+      </p>
+
+      <nav class="toc" aria-label="目次">
+        <span class="toc-title">この記事の内容</span>
+        <ol>
+          <li><a href="#why">1. プロップでTradingViewが効く場面</a></li>
+          <li><a href="#alert">2. DD管理に効くアラート設計</a></li>
+          <li><a href="#plan">3. 無料/有料プランの比較</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="why">1. プロップでTradingViewが効く場面</h2>
+      <p>
+        プロップの合否は損失上限ルール（日次DD・最大DD）で決まります。含み損が膨らんで抵触する事故を防ぐには、「いま自分が抵触ラインのどれくらい手前にいるか」を常に把握する必要があります。
+        TradingViewが役立つのは主に次の場面です。
+      </p>
+      <ul>
+        <li><strong>抵触ラインの監視</strong>：DD基準にあたる価格へ近づいたら通知（後述のアラート設計）。</li>
+        <li><strong>複数銘柄の同時監視</strong>：複数通貨ペア・指数を分割チャートで一覧し、見落としを減らす。</li>
+        <li><strong>端末をまたいだ同期</strong>：PCで引いたラインやアラートをスマホでも受け取り、外出時の放置を防ぐ。</li>
+        <li><strong>記録の蓄積</strong>：チャートにメモを残し、後から自分の判断を振り返る（自己記録であり、売買助言ではない）。</li>
+      </ul>
+
+      <!-- アラート設計の図（自作インラインSVG） -->
+      <figure class="figure" aria-label="DD抵触ラインの手前にアラートを置く図">
+        <svg viewBox="0 0 720 220" role="img" preserveAspectRatio="xMidYMid meet">
+          <rect class="fig-bg" x="0" y="0" width="720" height="220" rx="4" />
+          <!-- 軸 -->
+          <line class="fig-line" x1="60" y1="20" x2="60" y2="190" />
+          <line class="fig-line" x1="60" y1="190" x2="690" y2="190" />
+          <!-- 価格ライン（ジグザグ） -->
+          <polyline class="fig-line-accent" points="60,70 140,90 220,75 300,110 380,100 460,135 540,128 620,160" />
+          <!-- DD抵触ライン -->
+          <line x1="60" y1="170" x2="690" y2="170" stroke="#e25571" stroke-width="1.2" stroke-dasharray="6 4" />
+          <text class="fig-text-accent" x="66" y="184" text-anchor="start">DD抵触ライン（ここを越えると失格水準）</text>
+          <!-- アラートライン -->
+          <line x1="60" y1="145" x2="690" y2="145" stroke="#6f5878" stroke-width="1.2" stroke-dasharray="4 4" />
+          <text class="fig-text-sm" x="66" y="140" text-anchor="start">アラート（抵触ラインの手前に置く）</text>
+          <!-- ベル -->
+          <circle class="fig-box-accent" cx="460" cy="135" r="9" />
+          <text class="fig-text-sm" x="460" y="120" text-anchor="middle">通知</text>
+        </svg>
+        <figcaption>抵触ラインそのものではなく「手前」に通知を置く。気づいてから対応する余地を残すための設計。</figcaption>
+      </figure>
+
+      <h2 id="alert">2. DD管理に効くアラート設計</h2>
+      <p>考え方はシンプルです。抵触ラインの「手前」に通知を置き、余地を残して気づけるようにします。</p>
+      <ol>
+        <li><strong>抵触ラインを数値で出す</strong>：口座サイズと日次DD%・最大DD%から、抵触にあたる損失額・価格水準を計算します。計算は <a href="../tools/calculator.html">資金管理＆ROI計算ツール</a> が使えます。</li>
+        <li><strong>手前に通知を置く</strong>：抵触ラインそのものではなく、たとえば余地が残っている価格に到達したら通知が飛ぶように設定します。抵触してから気づいても遅いためです。</li>
+        <li><strong>端末同期で取りこぼさない</strong>：スマホ通知を有効にし、PCの前にいない時間帯の放置を防ぎます。</li>
+      </ol>
+      <div class="note-box">
+        <span class="tag">注意</span>
+        <p style="margin:0">
+          アラートは<strong>「気づきの補助」であって、自動で損失を止める仕組みではありません</strong>。通知が来ても対応しなければ抵触は防げません。また、価格アラートは売買タイミングの指示ではなく、自分で決めたルール水準への接近を知らせる機械的な通知です。本サイトは手法・タイミングの助言を行いません。
+        </p>
+      </div>
+
+      <div data-mascot-say="アラートは『気づきの補助』で、自動で損失を止める仕組みじゃないよ。買い時・売り時の合図でもないから、自分で決めたルール水準の通知として使ってね。"></div>
+
+      <h2 id="plan">3. 無料/有料プランの比較</h2>
+      <p>プランで主に変わるのは「同時に出せるアラート数」「チャート分割数」「広告の有無」などです。<strong>最新の制限・料金は必ず公式の料金ページで確認</strong>してください（本サイトは数値を保証しません）。</p>
+      <div class="tbl-wrap scroll">
+        <p class="scroll-hint">表は横にスクロールできます</p>
+        <table>
+          <caption>TradingView プランの違いの整理（2026年時点・制限/料金は要・公式確認）</caption>
+          <thead>
+            <tr>
+              <th>観点</th>
+              <th>無料プラン</th>
+              <th class="reco">有料プラン<span class="reco-tag">常時監視向け</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>チャート/アラート</th><td>基本機能・本数に制限</td><td class="reco">同時アラート数・分割数が拡張</td></tr>
+            <tr><th>広告</th><td>表示あり</td><td class="reco">非表示</td></tr>
+            <tr><th>向いている人</th><td>少数銘柄を時々確認</td><td class="reco">複数銘柄を常時監視・DDを細かく管理</td></tr>
+            <tr><th>料金</th><td>0円</td><td class="reco">月額/年額（要・公式）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        まず無料で使い、アラート数やチャート分割の制限が実務の妨げになったら有料を検討する、という順序が無駄がありません。プロップで複数通貨ペアを常時監視するなら、有料プランの拡張枠が効いてきます。
+      </p>
+
+      <!-- 編集部メモ（意見・観察。トレード実績の主張はしない） -->
+      <div class="editor-memo">
+        <span class="tag">編集部メモ</span>
+        <p>
+          TradingViewの紹介記事は「インジケーターが豊富」という機能自慢に寄りがちですが、プロップ実務で効くのは派手な分析機能より「抵触ラインの手前で確実に通知が来るか」という地味な一点です。
+          編集部がアラート設計を最初に置いているのは、合否を分けるのが分析の精度ではなく、ルール水準への接近に気づけるかどうかだと考えているからです。
+        </p>
+        <!-- TODO(Founder): TradingViewの実利用メモ（事実）があればここに追記可。誇張・捏造は書かない。 -->
+      </div>
+
+      <section class="faq" id="faq">
+        <h2>よくある質問</h2>
+        <dl>
+          <dt>TradingViewはプロップに役立ちますか？</dt>
+          <dd>値動きの監視・記録・アラート用途で役立ちます。とくにDD基準にあたる価格に近づいたら通知する設定は、ルール抵触の手前で気づく助けになります。ただし監視の補助であり、勝てる手法やタイミングを示すものではありません。</dd>
+          <dt>無料プランでも使えますか？</dt>
+          <dd>無料でも基本のチャートと一定数のアラートは使えます。同時アラート数・分割数・広告の有無などに制限があり、複数銘柄を常時監視するなら有料が候補です。最新の制限は公式の料金ページで確認してください。</dd>
+          <dt>DD管理のアラートはどう作りますか？</dt>
+          <dd>口座サイズと各DD率から抵触ラインの価格を計算し、その手前に通知を置きます。計算は当サイトの資金管理ツールが使えます。アラートは気づきの補助で、自動で損失を止めるものではありません。</dd>
+          <dt>TradingViewで発注できますか？</dt>
+          <dd>対応ブローカー連携で可能な場合がありますが、プロップ指定のプラットフォーム（MT4/MT5等）が別にあることも多いです。発注経路は各社規約に従ってください。本サイトは売買タイミング・手法の助言を行いません。</dd>
+        </dl>
+      </section>
+
+      <!-- 主CTA: 結論直後の文脈配置（このページに関連するサービス＝TradingView） -->
+      <div id="promos"></div>
+
+      <nav class="related">
+        <h2>関連記事</h2>
+        <ul>
+          <li><a href="tradingview-plan.html">TradingView有料プランは必要？無料との違いと一番お得な買い方</a><span class="desc">無料/有料の違い・年払い・セール時期の判断</span></li>
+          <li><a href="../tools/calculator.html">資金管理＆ROI計算ツール（無料）</a><span class="desc">抵触ラインの損失額・ロット目安を計算してアラート設計に使う</span></li>
+          <li><a href="shikin-kanri.html">プロップの資金管理 実務ガイド</a><span class="desc">アラートと並ぶ、撤退ライン・DD余地の管理</span></li>
+          <li><a href="vps.html">プロップ向けVPS比較</a><span class="desc">EA・自動売買を24時間落とさない環境構築</span></li>
+          <li><a href="challenge-rules.html">チャレンジルール完全ガイド</a><span class="desc">監視対象である日次DD・最大DDの計算の仕組み</span></li>
+        </ul>
+      </nav>
+
+      <div data-author-card></div>
+
+      <div class="source-list">
+        <strong>出典</strong>
+        <ol>
+          <li id="src-1">TradingView 機能・料金・パートナープログラム: TradingView公式 <a href="https://jp.tradingview.com/" target="_blank" rel="nofollow noopener">https://jp.tradingview.com/</a> ／ パートナープログラム <a href="https://jp.tradingview.com/partner-program/" target="_blank" rel="nofollow noopener">https://jp.tradingview.com/partner-program/</a></li>
+          <li id="src-2">アラート数・チャート分割数・広告の有無・料金などプランの制限内容は変更され得るため本文では断定せず「公式で要確認」としています。最新は公式の料金ページを参照してください。</li>
+        </ol>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="../assets/links.js?v=20260618"></script>
+  <script src="../assets/site.js?v=20260618" data-root="../"></script>
+  <script>
+    PropNavi.init({ promos: "promos", includeNote: true, page: "tradingview" });
+  </script>
+</body>
+</html>

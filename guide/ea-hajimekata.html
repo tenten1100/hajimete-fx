@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FX自動売買（EA）の始め方｜国内で合法に始める手順とVPS環境【2026年版】｜FXコンパス</title>
+  <meta name="description" content="FX自動売買（EA）を国内で合法に始める手順を初心者向けに。MT4/MT5の準備・VPSでの24時間稼働・国内登録業者の選び方を整理。『勝てるEA』は売りません。無登録の媒介リスクを避ける角度で解説。投資助言は行いません。" />
+  <link rel="canonical" href="https://hajimete-fx.com/guide/ea-hajimekata.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="FX自動売買（EA）の始め方｜国内で合法に始める手順とVPS環境" />
+  <meta property="og:description" content="EAを国内で合法に始める手順。MT4/MT5の準備・VPS稼働・国内登録業者の選び方を整理。『勝てるEA』は扱いません。" />
+  <meta property="og:url" content="https://hajimete-fx.com/guide/ea-hajimekata.html" />
+  <meta property="og:site_name" content="FXコンパス" />
+  <meta property="og:image" content="https://hajimete-fx.com/images/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../images/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/site.css?v=20260618" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "FX自動売買（EA）の始め方｜国内で合法に始める手順とVPS環境",
+    "description": "EAを国内で合法に始める手順。MT4/MT5の準備・VPS稼働・国内登録業者の選び方を整理。『勝てるEA』は扱いません。",
+    "inLanguage": "ja",
+    "author": { "@type": "Organization", "name": "FXコンパス編集部" },
+    "publisher": { "@type": "Organization", "name": "FXコンパス" },
+    "datePublished": "2026-06-14",
+    "dateModified": "2026-06-14",
+    "mainEntityOfPage": "https://hajimete-fx.com/guide/ea-hajimekata.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "ツール・環境", "item": "https://hajimete-fx.com/guide/vps.html" },
+      { "@type": "ListItem", "position": 3, "name": "FX自動売買（EA）の始め方", "item": "https://hajimete-fx.com/guide/ea-hajimekata.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "FX自動売買（EA）を国内で合法に始める手順",
+    "description": "国内登録業者の口座・MT4/MT5・EA・VPSをそろえて、自動売買を24時間安定して動かすまでの基本手順。本手順は環境構築の解説で、利益や勝率を保証しません。",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "国内の登録業者で自動売買対応の口座を用意する", "text": "MT4/MT5やツールでの自動売買に対応した、日本の金融庁登録業者の口座を開設します。無登録の海外業者は媒介リスクがあるため避けます。" },
+      { "@type": "HowToStep", "position": 2, "name": "MT4/MT5を導入し、デモ口座で動作を確認する", "text": "取引プラットフォームを導入し、まずデモ環境でEAの設定・稼働を確認します。いきなり資金を入れません。" },
+      { "@type": "HowToStep", "position": 3, "name": "EA（自動売買プログラム）の中身と設定を理解する", "text": "EAのロジック・想定相場・パラメータ・最大ドローダウンを把握します。中身の分からないEAは使いません。" },
+      { "@type": "HowToStep", "position": 4, "name": "VPSで24時間稼働させる環境を整える", "text": "自宅PCの電源断・回線切断・更新再起動でEAが止まらないよう、VPSにMT4/MT5とEAを載せて常時稼働させます。" },
+      { "@type": "HowToStep", "position": 5, "name": "少額・少数EAから始め、損益と稼働を記録する", "text": "余裕資金の範囲で少額から開始し、損益とドローダウン、サーバの稼働状況を記録して振り返ります。" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "FX自動売買（EA）は国内でも合法に始められますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい。日本の金融庁登録業者で、自動売買（MT4/MT5やツール）に対応した口座を使えば、国内の枠内で合法に始められます。注意が必要なのは無登録の海外業者で、日本居住者向けの勧誘・媒介には金融商品取引法上のリスクがあるため、本サイトは国内登録業者のみを扱います。" } },
+      { "@type": "Question", "name": "EAにVPSは必須ですか？", "acceptedAnswer": { "@type": "Answer", "text": "自宅PCを開いている時間だけ動かすなら必須ではありませんが、24時間EAを止めない用途では実質的に必要です。自宅PCの電源断・スリープ・Windows更新の再起動でEAが止まると建玉が放置され、損失拡大につながるためです。VPSはクラウド上で常時稼働するため、自宅の電源・回線から切り離せます。" } },
+      { "@type": "Question", "name": "『勝てるEA』を購入すれば自動で儲かりますか？", "acceptedAnswer": { "@type": "Answer", "text": "いいえ。過去の成績は将来を保証せず、相場環境が変われば成績も変わります。『必ず儲かる』『コピーするだけ』をうたうEAやその販売・勧誘は、景品表示法や金融商品取引法の観点でも要注意です。本サイトは特定のEAの売買や推奨を行いません。" } },
+      { "@type": "Question", "name": "EAはどこで手に入れますか？", "acceptedAnswer": { "@type": "Answer", "text": "取引プラットフォームのマーケットや開発者からの入手などがありますが、本サイトは特定のEAを推奨・販売しません。入手より先に『中身（ロジック・想定相場・最大ドローダウン）を理解できるか』を基準にしてください。理解できないEAはリスク管理ができません。" } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+  <nav class="breadcrumb" aria-label="パンくず">
+    <a href="../index.html">ホーム</a><span class="sep">›</span><a href="vps.html">ツール・環境</a><span class="sep">›</span>FX自動売買（EA）の始め方
+  </nav>
+
+  <main>
+    <article>
+      <header class="article-head">
+        <span class="badge pickup">自動売買</span>
+        <h1>FX自動売買（EA）の始め方｜国内で合法に始める手順とVPS環境</h1>
+        <div class="article-meta">
+          公開: <time datetime="2026-06-14">2026年6月14日</time> ／ 更新: <time datetime="2026-06-14">2026年6月14日</time> ／ FXコンパス編集部
+        </div>
+      </header>
+
+      <p class="lead">
+        「FX 自動売買 EA 始め方」で検索すると、上位は海外FX業者や「勝てるEA配布」の情報で埋まりがちです。本サイトはその角度を採りません。
+        この記事は<strong>国内の登録業者で・合法に・環境面の事故を避けて</strong>自動売買を始めるための手順を、初心者向けに整理します。
+        <strong>当サイトは「勝てるEA」を売りません</strong>。利益や勝率の保証もしません。扱うのは「どう環境を整え、どこに注意するか」という事実だけです。
+      </p>
+
+      <div class="note-box">
+        <span class="tag">先に結論（3行）</span>
+        <p style="margin:0">
+          ①口座は<strong>国内の金融庁登録業者</strong>（無登録の海外業者は媒介リスクがあり扱わない）。
+          ②EAは<strong>中身（ロジック・最大ドローダウン）を理解できるもの</strong>だけ。理解できないEAは使わない。
+          ③24時間止めないなら<strong>VPS</strong>で動かす。自宅PC放置はEA停止＝建玉放置の事故につながる。
+        </p>
+      </div>
+
+      <!-- 主CTA: 結論直後（文脈＝VPS） -->
+      <div id="promos"></div>
+
+      <nav class="toc" aria-label="目次">
+        <span class="toc-title">この記事の内容</span>
+        <ol>
+          <li><a href="#legal">1. 「国内で合法に」が最初の分かれ道（無登録業者の注意）</a></li>
+          <li><a href="#what">2. EA（自動売買）とは何か・何ではないか</a></li>
+          <li><a href="#steps">3. 始め方の5ステップ（手順）</a></li>
+          <li><a href="#vps">4. なぜVPSが要るのか</a></li>
+          <li><a href="#caution">5. 始める前に知るべき注意点</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="legal">1. 「国内で合法に」が最初の分かれ道（無登録業者の注意）</h2>
+      <p>
+        自動売買の入口で最も大事なのは、手法やEAの種類ではなく<strong>「どの業者で取引するか」</strong>です。日本居住者は、日本の金融庁に登録された国内業者を使うのが基本です。
+        無登録の海外業者は、日本居住者向けの勧誘・媒介に金融商品取引法上のリスクがあるとされ、トラブル時の保護も国内の枠組みの外になりがちです。
+        <strong>本サイトは海外FX業者の口座開設を紹介・勧誘しません</strong>。理由は <a href="kokunai-kouza.html">国内FX/CFD口座の使い分け</a> でも説明しています。
+      </p>
+      <div class="note-box">
+        <span class="tag">なぜこの角度なのか</span>
+        <p style="margin:0">
+          「EA 始め方」のSERPは海外FX系の情報が多いのが実情です。当サイトは、合法性と利用者保護を優先して<strong>国内登録業者の範囲で</strong>始める手順に限定します。高いレバレッジや出金トラブルの話とは切り離して読んでください。
+        </p>
+      </div>
+
+      <h2 id="what">2. EA（自動売買）とは何か・何ではないか</h2>
+      <p>
+        EA（Expert Advisor）は、MT4/MT5上で動く<strong>あらかじめ決めたルールどおりに発注する自動売買プログラム</strong>です。感情を排して一貫実行できる、24時間チャンスを逃しにくい、といった利点があります。
+        一方で、<strong>EAは「自動で儲かる魔法」ではありません</strong>。ロジックが前提とする相場環境が変われば成績も変わり、想定外の値動きでドローダウン（資産の落ち込み）が膨らむこともあります。
+      </p>
+      <div class="pros-cons">
+        <div class="pros">
+          <div class="h">EAの利点</div>
+          <ul>
+            <li>ルールどおり感情なく実行できる</li>
+            <li>24時間、人が見ていなくても稼働する</li>
+            <li>裁量のブレ（迷い・後出し）を減らせる</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <div class="h">EAの限界・注意</div>
+          <ul>
+            <li>過去成績は将来を保証しない</li>
+            <li>中身が分からないEAはリスク管理不能</li>
+            <li>「必ず儲かる」「コピーだけ」は要警戒</li>
+          </ul>
+        </div>
+      </div>
+
+      <div data-mascot-say="EAは『勝たせてくれる道具』じゃなくて『ルールを淡々と実行する道具』だよ。中身が分からないEAは、リスクも分からないってことなんだ。"></div>
+
+      <h2 id="steps">3. 始め方の5ステップ（手順）</h2>
+      <ol>
+        <li><strong>国内の登録業者で自動売買対応の口座を用意する</strong>：MT4/MT5やツールでの自動売買に対応した、日本の金融庁登録業者の口座を開設します。口座選びは <a href="kokunai-kouza.html">国内FX/CFD口座の使い分け</a> を参考に。</li>
+        <li><strong>MT4/MT5を導入し、デモ口座で動作を確認する</strong>：まずデモ環境でEAの設定・稼働を確認します。いきなり資金は入れません。</li>
+        <li><strong>EAの中身と設定を理解する</strong>：ロジック・想定相場・パラメータ・最大ドローダウンを把握します。<strong>中身の分からないEAは使わない</strong>のが原則です。</li>
+        <li><strong>VPSで24時間稼働させる環境を整える</strong>：自宅PCの電源断・回線切断でEAが止まらないよう、VPSにMT4/MT5とEAを載せます。手順は <a href="vps-setup.html">ConoHa VPSでMT5を24時間動かす設定手順</a> へ。</li>
+        <li><strong>少額・少数EAから始め、記録する</strong>：余裕資金の範囲で少額から。損益・ドローダウン・稼働状況を <a href="../tools/tracker.html">進捗トラッキング</a> や <a href="../tools/calculator.html">資金管理ツール</a> で可視化し、振り返ります。</li>
+      </ol>
+
+      <h2 id="vps">4. なぜVPSが要るのか</h2>
+      <p>
+        EAは「動かし続ける」ことが前提です。自宅PCでEAを動かすと、<strong>電源を切る・スリープする・Windows更新で再起動する・回線が切れる</strong>たびにEAが止まり、その間に建玉が放置されます。含み損が膨らんでも損切りが効かない——これが自動売買で最も多い事故のひとつです。
+      </p>
+      <p>
+        VPS（仮想専用サーバ）はクラウド上で常時稼働するため、自宅PCを閉じてもEAは動き続けます。どのVPSが自分のEA構成に合うかは <a href="fx-vps-hikaku.html">FX VPSの料金・スペック客観比較</a> で、必要メモリと料金を横並びで確認できます。VPSが要る理由の詳細は <a href="vps.html">プロップ向けVPS比較（なぜ要るか）</a> も参照してください。
+      </p>
+
+      <!-- 本文中の文脈CTA（記事末で再掲するため、ここはテキスト誘導のみ） -->
+      <p>
+        多通貨・複数EAを安定して動かすなら、チャートやアラートの管理に <a href="tradingview.html">TradingView</a> を併用すると運用が整理しやすくなります。
+      </p>
+
+      <h2 id="caution">5. 始める前に知るべき注意点</h2>
+      <ul>
+        <li><strong>「必ず儲かる」「コピーするだけ」は疑う</strong>：成果保証の文言は景品表示法・金融商品取引法の観点でも要注意です。</li>
+        <li><strong>バックテスト成績を鵜呑みにしない</strong>：過去に最適化されたEAは、未来の相場で同じ成績になるとは限りません。</li>
+        <li><strong>最大ドローダウンを先に把握する</strong>：「どこまで負ける設計か」を理解してから資金量を決めます。</li>
+        <li><strong>余裕資金で・少額から</strong>：生活費や借入で自動売買はしない。失っても困らない範囲で始めます。</li>
+      </ul>
+
+      <div class="editor-memo">
+        <span class="tag">編集部メモ</span>
+        <p>
+          「EA 始め方」で検索した人の多くは、本当は「自動で楽に儲けたい」のだと思います。でも編集部が書けるのは「環境を事故なく整える手順」と「中身を理解する大切さ」までです。
+          勝てるEAの紹介はしません——できないからではなく、それをやると成果保証や無登録媒介の線に触れるからです。地味でも、合法に・事故なく始める準備に紙幅を割きます。
+        </p>
+      </div>
+
+      <section class="faq" id="faq">
+        <h2>よくある質問</h2>
+        <dl>
+          <dt>FX自動売買（EA）は国内でも合法に始められますか？</dt>
+          <dd>はい。日本の金融庁登録業者で自動売買対応の口座を使えば、国内の枠内で合法に始められます。注意が必要なのは無登録の海外業者で、日本居住者向けの勧誘・媒介には金融商品取引法上のリスクがあるため、本サイトは国内登録業者のみを扱います。</dd>
+          <dt>EAにVPSは必須ですか？</dt>
+          <dd>自宅PCを開いている時間だけ動かすなら必須ではありませんが、24時間止めない用途では実質的に必要です。電源断・スリープ・更新再起動でEAが止まると建玉が放置されるためです。VPSはクラウド上で常時稼働します。</dd>
+          <dt>『勝てるEA』を購入すれば自動で儲かりますか？</dt>
+          <dd>いいえ。過去の成績は将来を保証せず、相場環境が変われば成績も変わります。「必ず儲かる」「コピーするだけ」をうたうEAやその勧誘は、景品表示法・金融商品取引法の観点でも要注意です。本サイトは特定EAの売買・推奨を行いません。</dd>
+          <dt>EAはどこで手に入れますか？</dt>
+          <dd>プラットフォームのマーケットや開発者からの入手などがありますが、本サイトは特定EAを推奨・販売しません。入手より先に「中身（ロジック・想定相場・最大ドローダウン）を理解できるか」を基準にしてください。</dd>
+        </dl>
+      </section>
+
+      <!-- 主CTA再掲（記事末） -->
+      <div id="promos2"></div>
+
+      <div data-author-card></div>
+
+      <nav class="related">
+        <h2>関連記事</h2>
+        <ul>
+          <li><a href="fx-vps-hikaku.html">FX VPSはどれが最安？料金・スペックを実数で客観比較【2026年6月】</a><span class="desc">EAを動かすVPSを料金・メモリで横並び比較</span></li>
+          <li><a href="vps-setup.html">ConoHa VPSでMT5を24時間動かす設定手順</a><span class="desc">EAを止めない環境の具体的な作り方</span></li>
+          <li><a href="vps.html">プロップ向けVPS比較｜EA・自動売買を24時間落とさない選び方</a><span class="desc">VPSの選定基準（稼働率・メモリ・遅延）</span></li>
+          <li><a href="kokunai-kouza.html">練習・検証用の国内FX/CFD口座</a><span class="desc">自動売買対応の国内登録業者の使い分け</span></li>
+          <li><a href="../tools/calculator.html">資金管理＆ROI計算ツール（無料）</a><span class="desc">EAの最大DD・損失上限の目安を試算</span></li>
+        </ul>
+      </nav>
+
+      <div class="source-list">
+        <strong>出典</strong>
+        <ol>
+          <li id="src-1">金融商品取引業の登録・無登録業者に関する注意喚起: 金融庁 <a href="https://www.fsa.go.jp/" target="_blank" rel="nofollow noopener">https://www.fsa.go.jp/</a>（無登録業者の利用に関する注意・最新情報は公式で要確認）</li>
+          <li id="src-2">VPSでのMT4/MT5・自動売買稼働（用途・プラン）: ConoHa公式 <a href="https://www.conoha.jp/vps/" target="_blank" rel="nofollow noopener">https://www.conoha.jp/vps/</a></li>
+          <li id="src-3">本記事は環境構築と注意点の解説で、特定のEA・売買手法・タイミングの推奨は行いません。成績・利益の保証もしません。</li>
+        </ol>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="../assets/links.js?v=20260618"></script>
+  <script src="../assets/site.js?v=20260618" data-root="../"></script>
+  <script>
+    PropNavi.init({ promos: "promos", includeNote: false, page: "ea-hajimekata" });
+    PropNavi.renderPromos("promos2", { includeNote: true, page: "ea-hajimekata" });
+  </script>
+</body>
+</html>

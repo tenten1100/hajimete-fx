@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FXのレバレッジとは？仕組み・計算方法・初心者向けの倍率設定を解説｜FXコンパス</title>
+  <meta name="description" content="FXのレバレッジの仕組み・計算方法・初心者が選ぶべき倍率を解説。国内FXの上限25倍の根拠（金融庁規制）、実効レバレッジの考え方、ロスカットとの関係まで具体的な数字で整理。数値は各社公式で要確認。投資助言は行いません。" />
+  <link rel="canonical" href="https://hajimete-fx.com/guide/leverage-guide.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="FXのレバレッジとは？仕組み・計算方法・初心者向けの倍率設定を解説" />
+  <meta property="og:description" content="FXレバレッジの仕組み・計算方法・初心者向け倍率の目安を解説。国内上限25倍の根拠、実効レバレッジ、ロスカットとの関係を数字で整理。投資助言は行いません。" />
+  <meta property="og:url" content="https://hajimete-fx.com/guide/leverage-guide.html" />
+  <meta property="og:site_name" content="FXコンパス" />
+  <meta property="og:image" content="https://hajimete-fx.com/images/og-default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://hajimete-fx.com/images/og-default.png" />
+  <meta name="theme-color" content="#2f54eb" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../images/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/site.css?v=20260618" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "FXのレバレッジとは？仕組み・計算方法・初心者向けの倍率設定を解説",
+    "description": "FXレバレッジの仕組み・計算方法・初心者向け倍率の目安を解説。国内上限25倍の根拠、実効レバレッジ、ロスカットとの関係を具体的な数字で整理。",
+    "inLanguage": "ja",
+    "author": { "@type": "Person", "name": "編集長 カイ" },
+    "publisher": { "@type": "Organization", "name": "FXコンパス" },
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "mainEntityOfPage": "https://hajimete-fx.com/guide/leverage-guide.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "はじめてのFX", "item": "https://hajimete-fx.com/guide/fx-hajimekata.html" },
+      { "@type": "ListItem", "position": 3, "name": "レバレッジとは", "item": "https://hajimete-fx.com/guide/leverage-guide.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "FXのレバレッジとは何ですか？", "acceptedAnswer": { "@type": "Answer", "text": "レバレッジとは、預けた証拠金の何倍もの金額の取引ができる仕組みです。たとえば10万円の証拠金でレバレッジ25倍なら、最大250万円分の取引が可能です。ただし倍率が高いほど、少しの値動きで大きな損益が生じるため、資金管理とセットで考える必要があります。" } },
+      { "@type": "Question", "name": "国内FXのレバレッジ上限は何倍ですか？", "acceptedAnswer": { "@type": "Answer", "text": "個人口座の場合、金融庁の規制により最大25倍です（金融商品取引業等に関する内閣府令 第117条）。法人口座は通貨ペアごとに毎週算出される変動制で、個人より高い倍率が適用されることがあります。" } },
+      { "@type": "Question", "name": "初心者はレバレッジ何倍で始めるべきですか？", "acceptedAnswer": { "@type": "Answer", "text": "一般的に実効レバレッジ3〜5倍程度が初心者の目安とされています。口座に入金した金額に対してポジションサイズを小さく保つことで実効レバレッジを低く抑えられます。まずはデモトレードや少額取引で値動きの感覚をつかむことが先決です。" } },
+      { "@type": "Question", "name": "レバレッジが高いとロスカットされやすいですか？", "acceptedAnswer": { "@type": "Answer", "text": "はい。実効レバレッジが高い状態は、証拠金維持率が低い状態と同義です。少しの逆行で証拠金維持率がロスカットラインを割り込みやすくなるため、結果としてロスカットの確率が高まります。証拠金維持率は常に余裕を持って管理することが重要です。" } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+
+  <nav class="breadcrumb" aria-label="パンくず">
+    <a href="../index.html">ホーム</a><span class="sep">&rsaquo;</span><a href="fx-hajimekata.html">はじめてのFX</a><span class="sep">&rsaquo;</span>レバレッジとは
+  </nav>
+
+  <main>
+    <article>
+      <header class="article-head">
+        <span class="badge pickup">はじめてのFX</span>
+        <h1>FXのレバレッジとは？仕組み・計算方法・初心者向けの倍率設定を解説</h1>
+        <div class="article-meta">
+          公開: <time datetime="2026-06-17">2026年6月17日</time> ／ 更新: <time datetime="2026-06-17">2026年6月17日</time> ／ FXコンパス編集部
+        </div>
+      </header>
+
+      <!-- リード文 -->
+      <p class="lead">
+        FXでは「レバレッジ」を使うことで、手元の資金（証拠金）の何倍もの金額を取引できます。
+        たとえば10万円の証拠金にレバレッジ25倍をかけると、最大250万円分の取引が可能です。
+        少ない資金で大きな取引ができる反面、損失も同じ倍率で拡大するため、仕組みを正しく理解したうえで倍率を管理することが欠かせません。
+        この記事では、レバレッジの基本的な仕組み、必要証拠金の計算方法、国内FXの規制（金融庁の上限25倍）、初心者が目安にすべき実効レバレッジ、そしてロスカットとの関係までを具体的な数字で整理します。
+        <strong>数値は変動するため、取引前に必ず各社公式サイトで最新の条件を確認してください</strong>。当サイトは投資助言は行いません。
+      </p>
+
+      <div class="note-box">
+        <span class="tag">PR</span>
+        <p style="margin:0">この記事にはアフィリエイト広告を含みます。各サービスの評価は編集部が独自に行っており、広告出稿の有無で変わることはありません。</p>
+      </div>
+
+      <nav class="toc" aria-label="目次">
+        <span class="toc-title">この記事の内容</span>
+        <ol>
+          <li><a href="#what">1. レバレッジとは何か</a></li>
+          <li><a href="#calc">2. レバレッジの計算方法（必要証拠金の求め方）</a></li>
+          <li><a href="#regulation">3. 国内FXのレバレッジ規制</a></li>
+          <li><a href="#beginner">4. 初心者が選ぶべきレバレッジの目安</a></li>
+          <li><a href="#losscut">5. レバレッジとロスカットの関係</a></li>
+          <li><a href="#faq">6. よくある質問</a></li>
+          <li><a href="#related">関連記事</a></li>
+        </ol>
+      </nav>
+
+      <!-- ===== 1. レバレッジとは何か ===== -->
+      <h2 id="what">1. レバレッジとは何か</h2>
+      <p>
+        レバレッジ（leverage）は、日本語で「てこ」を意味する言葉です。
+        FXにおけるレバレッジとは、<strong>預けた証拠金を担保に、その何倍もの金額の取引を可能にする仕組み</strong>のことです。
+      </p>
+      <p>
+        たとえば、米ドル/円のレートが1ドル=155円のとき、1万通貨（＝1万ドル）を買うには本来155万円が必要です。
+        しかしレバレッジ25倍の口座であれば、必要証拠金は155万円 / 25 = <strong>62,000円</strong>で済みます。
+        つまり6万2,000円の証拠金で、155万円分の取引ができるわけです。
+      </p>
+
+      <h3>レバレッジの「てこ」のイメージ</h3>
+      <p>
+        てこの原理では、小さな力で大きな物を動かせます。FXのレバレッジも同じで、少額の資金で大きな取引額を動かせます。
+        ただし重要なのは、<strong>利益だけでなく損失も同じ倍率で拡大する</strong>という点です。
+      </p>
+
+      <div class="note-box">
+        <span class="tag">具体例</span>
+        <p style="margin:0">
+          証拠金10万円、レバレッジ25倍 → 取引可能額250万円<br>
+          USD/JPY = 155.000で1万通貨（155万円分）を買った場合：<br>
+          <strong>1円上昇（156円）</strong>：+10,000円の利益（証拠金の10%）<br>
+          <strong>1円下落（154円）</strong>：-10,000円の損失（証拠金の10%）<br><br>
+          もしレバレッジなし（1倍）で155万円の資金で同じ取引をしていたら、1円の値動きでの損益率は約0.6%。
+          レバレッジをかけることで損益の「振れ幅」が大きくなることがわかります。
+        </p>
+      </div>
+
+      <h3>「最大レバレッジ」と「実効レバレッジ」の違い</h3>
+      <p>
+        FX口座のスペック表に書かれている「レバレッジ25倍」は、<strong>その口座で設定可能な最大レバレッジ</strong>です。
+        常に25倍のレバレッジで取引しなければならないわけではありません。
+      </p>
+      <p>
+        実際の取引で重要なのは<strong>「実効レバレッジ」</strong>です。実効レバレッジとは、口座に入っている資金（有効証拠金）に対して、実際にどれくらいの倍率のポジションを持っているかを示す数値です。
+      </p>
+      <p>
+        たとえば口座に100万円を入金し、155万円分（1万通貨）のポジションを持っている場合、実効レバレッジは155万円 / 100万円 = <strong>約1.55倍</strong>です。
+        口座の最大レバレッジが25倍でも、ポジションサイズを小さく保てば実効レバレッジは低くなります。
+      </p>
+
+      <!-- ===== 2. レバレッジの計算方法 ===== -->
+      <h2 id="calc">2. レバレッジの計算方法（必要証拠金の求め方）</h2>
+
+      <h3 id="calc-formula">必要証拠金の計算式</h3>
+      <p>
+        レバレッジから必要証拠金を求める基本式は以下の通りです。
+      </p>
+      <div class="note-box">
+        <span class="tag">計算式</span>
+        <p style="margin:0">
+          <strong>必要証拠金 = 取引金額 / レバレッジ</strong><br><br>
+          取引金額 = 現在のレート x 取引数量<br>
+          （例）USD/JPY = 155円、1万通貨の場合：取引金額 = 155円 x 10,000 = 1,550,000円
+        </p>
+      </div>
+      <p>
+        逆に、実効レバレッジを求めたい場合は以下の式になります。
+      </p>
+      <div class="note-box">
+        <span class="tag">計算式</span>
+        <p style="margin:0">
+          <strong>実効レバレッジ = 取引金額 / 有効証拠金（口座残高 + 含み損益）</strong>
+        </p>
+      </div>
+
+      <h3 id="calc-examples">通貨ペア別の必要証拠金 早見表</h3>
+      <p>
+        レバレッジ25倍（国内最大）の場合に、1,000通貨・1万通貨を取引するために必要な証拠金の目安をまとめました。
+      </p>
+      <div class="tbl-wrap scroll">
+        <p class="scroll-hint">表は横にスクロールできます</p>
+        <table>
+          <caption>通貨ペア別 必要証拠金の目安（レバレッジ25倍の場合・2026年6月時点の概算レート）</caption>
+          <thead>
+            <tr>
+              <th>通貨ペア</th>
+              <th>概算レート</th>
+              <th>1,000通貨の<br>必要証拠金</th>
+              <th>1万通貨の<br>必要証拠金</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>USD/JPY（米ドル/円）</th>
+              <td>155円</td>
+              <td>約6,200円</td>
+              <td>約62,000円</td>
+            </tr>
+            <tr>
+              <th>EUR/JPY（ユーロ/円）</th>
+              <td>170円</td>
+              <td>約6,800円</td>
+              <td>約68,000円</td>
+            </tr>
+            <tr>
+              <th>GBP/JPY（ポンド/円）</th>
+              <td>198円</td>
+              <td>約7,920円</td>
+              <td>約79,200円</td>
+            </tr>
+            <tr>
+              <th>AUD/JPY（豪ドル/円）</th>
+              <td>102円</td>
+              <td>約4,080円</td>
+              <td>約40,800円</td>
+            </tr>
+            <tr>
+              <th>EUR/USD（ユーロ/ドル）</th>
+              <td>1.10ドル<br>(=約170.5円)</td>
+              <td>約6,820円</td>
+              <td>約68,200円</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note-small">
+        レートは2026年6月時点の概算です。為替レートは常に変動するため、必要証拠金もリアルタイムで変わります。取引前に各社の取引画面で確認してください。
+      </p>
+
+      <h3 id="calc-leverage-comparison">レバレッジ倍率別の必要証拠金比較</h3>
+      <p>
+        同じ取引（USD/JPY 155円で1万通貨）でも、レバレッジの倍率によって必要な証拠金は大きく変わります。
+      </p>
+      <div class="tbl-wrap scroll">
+        <p class="scroll-hint">表は横にスクロールできます</p>
+        <table>
+          <caption>USD/JPY 155円で1万通貨取引時のレバレッジ別 必要証拠金</caption>
+          <thead>
+            <tr>
+              <th>レバレッジ</th>
+              <th>必要証拠金</th>
+              <th>1円逆行時の損失額</th>
+              <th>証拠金に対する損失率</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1倍（レバレッジなし）</th>
+              <td>1,550,000円</td>
+              <td>10,000円</td>
+              <td>約0.6%</td>
+            </tr>
+            <tr>
+              <th>3倍</th>
+              <td>約516,667円</td>
+              <td>10,000円</td>
+              <td>約1.9%</td>
+            </tr>
+            <tr>
+              <th>5倍</th>
+              <td>310,000円</td>
+              <td>10,000円</td>
+              <td>約3.2%</td>
+            </tr>
+            <tr>
+              <th>10倍</th>
+              <td>155,000円</td>
+              <td>10,000円</td>
+              <td>約6.5%</td>
+            </tr>
+            <tr>
+              <th>25倍（国内上限）</th>
+              <td>62,000円</td>
+              <td>10,000円</td>
+              <td>約16.1%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        注目すべきは、<strong>1円逆行時の損失額（10,000円）は、レバレッジに関係なく同じ</strong>という点です。
+        変わるのは「証拠金に対する損失率」です。レバレッジ25倍だと1円の逆行で証拠金の約16%が消えますが、3倍なら約1.9%にとどまります。
+        レバレッジが高いと「少額で取引できる」メリットがある一方、証拠金が少ないぶん損失に対する耐久力が下がることがわかります。
+      </p>
+
+      <div data-mascot-say="レバレッジは『どれだけ少ない資金で取引できるか』の話で、利益率が上がる魔法じゃない。大事なのは口座に入れた資金に対して何倍のポジションを持っているか、つまり実効レバレッジだよ。"></div>
+
+      <!-- ===== 3. 国内FXのレバレッジ規制 ===== -->
+      <h2 id="regulation">3. 国内FXのレバレッジ規制</h2>
+
+      <h3 id="regulation-individual">個人口座：最大25倍（金融庁規制）</h3>
+      <p>
+        日本国内のFX会社が提供する個人向け口座では、<strong>レバレッジの上限は25倍</strong>と法律で定められています。
+        根拠となるのは「金融商品取引業等に関する内閣府令」第117条第27項・第28項です。
+      </p>
+      <p>
+        この規制は2010年8月に段階的に導入されました。当初はレバレッジ50倍上限からスタートし、2011年8月に現在の25倍上限に引き下げられています。
+        規制の目的は、<strong>個人投資家がレバレッジの過度な利用により多額の損失を被ることを防ぐこと</strong>です。
+      </p>
+
+      <h3 id="regulation-history">レバレッジ規制の経緯</h3>
+      <div class="tbl-wrap scroll">
+        <p class="scroll-hint">表は横にスクロールできます</p>
+        <table>
+          <caption>国内FXレバレッジ規制の変遷</caption>
+          <thead>
+            <tr>
+              <th>時期</th>
+              <th>レバレッジ上限</th>
+              <th>主な経緯</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>2009年以前</th>
+              <td>上限なし（数百倍も可能）</td>
+              <td>レバレッジ100倍〜400倍を提供する業者も存在。個人投資家の多額損失が社会問題化</td>
+            </tr>
+            <tr>
+              <th>2010年8月</th>
+              <td>最大50倍</td>
+              <td>金融庁がレバレッジ規制を段階導入（第1段階）</td>
+            </tr>
+            <tr>
+              <th>2011年8月</th>
+              <td>最大25倍</td>
+              <td>規制の第2段階。現行の上限（個人口座）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="regulation-corporate">法人口座のレバレッジ</h3>
+      <p>
+        法人口座のレバレッジは個人口座の25倍上限とは異なり、<strong>通貨ペアごとに毎週算出される「為替リスク想定比率」に基づく変動制</strong>です。
+        一般社団法人 金融先物取引業協会が算出・公表しており、通貨ペアや相場のボラティリティによって倍率は変わります。
+      </p>
+      <p>
+        結果として、法人口座では個人口座の25倍を上回るレバレッジが適用されることがあります。ただし法人口座は開設の審査要件が厳しく、個人トレーダーが法人口座を使うために会社を設立するのは本末転倒です。
+      </p>
+
+      <h3 id="regulation-overseas">海外FXのレバレッジについて</h3>
+      <p>
+        海外のFX業者では、レバレッジ100倍〜1,000倍以上を提供しているところもあります。
+        ただし、以下の点を理解しておく必要があります。
+      </p>
+      <ul>
+        <li><strong>金融庁に無登録の業者は日本居住者へのサービス提供が違法にあたる可能性がある</strong>（金融商品取引法に基づく）</li>
+        <li>金融庁は無登録業者のリストを公式サイトで公開し、注意喚起を行っている</li>
+        <li>トラブル発生時に日本の法律による保護を受けにくい</li>
+        <li>出金拒否やサーバー不安定などのトラブル報告がある業者も存在する</li>
+      </ul>
+      <p>
+        当サイトでは、<strong>金融庁に登録された国内FX会社を利用することを前提に解説</strong>しています。海外FXの利用を推奨・助言するものではありません。
+      </p>
+
+      <!-- インラインCTA 1 -->
+      <div class="inline-cta">
+        <p class="ic-label">PR</p>
+        <p class="ic-title">少額からFXを始めるなら</p>
+        <p class="ic-desc">1,000通貨対応・低スプレッドの国内口座を手数料・キャンペーンで比較</p>
+        <a class="ic-btn" href="kouza-ranking.html">口座ランキングを見る →</a>
+        <p class="ic-micro">最短5分で口座開設・維持費無料</p>
+      </div>
+
+      <!-- ===== 4. 初心者が選ぶべきレバレッジの目安 ===== -->
+      <h2 id="beginner">4. 初心者が選ぶべきレバレッジの目安</h2>
+
+      <h3 id="beginner-guideline">実効レバレッジ3〜5倍が目安</h3>
+      <p>
+        「レバレッジ何倍が正解か？」という問いに対し、唯一の正解はありません。ただし初心者が最初に意識すべき目安として、<strong>実効レバレッジ3〜5倍程度</strong>がよく挙げられます。
+      </p>
+      <p>
+        実効レバレッジ3倍なら、USD/JPY 155円で1万通貨を保有する場合、口座に約52万円が必要です。1円の逆行で1万円（口座資金の約1.9%）の損失。この水準であれば、多少の値動きでロスカットに至ることはなく、冷静に判断する余裕を持てます。
+      </p>
+      <p>
+        対して実効レバレッジ25倍ギリギリだと、口座資金は6万2,000円。1円の逆行で約16%が消え、2〜3円の逆行でロスカット圏内に入ります。初心者がこの状態で冷静にトレードするのは現実的に困難です。
+      </p>
+
+      <h3 id="beginner-sizing">ポジションサイズで実効レバレッジをコントロールする</h3>
+      <p>
+        多くの国内FX口座では「レバレッジを○倍に設定する」というスイッチはありません。口座のレバレッジは一律25倍（最大）で、<strong>実効レバレッジはポジションサイズ（取引数量）を調整することでコントロール</strong>します。
+      </p>
+      <div class="note-box">
+        <span class="tag">考え方の例</span>
+        <p style="margin:0">
+          口座資金30万円でUSD/JPY = 155円の場合：<br><br>
+          <strong>1万通貨を保有</strong> → 取引金額155万円 / 30万円 = 実効レバレッジ約<strong>5.2倍</strong><br>
+          <strong>5,000通貨を保有</strong> → 取引金額77.5万円 / 30万円 = 実効レバレッジ約<strong>2.6倍</strong><br>
+          <strong>2万通貨を保有</strong> → 取引金額310万円 / 30万円 = 実効レバレッジ約<strong>10.3倍</strong><br><br>
+          同じ口座資金でも、ポジションサイズを変えるだけで実効レバレッジは大きく変わります。
+        </p>
+      </div>
+
+      <h3 id="beginner-steps">初心者のレバレッジ管理 3ステップ</h3>
+      <p>
+        レバレッジ管理を実践するための具体的なステップを整理します。
+      </p>
+      <ol>
+        <li>
+          <strong>ステップ1：口座資金を決める</strong><br>
+          「失っても生活に影響しない余裕資金」を明確にする。生活費や緊急資金とは完全に分けた口座で管理する。
+        </li>
+        <li>
+          <strong>ステップ2：1回の取引で許容する損失額を決める</strong><br>
+          一般的な目安は「口座資金の1〜2%」。口座資金30万円なら、1回の損失上限は3,000円〜6,000円。この金額を超える前に損切りする逆指値注文を必ず入れる。
+        </li>
+        <li>
+          <strong>ステップ3：損失上限から逆算してポジションサイズを決める</strong><br>
+          損失上限6,000円、損切り幅を0.5円（50pips）に設定する場合：<br>
+          6,000円 / 0.5円 = 12,000通貨 → <strong>1万通貨</strong>（切り下げ）が適正サイズ<br>
+          このとき取引金額は155万円、実効レバレッジは約5.2倍。自然とレバレッジが管理された状態になる。
+        </li>
+      </ol>
+      <p>
+        ポイントは、<strong>「レバレッジを何倍にしよう」ではなく「損失をいくらまでに抑えよう」から逆算する</strong>ことです。
+        損失許容額とロスカット幅からポジションサイズを計算すれば、実効レバレッジは結果として適切な水準に収まります。
+      </p>
+
+      <h3 id="beginner-multiple-positions">複数ポジション保有時の注意</h3>
+      <p>
+        実効レバレッジは<strong>口座内の全ポジションの合計</strong>で計算されます。
+        USD/JPYで1万通貨、EUR/JPYで1万通貨を同時に保有すれば、それぞれの取引金額の合計が実効レバレッジの分子になります。
+      </p>
+      <p>
+        1つずつのポジションは小さくても、複数持てばレバレッジは積み上がります。
+        「今の合計ポジションで実効レバレッジは何倍か」を常に把握する習慣をつけましょう。
+        多くのFX口座の取引画面には証拠金維持率やレバレッジ倍率の表示があるため、こまめに確認してください。
+      </p>
+
+      <!-- ===== 5. レバレッジとロスカットの関係 ===== -->
+      <h2 id="losscut">5. レバレッジとロスカットの関係</h2>
+
+      <h3 id="losscut-what">ロスカットとは</h3>
+      <p>
+        ロスカットとは、<strong>含み損の拡大により証拠金維持率が一定の水準を下回った場合に、FX会社が強制的にポジションを決済する仕組み</strong>です。
+        トレーダーの損失が証拠金を超えて拡大すること（＝借金状態）を防ぐための安全装置として機能します。
+      </p>
+      <p>
+        ロスカットが発動する基準は「証拠金維持率」で設定されており、口座によって異なりますが、国内FX口座では50%〜100%の範囲が一般的です。
+      </p>
+
+      <h3 id="losscut-margin-ratio">証拠金維持率の計算方法</h3>
+      <div class="note-box">
+        <span class="tag">計算式</span>
+        <p style="margin:0">
+          <strong>証拠金維持率（%） = 有効証拠金 / 必要証拠金 x 100</strong><br><br>
+          有効証拠金 = 口座残高 + 含み損益<br>
+          必要証拠金 = 取引金額 / レバレッジ（25倍）
+        </p>
+      </div>
+      <p>
+        たとえば、口座残高10万円でUSD/JPY 155円・1万通貨を保有している場合（必要証拠金62,000円）を考えます。
+      </p>
+      <div class="tbl-wrap scroll">
+        <p class="scroll-hint">表は横にスクロールできます</p>
+        <table>
+          <caption>含み損と証拠金維持率の変化（口座残高10万円、USD/JPY 1万通貨）</caption>
+          <thead>
+            <tr>
+              <th>レートの変動</th>
+              <th>含み損益</th>
+              <th>有効証拠金</th>
+              <th>証拠金維持率</th>
+              <th>状態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>変動なし（155円）</td>
+              <td>0円</td>
+              <td>100,000円</td>
+              <td>約161%</td>
+              <td>余裕あり</td>
+            </tr>
+            <tr>
+              <td>-1円（154円）</td>
+              <td>-10,000円</td>
+              <td>90,000円</td>
+              <td>約145%</td>
+              <td>やや注意</td>
+            </tr>
+            <tr>
+              <td>-2円（153円）</td>
+              <td>-20,000円</td>
+              <td>80,000円</td>
+              <td>約129%</td>
+              <td>警告ゾーン</td>
+            </tr>
+            <tr>
+              <td>-3円（152円）</td>
+              <td>-30,000円</td>
+              <td>70,000円</td>
+              <td>約113%</td>
+              <td>ロスカット間近</td>
+            </tr>
+            <tr>
+              <td>-3.8円（151.2円）</td>
+              <td>-38,000円</td>
+              <td>62,000円</td>
+              <td>100%</td>
+              <td>ロスカットライン（100%設定の場合）</td>
+            </tr>
+            <tr>
+              <td>-5.1円（149.9円）</td>
+              <td>-51,000円</td>
+              <td>49,000円</td>
+              <td>約79%</td>
+              <td>ロスカット済（50%設定でもここで発動）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        この例では、口座残高10万円・実効レバレッジ約15.5倍の状態です。ロスカットライン100%の口座なら3.8円の逆行で強制決済されます。
+        仮に口座資金が50万円（実効レバレッジ約3.1倍）であれば、同じ1万通貨のポジションでもロスカットまでの余裕は大幅に広がります。
+      </p>
+
+      <h3 id="losscut-additional-margin">追証（追加証拠金）とは</h3>
+      <p>
+        一部のFX口座では、ロスカットの前段階として<strong>「追証（おいしょう）」＝追加証拠金の差し入れ要求</strong>があります。
+        証拠金維持率が一定水準（たとえば100%）を下回った場合に、翌営業日の指定時刻までに証拠金を追加入金するか、ポジションを一部決済して維持率を回復するよう求められます。
+      </p>
+      <p>
+        追証の期限までに対応しなければ、FX会社が強制的にポジションを決済（ロスカット）します。
+        追証の有無や発動基準は口座ごとに異なるため、<strong>口座開設時に必ずルールを確認</strong>しておきましょう。
+      </p>
+
+      <h3 id="losscut-gap">ロスカットでも損失が証拠金を超える場合がある</h3>
+      <p>
+        ロスカットは「証拠金以上の損失を防ぐ安全装置」ですが、<strong>急激な相場変動時にはロスカットが間に合わず、預けた証拠金を超える損失が発生する可能性</strong>があります。
+        いわゆる「スリッページ」が大きく発生するケースです。
+      </p>
+      <p>
+        過去の例として、2015年1月のスイスフランショック（EUR/CHFが数分で約20%変動）では、ロスカットが正常に機能せず大きな損失を被った投資家が世界的に報告されています。
+        ロスカットを「絶対に損失をカバーしてくれる保険」と過信するのではなく、<strong>そもそもロスカットに頼らずに済むポジション管理</strong>を心がけることが大切です。
+      </p>
+
+      <div class="note-box">
+        <span class="tag">ロスカットを避けるための基本原則</span>
+        <p style="margin:0">
+          1. <strong>実効レバレッジを低く保つ</strong>（目安3〜5倍）<br>
+          2. <strong>逆指値注文（ストップロス）を必ず設定する</strong> → ロスカットの前に自分で損切りする<br>
+          3. <strong>余裕のある資金で取引する</strong> → 口座資金の全額をポジションに使わない<br>
+          4. <strong>複数ポジションの合計レバレッジを把握する</strong> → 1つずつは小さくても合計で高倍率になることがある
+        </p>
+      </div>
+
+      <div data-author-card></div>
+
+      <!-- インラインCTA 2 -->
+      <div class="inline-cta">
+        <p class="ic-label">PR</p>
+        <p class="ic-title">資金管理をシミュレーションする</p>
+        <p class="ic-desc">レバレッジ倍率から必要証拠金・損失上限の目安を自動計算</p>
+        <a class="ic-btn" href="../tools/calculator.html">ロット計算ツールを使う →</a>
+        <p class="ic-micro">口座残高と許容損失率を入れるだけ</p>
+      </div>
+
+      <!-- ===== 6. FAQ ===== -->
+      <h2 id="faq">6. よくある質問</h2>
+      <dl class="faq">
+        <dt>FXのレバレッジとは何ですか？</dt>
+        <dd>預けた証拠金の何倍もの金額の取引ができる仕組みです。たとえば10万円の証拠金でレバレッジ25倍なら、最大250万円分の取引が可能です。ただし倍率が高いほど、少しの値動きで大きな損益が生じるため、資金管理とセットで考える必要があります。</dd>
+
+        <dt>国内FXのレバレッジ上限は何倍ですか？</dt>
+        <dd>個人口座の場合、金融庁の規制により最大25倍です（金融商品取引業等に関する内閣府令 第117条）。法人口座は通貨ペアごとに毎週算出される変動制で、個人より高い倍率が適用されることがあります。最新の情報は金融庁および金融先物取引業協会の公式サイトで確認できます。</dd>
+
+        <dt>初心者はレバレッジ何倍で始めるべきですか？</dt>
+        <dd>一般的に実効レバレッジ3〜5倍程度が初心者の目安とされています。口座に入金した金額に対してポジションサイズを小さく保つことで実効レバレッジを低く抑えられます。レバレッジの倍率を意識するよりも、「1回の損失を口座資金の1〜2%以内に抑える」という損失管理の観点で考える方が実践的です。</dd>
+
+        <dt>レバレッジが高いとロスカットされやすいですか？</dt>
+        <dd>はい。実効レバレッジが高い状態は、証拠金維持率が低い状態と同義です。少しの逆行で証拠金維持率がロスカットラインを割り込みやすくなるため、結果としてロスカットの確率が高まります。ロスカットに頼るのではなく、事前に逆指値注文（ストップロス）で損切りラインを設定しておくことが基本です。</dd>
+      </dl>
+
+      <!-- ===== 関連記事 ===== -->
+      <div class="related" id="related">
+        <h2>次に読む</h2>
+        <ul>
+          <li><a href="fx-hajimekata.html">FXの始め方 完全ガイド<span class="desc">仕組み・必要資金・口座開設の流れを初心者向けに</span></a></li>
+          <li><a href="ikura-kara.html">FXはいくらから始められる？少額1000円〜の現実<span class="desc">最低額の現実と失敗しない少額スタート</span></a></li>
+          <li><a href="shikin-kanri.html">FX資金管理の基本<span class="desc">ロット計算と損失上限の考え方</span></a></li>
+          <li><a href="kouza-ranking.html">国内FX口座おすすめ徹底比較【2026年6月】<span class="desc">手数料・スプレッド・キャンペーンを軸で客観比較</span></a></li>
+          <li><a href="demo-trade.html">FXデモトレード比較<span class="desc">無料で練習できるアプリと口座を比較</span></a></li>
+        </ul>
+      </div>
+
+      <div class="source-list">
+        <strong>出典</strong>
+        <ol>
+          <li id="src-1">金融庁「金融商品取引業等に関する内閣府令」第117条（証拠金規制・レバレッジ上限25倍の根拠） <a href="https://www.fsa.go.jp/" target="_blank" rel="nofollow noopener">https://www.fsa.go.jp/</a></li>
+          <li id="src-2">一般社団法人 金融先物取引業協会「為替リスク想定比率」（法人口座のレバレッジ算出基準） <a href="https://www.ffaj.or.jp/" target="_blank" rel="nofollow noopener">https://www.ffaj.or.jp/</a></li>
+          <li id="src-3">各社の必要証拠金・ロスカットルールは2026年6月時点の公式サイト公開情報に基づく参考値です。条件は変更される場合があるため、取引前に必ず各社公式で最新値をご確認ください。</li>
+          <li id="src-4">スイスフランショック（2015年1月15日）：スイス国立銀行のEUR/CHF下限撤廃により数分で約20%の急落が発生し、世界的にロスカット遅延による損失が報告された事例。</li>
+        </ol>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="../assets/links.js?v=20260618"></script>
+  <script src="../assets/site.js?v=20260618" data-root="../"></script>
+  <script>
+    PropNavi.init({ page: "leverage-guide" });
+  </script>
+</body>
+</html>

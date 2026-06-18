@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FXチャートの見方入門｜ローソク足・移動平均線・RSIを初心者向けに図解【2026年版】｜FXコンパス</title>
+  <meta name="description" content="FXチャートの見方を初心者向けに解説。ローソク足の読み方、移動平均線（SMA）の使い分け、RSIの基礎を図解感覚で整理。テクニカル分析の第一歩を事実ベースで案内します。投資助言・売買推奨は行いません。" />
+  <link rel="canonical" href="https://hajimete-fx.com/guide/chart-yomikata.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="FXチャートの見方入門｜ローソク足・移動平均線・RSIを初心者向けに図解【2026年版】" />
+  <meta property="og:description" content="ローソク足の読み方、移動平均線の使い分け、RSIの基礎を初心者向けに整理。テクニカル分析の第一歩を事実ベースで。" />
+  <meta property="og:url" content="https://hajimete-fx.com/guide/chart-yomikata.html" />
+  <meta property="og:site_name" content="FXコンパス" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://hajimete-fx.com/images/og-default.png" />
+  <meta name="twitter:image" content="https://hajimete-fx.com/images/og-default.png" />
+  <meta name="theme-color" content="#2f54eb" />
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../images/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/site.css?v=20260618" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "FXチャートの見方入門｜ローソク足・移動平均線・RSIを初心者向けに図解【2026年版】",
+    "description": "ローソク足の読み方、移動平均線の使い分け、RSIの基礎を初心者向けに整理。テクニカル分析の第一歩を事実ベースで。",
+    "inLanguage": "ja",
+    "author": { "@type": "Person", "name": "編集長 カイ" },
+    "publisher": { "@type": "Organization", "name": "FXコンパス" },
+    "datePublished": "2026-06-16",
+    "dateModified": "2026-06-16",
+    "mainEntityOfPage": "https://hajimete-fx.com/guide/chart-yomikata.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/index.html" },
+      { "@type": "ListItem", "position": 2, "name": "FXチャートの見方入門", "item": "https://hajimete-fx.com/guide/chart-yomikata.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "FXチャートは何分足を見ればいいですか？", "acceptedAnswer": { "@type": "Answer", "text": "決まった正解はありません。一般的には、長い時間足（日足・4時間足）で全体の方向感を確認し、短い時間足（1時間足・15分足など）で細かい動きを見る「マルチタイムフレーム」の考え方が広く知られています。まずは日足から慣れるのが取り組みやすいです。" } },
+      { "@type": "Question", "name": "テクニカル分析だけで勝てますか？", "acceptedAnswer": { "@type": "Answer", "text": "テクニカル分析は過去の値動きのパターンを読み取る手法であり、将来の値動きを保証するものではありません。ファンダメンタルズ（経済指標・金利動向など）との併用や、資金管理・リスク管理と合わせて総合的に判断するのが一般的です。" } },
+      { "@type": "Question", "name": "移動平均線の期間設定はどれが正しいですか？", "acceptedAnswer": { "@type": "Answer", "text": "唯一の正解はありません。短期は5〜25日、中期は50〜75日、長期は100〜200日あたりがよく使われますが、これは慣習的なもので、相場環境や通貨ペアによって有効性は変わります。まずは広く使われている設定で値動きとの関係を観察してみてください。" } },
+      { "@type": "Question", "name": "RSIが70を超えたらすぐ売るべきですか？", "acceptedAnswer": { "@type": "Answer", "text": "RSIが70を超えたからといって必ず下がるわけではありません。強いトレンドが続く局面ではRSIが高い水準に張り付くこともあります。RSIは相場の過熱感を測る参考情報の一つであり、それだけで売買判断をするのはリスクがあります。" } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header" id="siteHeader"></header>
+
+  <nav class="breadcrumb" aria-label="パンくず">
+    <a href="../index.html">ホーム</a><span class="sep">></span>FXチャートの見方入門
+  </nav>
+
+  <main>
+    <article>
+      <header class="article-head">
+        <span class="badge pickup">テクニカル入門</span>
+        <h1>FXチャートの見方入門｜ローソク足・移動平均線・RSIを初心者向けに図解【2026年版】</h1>
+        <p class="article-meta">編集長 カイ ／ 公開 <time datetime="2026-06-16">2026-06-16</time> ・ 最終更新 <time datetime="2026-06-16">2026-06-16</time></p>
+      </header>
+
+      <p class="lead">
+        FXで「チャートが読める」と何が変わるか。値動きの記録を視覚化したチャートは、過去に何が起きたかを客観的に確認するための道具です。
+        「未来を当てる魔法の地図」ではありませんが、値動きの傾向やリズムを把握する手がかりにはなります。
+        このページでは、テクニカル分析で最も基本となるローソク足・移動平均線・RSIの3つを、仕組みの説明に絞って整理します。
+        <strong>当サイトは特定の売買タイミングや手法の助言は行いません</strong>。あくまで「チャートに書いてあることを読む力」を身につけるための入門です。
+      </p>
+
+      <div class="toc" aria-label="目次">
+        <span class="toc-title">このページの内容</span>
+        <ol>
+          <li><a href="#structure">チャートの基本構造</a></li>
+          <li><a href="#candle">ローソク足の読み方</a></li>
+          <li><a href="#ma">移動平均線の見方</a></li>
+          <li><a href="#rsi">RSI（相対力指数）の基礎</a></li>
+          <li><a href="#tools">チャート分析に使えるツール</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ol>
+      </div>
+
+      <!-- ======== 1. チャートの基本構造 ======== -->
+      <h2 id="structure">チャートの基本構造</h2>
+      <p>
+        FXのチャートは、横軸に<strong>時間</strong>、縦軸に<strong>価格</strong>をとったグラフです。
+        過去の値動きが時系列で並んでおり、右に行くほど新しいデータになります。
+      </p>
+      <p>
+        チャートの表示方法にはいくつか種類がありますが、FXで最も広く使われているのが<strong>ローソク足チャート</strong>です。
+        ほかにラインチャート（終値だけを線で結んだもの）やバーチャート（欧米で多い）もありますが、日本発祥のローソク足は1本で4つの情報（始値・高値・安値・終値）を表現できるため、情報量が多く世界中で使われています。
+      </p>
+      <p>
+        チャートには「時間足」という概念があります。1本のローソク足が表す時間の長さのことで、たとえば「日足」なら1本が1日分、「1時間足」なら1時間分の値動きを示します。
+        長い時間足ほど大きな流れが見え、短い時間足ほど細かい動きが見えます。まずは日足で全体の方向感をつかみ、必要に応じて短い時間足を見るのがわかりやすい順番です。
+      </p>
+
+      <!-- ======== 2. ローソク足の読み方 ======== -->
+      <h2 id="candle">ローソク足の読み方</h2>
+      <p>
+        ローソク足は、一定期間の値動きを1本の図形にまとめたものです。
+        「始値（はじめね）」「終値（おわりね）」「高値（たかね）」「安値（やすね）」の4本値で構成されます。
+      </p>
+
+      <h3>陽線と陰線</h3>
+      <p>
+        終値が始値より高い（＝値上がりした）ローソク足を<strong>陽線</strong>、終値が始値より低い（＝値下がりした）ローソク足を<strong>陰線</strong>と呼びます。
+        一般的なチャートツールでは、陽線は白抜きや緑、陰線は塗りつぶしや赤で色分けされます（色の設定はツールによって異なります）。
+      </p>
+
+      <h3>実体とヒゲの意味</h3>
+      <p>
+        ローソク足の太い部分を<strong>実体</strong>と呼び、始値と終値の差を表します。実体が長いほど、その期間に大きく一方向に動いたことを意味します。
+      </p>
+      <p>
+        実体の上下に伸びる細い線が<strong>ヒゲ</strong>です。上ヒゲは「一時的に高値をつけたが押し戻された」、下ヒゲは「一時的に安値をつけたが買い戻された」ことを示します。
+        ヒゲが長いほど、その方向への動きが否定された度合いが大きいと読み取れます。
+      </p>
+
+      <h3>代表的なローソク足パターン4つ</h3>
+      <p>ローソク足には多くのパターンがありますが、まずは以下の4つを覚えておくと値動きの性質が読みやすくなります。</p>
+
+      <div class="note-box">
+        <span class="tag">前提</span>
+        <p style="margin:0">ローソク足のパターンは「こう動く可能性がある」という経験則的な読み方であり、必ずその通りになるわけではありません。単体で売買判断に使うものではなく、他の情報と組み合わせて状況を把握するためのヒントです。</p>
+      </div>
+
+      <h4>1. 大陽線（だいようせん）</h4>
+      <p>
+        実体が長く、上下のヒゲが短い陽線です。その期間中、買いの勢いが一貫して強かったことを示します。
+        下落が続いた後に出現すると「流れが変わる兆し」と解釈されることがありますが、それだけで転換が確定するわけではありません。
+      </p>
+
+      <h4>2. 大陰線（だいいんせん）</h4>
+      <p>
+        大陽線の逆で、実体が長い陰線です。売りの勢いが強かったことを示します。
+        上昇が続いた後に出ると注意される形ですが、大陽線と同様、単体での解釈には限界があります。
+      </p>
+
+      <h4>3. 十字線（じゅうじせん）</h4>
+      <p>
+        始値と終値がほぼ同じで、実体がほとんどない形です。上下にヒゲが伸びており、「買いと売りが拮抗した」状態を示します。
+        トレンドの途中で出ると「勢いが弱まっているかもしれない」と読まれることがあります。
+      </p>
+
+      <h4>4. コマ（こま足）</h4>
+      <p>
+        実体が小さく、上下に短めのヒゲがある形です。十字線と似ていますが、わずかに実体がある点が異なります。
+        相場参加者が方向感を決めかねている状態を反映していると解釈されます。
+      </p>
+
+      <div data-mascot-say="ローソク足を1本ずつ覚えるより、まずは『実体が長い＝勢いがある』『ヒゲが長い＝押し戻された』の2つだけ意識してみて。それだけでチャートの見え方が変わるよ。"></div>
+
+      <!-- ======== 3. 移動平均線の見方 ======== -->
+      <h2 id="ma">移動平均線の見方</h2>
+      <p>
+        移動平均線は、一定期間の終値の平均を線で結んだものです。
+        値動きの細かいブレを均すことで、価格の大まかな方向（トレンド）を視覚的に把握しやすくなります。
+        テクニカル分析の中でも最も広く使われている指標の一つです。
+      </p>
+
+      <h3>単純移動平均（SMA）とは</h3>
+      <p>
+        SMA（Simple Moving Average）は、指定した期間の終値を単純に平均したものです。
+        たとえば「20日SMA」なら、直近20日間の終値を合計し20で割った値をプロットします。日が進むたびに最も古いデータが外れ、最新のデータが加わるため、平均値が移動していく仕組みです。
+      </p>
+      <p>
+        SMAのほかに、直近のデータに重みをつけるEMA（指数平滑移動平均）もあります。EMAのほうが価格変動に素早く反応しますが、まずは計算が直感的なSMAから理解するのがおすすめです。
+      </p>
+
+      <h3>短期・中期・長期の使い分け</h3>
+      <p>
+        移動平均線は期間の長さによって性質が変わります。以下は一般的によく使われる目安です（唯一の正解ではありません）。
+      </p>
+      <ul>
+        <li><strong>短期（5〜25日）</strong>：価格に近い位置を動き、直近の勢いを反映。ただし「ダマシ」（一時的にシグナルが出てすぐ元に戻ること）が多い。</li>
+        <li><strong>中期（50〜75日）</strong>：短期と長期の中間。数週間〜数か月の方向感を見るときに参照されることが多い。</li>
+        <li><strong>長期（100〜200日）</strong>：動きが緩やかで、大きなトレンドの方向を確認するために使われる。特に200日移動平均線は機関投資家も注目するとされ、多くのチャート解説で言及される。</li>
+      </ul>
+      <p>
+        複数の期間を同時に表示し、それぞれの位置関係を見ることで、「短期的な勢い」と「長期的な方向」を同時に把握できます。
+      </p>
+
+      <h3>ゴールデンクロスとデッドクロスの概念</h3>
+      <p>
+        短期の移動平均線が長期の移動平均線を<strong>下から上に突き抜ける</strong>形を<strong>ゴールデンクロス</strong>と呼びます。
+        短期の平均が長期の平均を上回ったということは、「直近の値動きが長期的な平均を上回り始めた」ことを意味し、上昇の勢いが強まっている可能性を示唆する形と解釈されます。
+      </p>
+      <p>
+        逆に、短期の移動平均線が長期の移動平均線を<strong>上から下に突き抜ける</strong>形が<strong>デッドクロス</strong>です。
+        「直近の値動きが長期的な平均を下回り始めた」ことを意味し、下落の勢いが強まっている可能性を示唆する形です。
+      </p>
+      <div class="note-box">
+        <span class="tag">注意</span>
+        <p style="margin:0">ゴールデンクロス・デッドクロスは、過去の移動平均が交差した事実を確認する仕組みであり、未来の値動きを予測するシグナルではありません。レンジ相場（方向感のない横ばい）ではクロスが頻発して「ダマシ」になりやすく、それだけで売買判断をするのは危険です。あくまで「トレンドの変化を読み取る一つの視点」として理解してください。</p>
+      </div>
+
+      <!-- ======== 4. RSI ======== -->
+      <h2 id="rsi">RSI（相対力指数）の基礎</h2>
+      <p>
+        RSI（Relative Strength Index）は、値動きの「上昇の勢い」と「下落の勢い」のバランスを数値化した指標です。
+        J. Welles Wilder Jr.が1978年に提唱したもので、0〜100の範囲で推移します。
+      </p>
+
+      <h3>RSIの計算の考え方</h3>
+      <p>
+        RSIの計算式を厳密に覚える必要はありません。直感的に理解するなら、こういう仕組みです。
+      </p>
+      <p>
+        ある期間（一般的に14日間）の中で、価格が上がった日の上昇幅の平均と、下がった日の下落幅の平均を比較します。
+        上昇幅の平均が大きいほどRSIは100に近づき、下落幅の平均が大きいほど0に近づきます。
+        つまり<strong>RSIが高い＝最近は上がった日のほうが多い・強い</strong>、<strong>RSIが低い＝最近は下がった日のほうが多い・強い</strong>と読めます。
+      </p>
+
+      <h3>70/30の一般的な解釈</h3>
+      <p>
+        RSIの読み方としてよく言及されるのが、70と30のラインです。
+      </p>
+      <ul>
+        <li><strong>RSIが70以上</strong>：「買われすぎ」の水準とされる。直近で上昇の勢いが強い状態。</li>
+        <li><strong>RSIが30以下</strong>：「売られすぎ」の水準とされる。直近で下落の勢いが強い状態。</li>
+      </ul>
+      <p>
+        ただし、「買われすぎだからすぐ下がる」「売られすぎだからすぐ上がる」とは限りません。
+        強いトレンドが発生しているときは、RSIが70以上に張り付いたまま価格が上昇し続けることも、30以下に張り付いたまま下落し続けることも珍しくありません。
+      </p>
+      <p>
+        RSIは「今の相場が過熱気味か、冷え込み気味か」を測る体温計のようなものです。
+        体温が高いからといって必ず熱が下がるわけではないのと同様に、RSIの数値だけで売買を決めるのはリスクがあります。
+        他の指標や値動きの文脈と合わせて、状況判断の一材料として使うものです。
+      </p>
+
+      <!-- ======== 5. チャート分析に使えるツール ======== -->
+      <h2 id="tools">チャート分析に使えるツール</h2>
+      <p>
+        ここまで紹介したローソク足・移動平均線・RSIは、ほとんどのチャートツールに標準搭載されています。
+        代表的なツールを2つ紹介します。
+      </p>
+
+      <h3>TradingView</h3>
+      <p>
+        <a href="https://jp.tradingview.com/" target="_blank" rel="nofollow noopener">TradingView</a>はブラウザベースのチャートツールで、アプリのインストール不要でPC・スマホから利用できます。
+        無料プランでも基本的なチャート表示・インジケーター表示・描画ツールは使えるため、テクニカル分析の練習を始めるには十分です。
+      </p>
+      <p>
+        無料プランと有料プランの主な違いは、同時に表示できるインジケーターの数、チャートのレイアウト分割数、アラート（価格通知）の設定数などです。
+        最初は無料で始めて、「インジケーターをもっと同時に表示したい」「複数の通貨ペアを並べて見たい」といった具体的なニーズが出てきたら有料プランを検討する、という順番が合理的です。
+        プランごとの違いは <a href="tradingview-plan.html">TradingViewプラン比較ページ</a> で詳しく整理しています。
+      </p>
+
+      <h3>MT4/MT5</h3>
+      <p>
+        MetaTrader 4（MT4）およびMetaTrader 5（MT5）は、PC・スマホ向けのチャート・取引ツールです。
+        国内FX業者の多くが対応しており、チャート分析と発注を同じ画面で行えます。
+      </p>
+      <p>
+        MT4/MT5にもローソク足・移動平均線・RSIは標準搭載されています。カスタムインジケーターの追加や自動売買（EA）にも対応しており、拡張性が高いのが特徴です。
+        Macでの導入手順は <a href="mac-mt5.html">MacでMT5を使う方法</a> でまとめています。
+      </p>
+
+      <div class="inline-cta">
+        <p class="ic-label">PR</p>
+        <p class="ic-title">TradingViewで実践する</p>
+        <p class="ic-desc">無料プランと有料プランの違い、一番お得な購入タイミングを整理</p>
+        <a class="ic-btn" href="tradingview-plan.html" target="_blank" rel="nofollow noopener">TradingViewプラン比較を見る →</a>
+        <p class="ic-micro">無料プランでもチャート分析は十分可能</p>
+      </div>
+
+      <div class="editor-memo">
+        <span class="tag">編集部メモ</span>
+        <p>
+          テクニカル分析は「これを覚えれば勝てる」というものではありません。
+          チャートに表示される情報は、すべて過去の値動きの記録です。それを読み解く力は、相場の状況を冷静に整理するための土台にはなりますが、利益を約束するものではありません。
+          大切なのは、チャートを読む力と同時に<a href="shikin-kanri.html">資金管理</a>の習慣を身につけることです。
+        </p>
+      </div>
+
+      <div class="inline-cta">
+        <p class="ic-label">PR</p>
+        <p class="ic-title">デモ口座でチャートを実践する</p>
+        <p class="ic-desc">実際の値動きを見ながらローソク足や移動平均線を体感。登録不要のデモ口座もあり</p>
+        <a class="ic-btn" href="demo-trade.html" target="_blank" rel="nofollow noopener">デモトレード比較を見る →</a>
+        <p class="ic-micro">無料で練習できるデモ口座を一覧比較</p>
+      </div>
+
+      <!-- ======== 6. FAQ ======== -->
+      <h2 id="faq">よくある質問</h2>
+      <dl class="faq">
+        <dt>FXチャートは何分足を見ればいいですか？</dt>
+        <dd>決まった正解はありません。一般的には、長い時間足（日足・4時間足）で全体の方向感を確認し、短い時間足（1時間足・15分足など）で細かい動きを見る「マルチタイムフレーム」の考え方が広く知られています。まずは日足から慣れるのが取り組みやすいでしょう。</dd>
+        <dt>テクニカル分析だけで勝てますか？</dt>
+        <dd>テクニカル分析は過去の値動きのパターンを読み取る手法であり、将来の値動きを保証するものではありません。ファンダメンタルズ（経済指標・金利動向など）との併用や、<a href="shikin-kanri.html">資金管理</a>・リスク管理と合わせて総合的に判断するのが一般的です。</dd>
+        <dt>移動平均線の期間設定はどれが正しいですか？</dt>
+        <dd>唯一の正解はありません。短期は5〜25日、中期は50〜75日、長期は100〜200日あたりがよく使われますが、相場環境や通貨ペアによって有効性は変わります。まずは広く使われている設定で値動きとの関係を観察してみてください。</dd>
+        <dt>RSIが70を超えたらすぐ売るべきですか？</dt>
+        <dd>RSIが70を超えたからといって必ず下がるわけではありません。強いトレンドが続く局面ではRSIが高い水準に張り付くこともあります。RSIは相場の過熱感を測る参考情報の一つであり、それだけで売買判断をするのはリスクがあります。</dd>
+      </dl>
+
+      <div id="promos"></div>
+
+      <div data-author-card></div>
+
+      <div class="related">
+        <h2>次に読む</h2>
+        <ul>
+          <li><a href="fx-hajimekata.html">FXの始め方 完全ガイド｜仕組み・必要資金・口座開設の流れ<span class="desc">ゼロから始める人のための入門ページ</span></a></li>
+          <li><a href="tradingview.html">TradingView活用ガイド｜アラート設計とプラン比較<span class="desc">チャート分析を実務に落とし込むための設定と使い方</span></a></li>
+          <li><a href="tradingview-plan.html">TradingView有料プランは必要？無料との違いと一番お得な買い方<span class="desc">無料で十分？有料にすべき？判断基準を整理</span></a></li>
+          <li><a href="shikin-kanri.html">資金管理の基本<span class="desc">テクニカルと並んで重要な、損失を限定する考え方</span></a></li>
+          <li><a href="prop-yougo.html">FX・トレード用語集<span class="desc">pips・ロット・DDなどを1〜3文で</span></a></li>
+          <li><a href="../tools/calculator.html">資金管理＆ロット計算ツール<span class="desc">必要証拠金・損失上限の目安を自動計算</span></a></li>
+        </ul>
+      </div>
+
+      <div class="source-list">
+        <strong>出典・参考</strong>
+        <ol>
+          <li id="src-1">ローソク足チャートの起源と構造: 日本発祥の罫線分析として、酒田五法を始めとする文献で広く解説されている手法。各パターンの解釈は経験則であり、学術的に有効性が証明されたものではありません。</li>
+          <li id="src-2">RSI（Relative Strength Index）: J. Welles Wilder Jr.『New Concepts in Technical Trading Systems』（1978年）で提唱。期間14が一般的に使われるのは同書のデフォルト設定に由来。</li>
+          <li id="src-3">TradingViewのプラン・機能: <a href="https://jp.tradingview.com/pricing/" target="_blank" rel="nofollow noopener">https://jp.tradingview.com/pricing/</a>（最新の価格・機能差は公式で要確認）</li>
+        </ol>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <script src="../assets/links.js?v=20260618"></script>
+  <script src="../assets/site.js?v=20260618" data-root="../"></script>
+  <script>
+    PropNavi.init({ promos: "promos", includeNote: true, page: "chart-yomikata" });
+  </script>
+</body>
+</html>
