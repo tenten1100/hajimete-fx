@@ -1,227 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   sitemap.xml — プロップナビ
-  ベースURL（https://tenten1100.github.io/prop-navi）は公開ドメインに合わせて全行を一括置換すること。
+  ベースURL（https://hajimete-fx.com）は公開ドメインに合わせて全行を一括置換すること。
   置換位置は assets/links.js の site.baseUrl と一致させる。lastmod はサイト更新時に更新。
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/index.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/index.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/vps.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/vps.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/kokunai-kouza.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/kokunai-kouza.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/tradingview.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/tradingview.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/shikin-kanri.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/shikin-kanri.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/ftmo.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/ftmo.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/erabikata.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/erabikata.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/challenge-rules.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/challenge-rules.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/shikin-kessai-hou.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/shikin-kessai-hou.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/vps-setup.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/vps-setup.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/mac-mt5.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/mac-mt5.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/kakutei-shinkoku.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/kakutei-shinkoku.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/prop-no-risk.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/prop-no-risk.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/prop-yougo.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/koushin-log.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/tools/calculator.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/tools/tracker.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/prop-yougo.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/about.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/koushin-log.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/tools/calculator.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/tools/tracker.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/about.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/legal/disclaimer.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/legal/disclaimer.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/legal/pr-policy.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/legal/pr-policy.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/fx-hajimekata.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/fx-hajimekata.html</loc>
+    <lastmod>2026-06-18</lastmod>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/fx-vps-hikaku.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/fx-vps-hikaku.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/ea-hajimekata.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/ea-hajimekata.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/mac-vps.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/mac-vps.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/kouza-ranking.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/kouza-ranking.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/ikura-kara.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/ikura-kara.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/tradingview-plan.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/tradingview-plan.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/spread-hikaku.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/swap-hikaku.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/spread-hikaku.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/demo-trade.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/chart-yomikata.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/gold-cfd.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/fx-fukugyou.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/leverage-guide.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/order-types.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/fx-app-hikaku.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/swap-hikaku.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tenten1100.github.io/prop-navi/guide/currency-pairs.html</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://hajimete-fx.com/guide/demo-trade.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/guide/chart-yomikata.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/guide/gold-cfd.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/guide/fx-fukugyou.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/guide/leverage-guide.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/guide/order-types.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/guide/fx-app-hikaku.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://hajimete-fx.com/guide/currency-pairs.html</loc>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
