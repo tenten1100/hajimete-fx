@@ -33,37 +33,37 @@
   var MASCOT_SVG =
     '<svg viewBox="0 0 120 120" role="img" aria-label="コンパスくん">' +
     '<defs><linearGradient id="cmg" x1="0" y1="0" x2="1" y2="1">' +
-    '<stop offset="0" stop-color="#f97316"/><stop offset="1" stop-color="#0284c7"/></linearGradient></defs>' +
+    '<stop offset="0" stop-color="#b5894e"/><stop offset="1" stop-color="#1c1c1e"/></linearGradient></defs>' +
     '<circle cx="60" cy="62" r="46" fill="url(#cmg)"/>' +
     '<circle cx="60" cy="62" r="37" fill="#fff"/>' +
     '<circle cx="60" cy="62" r="37" fill="none" stroke="#e2e8f0" stroke-width="2"/>' +
     '<circle cx="60" cy="30" r="2.4" fill="#94a3b8"/><circle cx="60" cy="94" r="2.4" fill="#94a3b8"/>' +
     '<circle cx="28" cy="62" r="2.4" fill="#94a3b8"/><circle cx="92" cy="62" r="2.4" fill="#94a3b8"/>' +
-    '<polygon points="60,40 66,62 60,58 54,62" fill="#f97316"/>' +
+    '<polygon points="60,40 66,62 60,58 54,62" fill="#b5894e"/>' +
     '<polygon points="60,84 54,62 60,66 66,62" fill="#0f172a"/>' +
     '<circle cx="60" cy="62" r="4" fill="#0f172a"/>' +
     '<circle cx="49" cy="58" r="3.2" fill="#0f172a"/><circle cx="71" cy="58" r="3.2" fill="#0f172a"/>' +
     '<path d="M52 70 Q60 76 68 70" fill="none" stroke="#0f172a" stroke-width="2.4" stroke-linecap="round"/>' +
-    '<circle cx="44" cy="66" r="3" fill="#fbbf24" opacity=".6"/><circle cx="76" cy="66" r="3" fill="#fbbf24" opacity=".6"/>' +
+    '<circle cx="44" cy="66" r="3" fill="#d4a574" opacity=".6"/><circle cx="76" cy="66" r="3" fill="#d4a574" opacity=".6"/>' +
     '</svg>';
 
   var EDITOR_SVG =
     '<svg viewBox="0 0 64 64" role="img" aria-label="編集長カイ">' +
     '<defs><linearGradient id="edg" x1="0" y1="0" x2="1" y2="1">' +
-    '<stop offset="0" stop-color="#f97316"/><stop offset="1" stop-color="#0284c7"/></linearGradient></defs>' +
+    '<stop offset="0" stop-color="#b5894e"/><stop offset="1" stop-color="#1c1c1e"/></linearGradient></defs>' +
     '<rect width="64" height="64" rx="16" fill="url(#edg)"/>' +
     '<circle cx="32" cy="26" r="12" fill="#ffe0c2"/>' +
     '<path d="M20 24 Q22 12 32 12 Q42 12 44 24 Q40 19 32 19 Q24 19 20 24Z" fill="#1e293b"/>' +
     '<circle cx="27.5" cy="26" r="1.6" fill="#1e293b"/><circle cx="36.5" cy="26" r="1.6" fill="#1e293b"/>' +
     '<path d="M28 31 Q32 34 36 31" fill="none" stroke="#1e293b" stroke-width="1.6" stroke-linecap="round"/>' +
     '<path d="M16 56 Q16 42 32 42 Q48 42 48 56Z" fill="#fff"/>' +
-    '<path d="M32 42 L28 50 L32 53 L36 50Z" fill="#f97316"/>' +
+    '<path d="M32 42 L28 50 L32 53 L36 50Z" fill="#b5894e"/>' +
     '</svg>';
 
   var LOGO_MARK =
     '<svg viewBox="0 0 24 24" aria-hidden="true">' +
     '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>' +
-    '<polygon points="12,6 14,12 12,11 10,12" fill="#f97316"/>' +
+    '<polygon points="12,6 14,12 12,11 10,12" fill="#b5894e"/>' +
     '<polygon points="12,18 10,12 12,13 14,12" fill="currentColor"/>' +
     '<circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>';
 
