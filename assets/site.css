@@ -1808,7 +1808,7 @@ article blockquote {
   flex-shrink: 0;
   letter-spacing: .06em;
 }
-.promo-main { flex: 1; min-width: 0; }
+.promo-main { flex: 1; min-width: 200px; }
 .promo-label { font-size: .9rem; font-weight: 700; }
 .promo-note { font-size: .8rem; color: var(--ink-soft); line-height: 1.6; margin-top: 2px; }
 .promo-cta {
@@ -1841,6 +1841,14 @@ article blockquote {
 }
 .promo-banner { margin-top: 14px; text-align: center; }
 .promo-banner img { max-width: 100%; border-radius: var(--radius-sm); }
+.promo-btn-banner {
+  display: block; text-align: center; padding: 16px 32px;
+  color: #fff; border-radius: var(--radius-sm); font-weight: 700;
+  font-size: .95rem; text-decoration: none; letter-spacing: .5px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.15);
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.promo-btn-banner:hover { opacity: .9; transform: translateY(-2px); color: #fff; }
 .promo-block .basis {
   font-size: .7rem;
   color: var(--ink-faint);

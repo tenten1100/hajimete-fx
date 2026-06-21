@@ -59,17 +59,6 @@ window.PROPNAVI = {
       slot: "primary",
       pages: ["index", "ftmo", "erabikata", "challenge-rules", "shikin-kanri", "calculator", "tracker", "prop-no-risk"],
     },
-    {
-      key: "fintokei",
-      label: "Fintokei（公式アフィリエイト）",
-      url: "",   // ← 第2指名。親会社の規制状況をFounderが確認後に掲載（未確認なら空のまま）
-      bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
-      note: "日本最大シェア。規制ブローカー親会社条件はFounder確認後に掲載。1社運用なら空でよい。",
-      category: "prop",
-      slot: "primary",
-      pages: ["erabikata"],
-    },
-
     // --- FX用VPS（収益主砲・最高単価。ASP=A8/もしも経由） ---
     {
       key: "conoha",
@@ -114,11 +103,11 @@ window.PROPNAVI = {
       pages: ["kokunai-kouza", "fx-hajimekata", "kouza-ranking", "ikura-kara", "demo-trade", "spread-hikaku", "fx-fukugyou", "swap-hikaku", "leverage-guide", "order-types", "fx-app-hikaku", "currency-pairs"],
     },
     {
-      key: "gmoclick",
-      label: "GMOクリック証券 FXネオ（国内FX口座）",
-      url: "",   // ← FounderがA8.net等で提携後にURLを差し替え
-      bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
-      note: "国内登録業者・合法。単価は約1〜1.1万円（公開まとめベース・要ASP確認）。",
+      key: "fxtf",
+      label: "FXTF（ゴールデンウェイ・ジャパン）",
+      url: "https://px.a8.net/svt/ejp?a8mat=4B614L+47TK1E+48D0+626XT",   // ← A8.net経由（即提携済み）
+      bannerHtml: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B614L+47TK1E+48D0+626XT\" rel=\"nofollow\">\n<img border=\"0\" width=\"300\" height=\"250\" alt=\"\" src=\"https://www24.a8.net/svt/bgt?aid=260621877255&wid=001&eno=01&mid=s00000019746001018000&mc=1\"></a>\n<img border=\"0\" width=\"1\" height=\"1\" src=\"https://www15.a8.net/0.gif?a8mat=4B614L+47TK1E+48D0+626XT\" alt=\"\">",  // ← ASPバナーコードを丸ごと（publish.py が投入）
+      note: "国内登録業者・合法。業界最狭水準スプレッド。MT4対応の国内FX口座。",
       category: "kokunai-fx",
       slot: "primary",
       pages: ["kokunai-kouza", "fx-hajimekata", "kouza-ranking", "ikura-kara", "demo-trade", "spread-hikaku", "fx-fukugyou", "swap-hikaku", "leverage-guide", "order-types", "fx-app-hikaku", "currency-pairs"],
@@ -140,22 +129,22 @@ window.PROPNAVI = {
       label: "TradingView（チャートツール）",
       url: "https://jp.tradingview.com/?aff_id=167608",   // ← FounderがTradingViewパートナー登録後にURLを差し替え
       bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
-      note: "海外SaaSだが金融商品でない・合法。報酬は購入額の30%・ライフタイム継続（要パートナー管理画面で確定）。",
+      note: "海外SaaSだが金融商品でない・合法。報酬は購入額の30%・ライフタイム継続。",
       category: "chart",
       slot: "always",
       pages: ["index", "vps", "vps-setup", "mac-mt5", "kokunai-kouza", "tradingview", "shikin-kanri", "challenge-rules", "calculator", "tracker", "fx-hajimekata", "fx-vps-hikaku", "ea-hajimekata", "mac-vps", "kouza-ranking", "ikura-kara", "tradingview-plan", "chart-yomikata", "demo-trade", "spread-hikaku", "leverage-guide", "order-types", "fx-app-hikaku", "currency-pairs"],
     },
 
-    // --- 暗号資産取引所（補完・CFD/暗号資産トレーダー向け。ASP=A8/アクセストレード等） ---
+    // --- クラウド/VPS（補完・A8即提携枠） ---
     {
-      key: "coincheck",
-      label: "コインチェック（暗号資産取引所）",
-      url: "",   // ← FounderがASP登録後にURLを差し替え（未提携なら空のまま=「準備中」）
-      bannerHtml: "",  // ← ASPバナーコードを丸ごと（任意。publish.py が投入）
-      note: "国内登録の暗号資産交換業者・合法。単価は約7,000円/件（複数ASP・要管理画面で確定）。",
-      category: "crypto",
+      key: "biglobe",
+      label: "BIGLOBE クラウドホスティング",
+      url: "https://px.a8.net/svt/ejp?a8mat=4B614L+4G5MIA+B4+2BDJK1",   // ← A8.net経由（即提携済み）
+      bannerHtml: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B614L+4G5MIA+B4+2BDJK1\" rel=\"nofollow\">\n<img border=\"0\" width=\"468\" height=\"60\" alt=\"\" src=\"https://www28.a8.net/svt/bgt?aid=260621877269&wid=001&eno=01&mid=s00000000040014004000&mc=1\"></a>\n<img border=\"0\" width=\"1\" height=\"1\" src=\"https://www14.a8.net/0.gif?a8mat=4B614L+4G5MIA+B4+2BDJK1\" alt=\"\">",  // ← ASPバナーコードを丸ごと（publish.py が投入）
+      note: "国内大手ISP運営のクラウドサービス。安定性重視のVPS環境。",
+      category: "vps",
       slot: "primary",
-      pages: ["kokunai-kouza"],
+      pages: ["fx-vps-hikaku", "vps", "vps-setup", "ea-hajimekata", "mac-vps"],
     },
   ],
 

@@ -222,6 +222,11 @@
     "crypto":     { text: "無料で口座開設", micro: "最短10分" },
   };
 
+  var BANNER_STYLE = {
+    "prop":       { bg: "linear-gradient(135deg,#1a1a2e,#16213e)", text: "チャレンジに挑戦する →" },
+    "chart":      { bg: "linear-gradient(135deg,#2962FF,#1E88E5)", text: "無料で始める →" },
+  };
+
   function promoRow(label, note, url, bannerHtml, category) {
     var hasUrl = url && String(url).trim() !== "";
     var copy = CTA_COPY[category] || { text: "公式サイトへ", micro: "" };
@@ -229,9 +234,13 @@
     var cta = hasUrl
       ? '<a class="promo-cta" href="' + escAttr(url) + '" target="_blank" rel="nofollow sponsored noopener">' + esc(copy.text) + microHtml + "</a>"
       : '<span class="promo-cta disabled">準備中</span>';
-    var banner = bannerHtml && String(bannerHtml).trim() !== ""
-      ? '<div class="promo-banner">' + bannerHtml + "</div>"
-      : "";
+    var banner = "";
+    if (bannerHtml && String(bannerHtml).trim() !== "") {
+      banner = '<div class="promo-banner">' + bannerHtml + "</div>";
+    } else if (hasUrl && BANNER_STYLE[category]) {
+      var bs = BANNER_STYLE[category];
+      banner = '<div class="promo-banner"><a href="' + escAttr(url) + '" target="_blank" rel="nofollow sponsored noopener" class="promo-btn-banner" style="background:' + bs.bg + ';">' + esc(label.split("（")[0]) + " — " + esc(bs.text) + "</a></div>";
+    }
     return (
       '<div class="promo-row">' +
       '<span class="pr-inline">PR</span>' +
@@ -260,7 +269,7 @@
     ordered.forEach(function (a) {
       rows += promoRow(a.label, a.note, a.url, a.bannerHtml, a.category);
     });
-    if (includeNote && CFG.note) {
+    if (includeNote && CFG.note && CFG.note.url) {
       rows += promoRow(CFG.note.label, CFG.note.note, CFG.note.url, CFG.note.bannerHtml, "");
     }
     if (!rows) return;
