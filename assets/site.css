@@ -2233,7 +2233,71 @@ article blockquote {
 }
 
 /* ============================
-   34. Print
+   34. SEO Enhancement
+   ============================ */
+.heading-anchor {
+  opacity: 0;
+  margin-left: 0.3em;
+  font-size: 0.75em;
+  color: var(--accent, #6f5878);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+h2:hover .heading-anchor,
+h3:hover .heading-anchor { opacity: 0.6; }
+.heading-anchor:hover { opacity: 1; }
+
+a.auto-link {
+  color: var(--accent, #6f5878);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent, #6f5878);
+}
+a.auto-link:hover {
+  border-bottom-style: solid;
+}
+
+.reading-time {
+  color: #94a3b8;
+  font-size: 0.92em;
+}
+
+.snippet-box {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 0 0 32px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.snippet-box strong {
+  color: var(--navy, #0f172a);
+}
+.snippet-box .snippet-q {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--navy, #0f172a);
+}
+.snippet-box .snippet-a {
+  margin: 0;
+}
+
+.freshness-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-left: 8px;
+}
+
+/* ============================
+   35. Print
    ============================ */
 @media print {
   .site-header, .site-footer, .disclaimer-bar,

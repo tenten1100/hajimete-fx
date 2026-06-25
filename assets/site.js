@@ -82,6 +82,13 @@
 
   /* ─── Organization JSON-LD ─── */
 
+  function injectSchemaLD(obj) {
+    var s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.textContent = JSON.stringify(obj);
+    document.head.appendChild(s);
+  }
+
   function injectOrganization() {
     var base = (SITE.baseUrl || "").replace(/\/$/, "");
     if (!base) return;
@@ -89,19 +96,175 @@
     for (var i = 0; i < existing.length; i++) {
       if (/"@type"\s*:\s*"Organization"[\s\S]*"logo"/.test(existing[i].textContent || "")) return;
     }
-    var org = {
+    injectSchemaLD({
       "@context": "https://schema.org",
       "@type": "Organization",
       name: SITE.name || "FXコンパス",
       url: base + "/",
       logo: base + "/images/apple-touch-icon.png",
       image: base + "/images/og-default.png",
-      description: "FXの始め方・口座比較・取引ツール・税金・プロップファームを出典付きで整理するFX総合メディア。",
+      description: "FXの始め方・口座比較・取引ツール・税金を出典付きで整理するFX総合メディア。",
+      sameAs: []
+    });
+    var hasWebSite = false;
+    for (var j = 0; j < existing.length; j++) {
+      if (/"@type"\s*:\s*"WebSite"/.test(existing[j].textContent || "")) { hasWebSite = true; break; }
+    }
+    if (!hasWebSite) {
+      injectSchemaLD({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: SITE.name || "FXコンパス",
+        url: base + "/",
+        inLanguage: "ja",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: { "@type": "EntryPoint", urlTemplate: base + "/?s={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      });
+    }
+  }
+
+  function injectSEOSignals() {
+    var base = (SITE.baseUrl || "").replace(/\/$/, "");
+    if (!base) return;
+    var h1 = document.querySelector("h1");
+    var article = document.querySelector("article");
+    if (!article || !h1) return;
+
+    var meta = document.querySelector(".article-meta");
+    var dateModified = "";
+    var datePublished = "";
+    if (meta) {
+      var times = meta.querySelectorAll("time");
+      if (times.length >= 1) datePublished = times[0].getAttribute("datetime") || "";
+      if (times.length >= 2) dateModified = times[1].getAttribute("datetime") || "";
+    }
+
+    var wordCount = (article.textContent || "").replace(/\s+/g, "").length;
+    var readingMinutes = Math.max(1, Math.ceil(wordCount / 600));
+
+    if (meta && !meta.querySelector(".reading-time")) {
+      var rt = document.createElement("span");
+      rt.className = "reading-time";
+      rt.textContent = " ／ 読了目安 " + readingMinutes + "分";
+      meta.appendChild(rt);
+    }
+
+    var images = article.querySelectorAll("img[src], figure svg");
+    var imageObjects = [];
+    images.forEach(function(img) {
+      if (img.tagName === "IMG" && img.src) {
+        imageObjects.push(img.src);
+      }
+    });
+
+    var existing = document.querySelectorAll('script[type="application/ld+json"]');
+    for (var i = 0; i < existing.length; i++) {
+      try {
+        var d = JSON.parse(existing[i].textContent);
+        if (d["@type"] === "Article") {
+          if (wordCount > 0) d.wordCount = wordCount;
+          if (imageObjects.length > 0) d.image = imageObjects;
+          if (!d.publisher || !d.publisher.logo) {
+            d.publisher = {
+              "@type": "Organization",
+              name: SITE.name || "FXコンパス",
+              logo: { "@type": "ImageObject", url: base + "/images/apple-touch-icon.png" }
+            };
+          }
+          existing[i].textContent = JSON.stringify(d);
+          break;
+        }
+      } catch (e) {}
+    }
+
+    if (!document.querySelector('link[rel="preconnect"]')) {
+      var pc = document.createElement("link");
+      pc.rel = "preconnect";
+      pc.href = base;
+      document.head.appendChild(pc);
+    }
+
+    article.querySelectorAll("h2[id], h3[id]").forEach(function(heading) {
+      if (heading.querySelector(".heading-anchor")) return;
+      var a = document.createElement("a");
+      a.className = "heading-anchor";
+      a.href = "#" + heading.id;
+      a.setAttribute("aria-label", "セクションリンク");
+      a.textContent = "#";
+      heading.appendChild(a);
+    });
+  }
+
+  function injectInternalLinkMesh() {
+    var LINK_MAP = {
+      "FX口座": "kokunai-kouza.html",
+      "口座比較": "kouza-ranking.html",
+      "口座開設": "kokunai-kouza.html",
+      "DMM FX": "kokunai-kouza.html",
+      "スプレッド": "spread-hikaku.html",
+      "スワップ": "swap-hikaku.html",
+      "VPS": "vps.html",
+      "自動売買": "ea-hajimekata.html",
+      "EA": "ea-hajimekata.html",
+      "TradingView": "tradingview.html",
+      "チャート": "chart-yomikata.html",
+      "確定申告": "kakutei-shinkoku.html",
+      "税金": "kakutei-shinkoku.html",
+      "デモトレード": "demo-trade.html",
+      "レバレッジ": "leverage-guide.html",
+      "注文方法": "order-types.html",
+      "通貨ペア": "currency-pairs.html",
+      "始め方": "fx-hajimekata.html",
+      "副業": "fx-fukugyou.html",
+      "ゴールド": "gold-cfd.html"
     };
-    var s = document.createElement("script");
-    s.type = "application/ld+json";
-    s.textContent = JSON.stringify(org);
-    document.head.appendChild(s);
+    var currentPath = location.pathname.split("/").pop() || "";
+    var article = document.querySelector("article");
+    if (!article) return;
+    var linked = {};
+    var textNodes = [];
+    var walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(node) {
+        var p = node.parentElement;
+        if (!p) return NodeFilter.FILTER_REJECT;
+        var tag = p.tagName;
+        if (tag === "A" || tag === "H1" || tag === "H2" || tag === "H3" || tag === "SCRIPT" || tag === "STYLE" || tag === "CODE") return NodeFilter.FILTER_REJECT;
+        if (p.closest && (p.closest("a") || p.closest("h1") || p.closest("h2") || p.closest(".toc") || p.closest(".breadcrumb") || p.closest(".source-list") || p.closest("nav"))) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+    var maxLinks = 5;
+    var count = 0;
+    for (var i = 0; i < textNodes.length && count < maxLinks; i++) {
+      var txt = textNodes[i];
+      for (var keyword in LINK_MAP) {
+        if (linked[keyword] || count >= maxLinks) continue;
+        var target = LINK_MAP[keyword];
+        if (currentPath === target) continue;
+        var idx = txt.textContent.indexOf(keyword);
+        if (idx === -1) continue;
+        var before = txt.textContent.substring(0, idx);
+        var after = txt.textContent.substring(idx + keyword.length);
+        var beforeNode = document.createTextNode(before);
+        var link = document.createElement("a");
+        link.href = ROOT + "guide/" + target;
+        link.textContent = keyword;
+        link.className = "auto-link";
+        var afterNode = document.createTextNode(after);
+        txt.parentNode.insertBefore(beforeNode, txt);
+        txt.parentNode.insertBefore(link, txt);
+        txt.parentNode.insertBefore(afterNode, txt);
+        txt.parentNode.removeChild(txt);
+        linked[keyword] = true;
+        count++;
+        break;
+      }
+    }
   }
 
   /* ─── Disclaimer Bar ─── */
@@ -621,12 +784,14 @@
 
   function init(opts) {
     injectOrganization();
+    injectSEOSignals();
     renderDisclaimerBar();
     renderHeader();
     renderFooter();
     hydrateMascots();
     hydrateAuthorCards();
     hydrateAffiliateLinks();
+    injectInternalLinkMesh();
     if (opts && opts.promos) renderPromos(opts.promos, opts);
 
     initScrollAnimations();
