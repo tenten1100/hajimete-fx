@@ -220,6 +220,19 @@
     });
   }
 
+  function injectSpeculationRules() {
+    if (!HTMLScriptElement.supports || !HTMLScriptElement.supports("speculationrules")) return;
+    var defined = document.querySelector('script[type="speculationrules"]');
+    if (defined) return;
+    var s = document.createElement("script");
+    s.type = "speculationrules";
+    s.textContent = JSON.stringify({
+      prerender: [{ where: { href_matches: "/guide/*" }, eagerness: "moderate" }],
+      prefetch: [{ where: { href_matches: "/*" }, eagerness: "moderate" }]
+    });
+    document.head.appendChild(s);
+  }
+
   function injectInternalLinkMesh() {
     var LINK_MAP = {
       "FX口座": "kokunai-kouza.html",
@@ -808,6 +821,7 @@
     injectOrganization();
     injectSiteNavigation();
     injectSEOSignals();
+    injectSpeculationRules();
     renderDisclaimerBar();
     renderHeader();
     renderFooter();

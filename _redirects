@@ -1,3 +1,10 @@
 # Cloudflare Pages redirects
-# 旧GitHub Pagesからのリダイレクト（もしリンクが残っていた場合）
+
+# www → non-www (canonical)
+https://www.hajimete-fx.com/*  https://hajimete-fx.com/:splat  301
+
+# 旧GitHub Pagesからのリダイレクト
 /prop-navi/*  /:splat  301
+
+# 旧.html URLからのリダイレクト（念のため）
+/index.html  /  301
