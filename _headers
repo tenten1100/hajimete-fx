@@ -1,39 +1,13 @@
 /*
   X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: interest-cohort=()
   X-Robots-Tag: max-snippet:-1, max-image-preview:large, max-video-preview:-1
-  Link: </assets/site.css?v=20260629>; rel=preload; as=style
-  Link: </assets/site.js>; rel=preload; as=script
-  Link: </assets/links.js>; rel=preload; as=script
-  Link: </assets/fonts/inter-var.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
-  Link: </assets/fonts/noto-sans-jp-var.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
 
-/assets/fonts/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/*.css
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
-
-/assets/*.js
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/assets/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
 /images/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
-
-/*.html
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
-
-/guide/*
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
-
-/sitemap.xml
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
 /feed.xml
-  Cache-Control: public, max-age=3600
   Content-Type: application/rss+xml; charset=utf-8
-
-/manifest.json
-  Cache-Control: public, max-age=604800

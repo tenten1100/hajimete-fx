@@ -1,10 +1,83 @@
-# Cloudflare Pages redirects
+# Cloudflare Pages redirects — リビルドv4（旧prop-navi構成 → はじめてFX構成）
 
-# www → non-www (canonical)
+# www → apex（正規化）
 https://www.hajimete-fx.com/*  https://hajimete-fx.com/:splat  301
 
-# 旧GitHub Pagesからのリダイレクト
-/prop-navi/*  /:splat  301
-
-# 旧.html URLからのリダイレクト（念のため）
+# 旧GitHub Pagesパス
+/prop-navi/*  /  301
 /index.html  /  301
+
+# ---- 旧URL → 新URL（拡張子あり/なし両方） ----
+/guide/kouza-ranking  /fx-kouza-ranking  301
+/guide/kouza-ranking.html  /fx-kouza-ranking  301
+/guide/kokunai-kouza  /fx-kouza-ranking  301
+/guide/kokunai-kouza.html  /fx-kouza-ranking  301
+/guide/erabikata  /fx-kouza-ranking  301
+/guide/erabikata.html  /fx-kouza-ranking  301
+/guide/fx-app-hikaku  /fx-kouza-ranking  301
+/guide/fx-app-hikaku.html  /fx-kouza-ranking  301
+/guide/gold-cfd  /fx-kouza-ranking  301
+/guide/gold-cfd.html  /fx-kouza-ranking  301
+/guide/fx-hajimekata  /fx-hajimekata  301
+/guide/fx-hajimekata.html  /fx-hajimekata  301
+/guide/demo-trade  /fx-hajimekata  301
+/guide/demo-trade.html  /fx-hajimekata  301
+/guide/order-types  /fx-hajimekata  301
+/guide/order-types.html  /fx-hajimekata  301
+/guide/currency-pairs  /fx-hajimekata  301
+/guide/currency-pairs.html  /fx-hajimekata  301
+/guide/leverage-guide  /fx-hajimekata  301
+/guide/leverage-guide.html  /fx-hajimekata  301
+/guide/ikura-kara  /fx-shogaku  301
+/guide/ikura-kara.html  /fx-shogaku  301
+/guide/fx-fukugyou  /fx-shogaku  301
+/guide/fx-fukugyou.html  /fx-shogaku  301
+/guide/shikin-kanri  /fx-shogaku  301
+/guide/shikin-kanri.html  /fx-shogaku  301
+/guide/spread-hikaku  /spread-hikaku  301
+/guide/spread-hikaku.html  /spread-hikaku  301
+/guide/swap-hikaku  /spread-hikaku  301
+/guide/swap-hikaku.html  /spread-hikaku  301
+/guide/kakutei-shinkoku  /fx-zeikin  301
+/guide/kakutei-shinkoku.html  /fx-zeikin  301
+/guide/shikin-kessai-hou  /fx-zeikin  301
+/guide/shikin-kessai-hou.html  /fx-zeikin  301
+/guide/vps  /fx-vps-hikaku  301
+/guide/vps.html  /fx-vps-hikaku  301
+/guide/fx-vps-hikaku  /fx-vps-hikaku  301
+/guide/fx-vps-hikaku.html  /fx-vps-hikaku  301
+/guide/vps-setup  /ea-jidoubaibai  301
+/guide/vps-setup.html  /ea-jidoubaibai  301
+/guide/ea-hajimekata  /ea-jidoubaibai  301
+/guide/ea-hajimekata.html  /ea-jidoubaibai  301
+/guide/mac-mt5  /mac-mt4  301
+/guide/mac-mt5.html  /mac-mt4  301
+/guide/mac-vps  /mac-mt4  301
+/guide/mac-vps.html  /mac-mt4  301
+/guide/tradingview  /tradingview-tsukaikata  301
+/guide/tradingview.html  /tradingview-tsukaikata  301
+/guide/chart-yomikata  /tradingview-tsukaikata  301
+/guide/chart-yomikata.html  /tradingview-tsukaikata  301
+/guide/tradingview-plan  /tradingview-plan  301
+/guide/tradingview-plan.html  /tradingview-plan  301
+/tools/calculator  /lot-keisan  301
+/tools/calculator.html  /lot-keisan  301
+/tools/tracker  /lot-keisan  301
+/tools/tracker.html  /lot-keisan  301
+/about.html  /about  301
+/legal/disclaimer  /policy  301
+/legal/disclaimer.html  /policy  301
+/legal/pr-policy  /policy  301
+/legal/pr-policy.html  /policy  301
+/guide/koushin-log  /about  301
+/guide/koushin-log.html  /about  301
+
+# 旧プロップ系ページ（新サイトに対応先なし → トップへ）
+/guide/ftmo  /  301
+/guide/ftmo.html  /  301
+/guide/challenge-rules  /  301
+/guide/challenge-rules.html  /  301
+/guide/prop-no-risk  /  301
+/guide/prop-no-risk.html  /  301
+/guide/prop-yougo  /  301
+/guide/prop-yougo.html  /  301

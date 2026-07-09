@@ -1,15 +1,13 @@
 {
-  "name": "FXコンパス｜FXの、迷わない地図。",
-  "short_name": "FXコンパス",
-  "description": "FX初心者向けに口座比較・始め方・VPS環境・税金を出典付きで整理。無料の計算ツールも公開中。",
+  "name": "はじめてFX",
+  "short_name": "はじめてFX",
+  "description": "FX初心者のための比較と始め方ガイド",
   "start_url": "/",
-  "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
-  "lang": "ja",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0b3a63",
+  "categories": ["finance", "education"],
   "icons": [
-    { "src": "/images/favicon-32.png", "sizes": "32x32", "type": "image/png" },
     { "src": "/images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
-  ],
-  "categories": ["finance", "education"]
+  ]
 }

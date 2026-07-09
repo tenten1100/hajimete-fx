@@ -1,41 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /docs/
-Disallow: /assets/*.js$
-Disallow: /assets/*.css$
-
-# AI crawlers - explicitly allow for AI Overview/SGE visibility
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: FacebookExternalHit
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
 
 Sitemap: https://hajimete-fx.com/sitemap.xml

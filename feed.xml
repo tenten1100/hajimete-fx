@@ -1,136 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <channel>
-    <title>FXコンパス｜FXの、迷わない地図。</title>
-    <link>https://hajimete-fx.com/</link>
-    <description>FX初心者向けに口座比較・始め方・VPS環境・税金を出典付きで整理するFX総合メディア。</description>
-    <language>ja</language>
-    <lastBuildDate>Sun, 29 Jun 2026 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://hajimete-fx.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <image>
-      <url>https://hajimete-fx.com/images/apple-touch-icon.png</url>
-      <title>FXコンパス</title>
-      <link>https://hajimete-fx.com/</link>
-    </image>
-
-    <item>
-      <title>国内FX口座おすすめ徹底比較【2026年版】</title>
-      <link>https://hajimete-fx.com/guide/kouza-ranking</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/kouza-ranking</guid>
-      <description>手数料・スプレッド・最小取引単位・キャンペーンを実数で整理。初心者が「最初の1社」を選ぶための比較ランキング。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>口座比較</category>
-    </item>
-
-    <item>
-      <title>FXスプレッド比較一覧表｜ドル円・主要通貨の取引コストを実数で整理</title>
-      <link>https://hajimete-fx.com/guide/spread-hikaku</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/spread-hikaku</guid>
-      <description>国内主要FX口座のスプレッドを横並び比較。ドル円・ユーロ円・ポンド円の実際の取引コストを一覧表で整理。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>口座比較</category>
-    </item>
-
-    <item>
-      <title>FXスワップポイント比較｜高金利通貨の受取額を国内口座で横並び整理</title>
-      <link>https://hajimete-fx.com/guide/swap-hikaku</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/swap-hikaku</guid>
-      <description>メキシコペソ・南アランド・トルコリラのスワップポイントを国内FX口座で横並び比較。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>口座比較</category>
-    </item>
-
-    <item>
-      <title>FX VPSはどれが最安？料金・スペックを実数で客観比較【2026年版】</title>
-      <link>https://hajimete-fx.com/guide/fx-vps-hikaku</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/fx-vps-hikaku</guid>
-      <description>ConoHa・XServer・お名前.comなど国内VPSの料金・スペック・FX向き度を一覧比較。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>VPS・取引環境</category>
-    </item>
-
-    <item>
-      <title>TradingView使い方ガイド｜FX初心者向けチャート分析の始め方</title>
-      <link>https://hajimete-fx.com/guide/tradingview</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/tradingview</guid>
-      <description>TradingViewの基本機能・アラート設定・プラン比較をFX初心者向けに解説。無料プランでできることも整理。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>チャートツール</category>
-    </item>
-
-    <item>
-      <title>FXの始め方 完全ガイド｜仕組み・必要資金・口座開設の流れ</title>
-      <link>https://hajimete-fx.com/guide/fx-hajimekata</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/fx-hajimekata</guid>
-      <description>FXとは何か、いくらから始められるか、口座開設の手順を初心者向けに一から解説。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>はじめてのFX</category>
-    </item>
-
-    <item>
-      <title>FXの税金と確定申告ガイド｜税率20.315%の計算と申告手順</title>
-      <link>https://hajimete-fx.com/guide/kakutei-shinkoku</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/kakutei-shinkoku</guid>
-      <description>FXの税率20.315%の内訳、確定申告が必要なケース、損失繰越の仕組みを解説。個別判断は税理士へ。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>税金・確定申告</category>
-    </item>
-
-    <item>
-      <title>FX自動売買（EA）の始め方｜国内で合法に始める手順とVPS環境</title>
-      <link>https://hajimete-fx.com/guide/ea-hajimekata</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/ea-hajimekata</guid>
-      <description>海外FXに頼らず、国内の環境でEA自動売買を24時間動かす手順を整理。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>自動売買</category>
-    </item>
-
-    <item>
-      <title>サラリーマンのFX副業ガイド｜届出・確定申告・口座選びの実務を整理</title>
-      <link>https://hajimete-fx.com/guide/fx-fukugyou</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/fx-fukugyou</guid>
-      <description>会社員がFXを副業として始めるときの届出・税金・口座選びの実務知識を整理。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>はじめてのFX</category>
-    </item>
-
-    <item>
-      <title>FXのレバレッジとは？仕組み・計算方法・初心者向けの倍率設定を解説</title>
-      <link>https://hajimete-fx.com/guide/leverage-guide</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/leverage-guide</guid>
-      <description>必要証拠金の計算式とロスカットの関係、初心者が選ぶべきレバレッジ倍率を解説。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>はじめてのFX</category>
-    </item>
-
-    <item>
-      <title>FXチャートの見方入門｜ローソク足・移動平均線・RSIを初心者向けに図解</title>
-      <link>https://hajimete-fx.com/guide/chart-yomikata</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/chart-yomikata</guid>
-      <description>テクニカル分析の基本をFX初心者向けに視覚的に解説。ローソク足の読み方から実践まで。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>チャート</category>
-    </item>
-
-    <item>
-      <title>FXデモトレードおすすめ比較｜無料で練習できるアプリと口座を整理</title>
-      <link>https://hajimete-fx.com/guide/demo-trade</link>
-      <guid isPermaLink="true">https://hajimete-fx.com/guide/demo-trade</guid>
-      <description>登録不要〜本番移行まで、FXデモトレードの練習環境を比較。おすすめアプリと口座を紹介。</description>
-      <pubDate>Sun, 29 Jun 2026 00:00:00 +0900</pubDate>
-      <dc:creator>カイ（FXコンパス編集長）</dc:creator>
-      <category>はじめてのFX</category>
-    </item>
-  </channel>
+<rss version="2.0">
+<channel>
+  <title>はじめてFX</title>
+  <link>https://hajimete-fx.com/</link>
+  <description>FX初心者のための比較と始め方ガイド</description>
+  <language>ja</language>
+  <item>
+    <title>DMM FXの評判とデメリット【2026年7月】初心者向け解説</title>
+    <link>https://hajimete-fx.com/dmm-fx</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/dmm-fx</guid>
+    <description>DMM FXの特徴・メリット・デメリットを事実ベースで解説します。1万通貨単位やMT4非対応といった注意点も正直に紹介し、口座開設の手順や向いている人・向かない人を具体的に整理します。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>FX自動売買（EA）の始め方｜仕組みとリスク・必要な環境</title>
+    <link>https://hajimete-fx.com/ea-jidoubaibai</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/ea-jidoubaibai</guid>
+    <description>MT4/MT5で動くEA（自動売買プログラム）の仕組みとリスク、始めるのに必要な口座・VPS・EA本体の3点、導入手順5ステップを解説します。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>FXの始め方5ステップ【2026年7月】初心者向け完全ガイド</title>
+    <link>https://hajimete-fx.com/fx-hajimekata</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/fx-hajimekata</guid>
+    <description>FX初心者が最初に何をすべきかを5ステップで解説します。通貨ペアやレバレッジなど仕組みの基礎知識、必要資金の計算例、やりがちな失敗、リスク管理の基本まで、具体的な数字を交えてまとめました。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>FX口座おすすめ比較【2026年7月】初心者の選び方</title>
+    <link>https://hajimete-fx.com/fx-kouza-ranking</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/fx-kouza-ranking</guid>
+    <description>FX初心者向けにDMM FXとFXTFを中心とした口座を比較します。最低取引単位・MT4対応・取引ツール・サポート体制の違いを整理し、自分の資金や取引スタイルに合う口座の選び方を具体的に解説します。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>FXは少額から始められる？【2026年7月】1万円の目安</title>
+    <link>https://hajimete-fx.com/fx-shogaku</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/fx-shogaku</guid>
+    <description>FXは1,000通貨単位なら数千円の証拠金から始められます。計算式と金額別シミュレーションを使い、少額取引に必要な資金の目安や少額対応口座、少額でも守るべきルールまで具体的に解説します。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>FX用VPS比較｜ConoHa・XServer・お名前.com【2026年7月】</title>
+    <link>https://hajimete-fx.com/fx-vps-hikaku</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/fx-vps-hikaku</guid>
+    <description>FX用VPSのConoHa・XServer・お名前.comを比較。MT4/MT5導入のしやすさ、VPSが必要になる条件、選び方3基準を2026年7月時点の公式情報をもとに整理しました。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>FXの税金はいくらから？税率・申告ラインの基本</title>
+    <link>https://hajimete-fx.com/fx-zeikin</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/fx-zeikin</guid>
+    <description>FXの利益には申告分離課税20.315%が適用され、給与所得者は年間利益20万円超で確定申告が原則必要です。税率、申告ライン、経費、損失繰越の考え方を解説します。個別の判断は税理士・税務署へご相談ください。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>FXTFの評判とMT4対応【2026年7月】国内MT4口座</title>
+    <link>https://hajimete-fx.com/fxtf</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/fxtf</guid>
+    <description>FXTF（ゴールデンウェイ・ジャパン）の特徴を解説します。国内でMT4が使える数少ない口座で、1,000通貨から取引できる点や、メリット・デメリット、向いている人を具体的に紹介します。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>FXロット計算ツール｜資金と損切り幅から適正取引量を無料計算</title>
+    <link>https://hajimete-fx.com/lot-keisan</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/lot-keisan</guid>
+    <description>口座資金・許容損失・損切り幅を入れるだけで、適正なロット（取引通貨量）と必要証拠金を自動計算。FX初心者が損失をコントロールするための無料ツールです。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>MacでMT4/MT5を使う方法｜現実的な3つの選択肢</title>
+    <link>https://hajimete-fx.com/mac-mt4</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/mac-mt4</guid>
+    <description>MacはMT4の公式サポート対象外です。VPS経由・MT5のMac版・WebTraderという3つの現実的な選択肢を、安定性・コスト・手間で比較して解説します。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>FXスプレッド比較【2026年7月】主要3社の実質コスト</title>
+    <link>https://hajimete-fx.com/spread-hikaku</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/spread-hikaku</guid>
+    <description>FXのスプレッドは実質的な取引コストです。DMM FXやFXTFなど国内FX会社のスプレッドの考え方、コスト計算の目安、固定制と変動制の違いを2026年7月時点の情報で解説します。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>TradingView料金プランの違い｜無料版の制限と選び方</title>
+    <link>https://hajimete-fx.com/tradingview-plan</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/tradingview-plan</guid>
+    <description>TradingViewの無料版とEssential・Plus・Premiumの違いを整理。インジケーター数やアラート数の制限、プラン選びの判断基準、安く契約する方法を解説します。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>TradingViewの使い方｜初心者が最初にやる設定5つ</title>
+    <link>https://hajimete-fx.com/tradingview-tsukaikata</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/tradingview-tsukaikata</guid>
+    <description>TradingView初心者向けに、最初にやる設定5つ、描画ツールやインジケーター・アラートの基本操作、スマホアプリの使い方、無料版の限界までまとめて解説します。</description>
+    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+</channel>
 </rss>

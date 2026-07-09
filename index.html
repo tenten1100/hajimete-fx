@@ -1,363 +1,85 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FXの始め方・口座比較・ツール完全ガイド｜FXコンパス</title>
-  <meta name="description" content="FX初心者向けに口座比較・始め方・VPS環境・税金を出典付きで整理。無料の計算ツールも公開中。" />
-  <link rel="canonical" href="https://hajimete-fx.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="FXコンパス｜FXの、迷わない地図。" />
-  <meta property="og:description" content="FX初心者向けに口座比較・始め方・VPS環境・税金を出典付きで整理。無料の計算ツールも公開中。" />
-  <meta property="og:url" content="https://hajimete-fx.com/" />
-  <meta property="og:site_name" content="FXコンパス" />
-  <meta property="og:image" content="https://hajimete-fx.com/images/og-default.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://hajimete-fx.com/images/og-default.png" />
-  <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <meta name="theme-color" content="#0f172a" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="alternate" type="application/rss+xml" title="FXコンパス" href="feed.xml" />
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png" />
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
-  <link rel="preload" href="assets/site.css?v=20260629b" as="style" />
-  <link rel="preload" href="assets/site.js?v=20260629" as="script" />
-  <link rel="preload" href="assets/links.js?v=20260629" as="script" />
-  <link rel="dns-prefetch" href="https://px.a8.net" />
-  <link rel="dns-prefetch" href="https://jp.tradingview.com" />
-  <link rel="stylesheet" href="assets/site.css?v=20260629b" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "FXコンパス",
-    "url": "https://hajimete-fx.com/",
-    "description": "FXの始め方・口座比較・取引ツール・資金管理・税金・プロップファームを出典付きで整理するFX総合メディア。投資助言は行いません。",
-    "inLanguage": "ja"
-  }
-  </script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>はじめてFX｜FX初心者のための比較と始め方ガイド</title>
+<meta name="description" content="FX初心者向けに、国内FX口座の比較・FXの始め方・自動売買のVPS環境・TradingViewの使い方を事実ベースで解説。少額からのFXの第一歩を迷わないための実用ガイドです。" />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://hajimete-fx.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="はじめてFX｜FX初心者のための比較と始め方ガイド" />
+<meta property="og:description" content="FX初心者向けに、国内FX口座の比較・FXの始め方・自動売買のVPS環境・TradingViewの使い方を事実ベースで解説。少額からのFXの第一歩を迷わないための実用ガイドです。" />
+<meta property="og:url" content="https://hajimete-fx.com/" />
+<meta property="og:site_name" content="はじめてFX" />
+<meta property="og:image" content="https://hajimete-fx.com/images/og-default.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#0b3a63" />
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<link rel="alternate" type="application/rss+xml" title="はじめてFX" href="/feed.xml" />
+<link rel="stylesheet" href="/assets/site.css?v=20260709" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "publisher": {"@type": "Organization", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "logo": {"@type": "ImageObject", "url": "https://hajimete-fx.com/images/apple-touch-icon.png"}}}</script>
 </head>
 <body>
-  <header class="site-header" id="siteHeader"></header>
+<header class="hd">
+  <div class="hd-in">
+    <a class="brand" href="/"><span class="brand-mark">FX</span>はじめてFX</a>
+    <button class="menu-btn" aria-label="メニュー" onclick="document.body.classList.toggle('nav-open')">☰</button>
+    <nav class="gnav"><a href="/fx-kouza-ranking">FX口座比較</a><a href="/fx-vps-hikaku">VPS比較</a><a href="/tradingview-plan">TradingView</a><a href="/fx-hajimekata">始め方</a><a href="/lot-keisan">計算ツール</a></nav>
+  </div>
+</header>
 
-  <!-- ===== HERO ===== -->
-  <section class="portal-hero">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-    <div class="inner">
-      <div class="hero-copy">
-        <span class="eyebrow">FX総合メディア</span>
-        <h1>FXの、<span class="hl">迷わない地図</span>。<br />始め方も、口座選びも、ここで。</h1>
-        <p class="sub">
-          はじめてのFXから、国内口座の比較、取引ツール・VPS環境、資金管理、税金まで。
-          「何から手をつけるか」を、出典付きの事実だけで案内します。
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary btn-lg" href="guide/kokunai-kouza.html">FX口座を比較する</a>
-          <a class="btn btn-ghost btn-lg" href="guide/fx-hajimekata.html">はじめてのFXを読む</a>
-        </div>
-      </div>
-      <div class="hero-art" id="heroArt" aria-hidden="true"></div>
-    </div>
-  </section>
+<main class="main">
 
-  <!-- ===== STATS BAND ===== -->
-  <section class="stats-band">
-    <div class="stats-grid">
-      <div class="stat-item reveal stagger-1">
-        <div class="stat-num"><span data-count="30" data-suffix="+">0</span></div>
-        <div class="stat-label">記事コンテンツ</div>
-      </div>
-      <div class="stat-item reveal stagger-2">
-        <div class="stat-num"><span data-count="5">0</span></div>
-        <div class="stat-label">無料ツール</div>
-      </div>
-      <div class="stat-item reveal stagger-3">
-        <div class="stat-num"><span data-count="0" data-prefix="¥">0</span></div>
-        <div class="stat-label">利用料金</div>
-      </div>
-      <div class="stat-item reveal stagger-4">
-        <div class="stat-num"><span data-count="100" data-suffix="%">0</span></div>
-        <div class="stat-label">出典付き情報</div>
-      </div>
-    </div>
-  </section>
+<article>
+<section class="hero">
+  <h1>FXの最初の一歩を、<br />迷わないための実用ガイド</h1>
+  <p>口座選び・必要資金・チャートツール・自動売買の環境づくりまで。FX初心者がつまずくポイントを、事実ベースで比較・解説します。</p>
+  <div class="hero-btns">
+    <a class="hero-btn" href="/fx-hajimekata">FXの始め方を見る</a>
+    <a class="hero-btn alt" href="/fx-kouza-ranking">FX口座を比較する</a>
+  </div>
+</section>
 
-  <!-- ===== CATEGORY CHIPS ===== -->
-  <nav class="chip-row" aria-label="カテゴリ">
-    <a class="chip" href="guide/fx-hajimekata.html">はじめてのFX</a>
-    <a class="chip" href="guide/kokunai-kouza.html">口座比較</a>
-    <a class="chip" href="guide/vps.html">VPS・取引環境</a>
-    <a class="chip" href="guide/tradingview.html">チャートツール</a>
-    <a class="chip" href="tools/calculator.html">資金管理ツール</a>
-    <a class="chip" href="guide/ftmo.html">プロップファーム</a>
-    <a class="chip" href="guide/kakutei-shinkoku.html">税金・確定申告</a>
-    <a class="chip" href="guide/prop-yougo.html">用語集</a>
-  </nav>
+<h2 class="sec-title">まず読みたい比較・レビュー</h2>
+<div class="card-grid">
+  <a class="card" href="/fx-kouza-ranking"><span class="card-cat">FX口座</span><strong>FX口座おすすめ比較｜初心者向けの選び方</strong><span class="card-desc">FX初心者向けにDMM FXとFXTFを中心とした口座を比較します。最低取引単位・MT4対応・取引ツール・サポート体制の…</span></a>
+  <a class="card" href="/fx-vps-hikaku"><span class="card-cat">VPS・自動売買</span><strong>FX用VPS徹底比較｜ConoHa・XServer・お名前.comの選び方</strong><span class="card-desc">FX用VPSのConoHa・XServer・お名前.comを比較。MT4/MT5導入のしやすさ、VPSが必要になる条件、…</span></a>
+  <a class="card" href="/tradingview-plan"><span class="card-cat">チャートツール</span><strong>TradingView料金プランの違い｜無料版の制限と選び方</strong><span class="card-desc">TradingViewの無料版とEssential・Plus・Premiumの違いを整理。インジケーター数やアラート数の…</span></a>
+  <a class="card" href="/dmm-fx"><span class="card-cat">FX口座</span><strong>DMM FXの評判・デメリットを正直に解説</strong><span class="card-desc">DMM FXの特徴・メリット・デメリットを事実ベースで解説します。1万通貨単位やMT4非対応といった注意点も正直に紹介し…</span></a>
+  <a class="card" href="/fxtf"><span class="card-cat">FX口座</span><strong>FXTFの評判｜国内で使えるMT4口座</strong><span class="card-desc">FXTF（ゴールデンウェイ・ジャパン）の特徴を解説します。国内でMT4が使える数少ない口座で、1,000通貨から取引でき…</span></a>
+</div>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main class="wide home-wrap">
-    <div class="home-main">
+<h2 class="sec-title">目的別ガイド</h2>
+<div class="card-grid">
+  <a class="card" href="/fx-hajimekata"><span class="card-cat">はじめ方ガイド</span><strong>FXの始め方｜初心者がやるべき5ステップ</strong><span class="card-desc">FX初心者が最初に何をすべきかを5ステップで解説します。通貨ペアやレバレッジなど仕組みの基礎知識、必要資金の計算例、やり…</span></a>
+  <a class="card" href="/fx-shogaku"><span class="card-cat">はじめ方ガイド</span><strong>FXは少額から始められる｜必要資金の目安</strong><span class="card-desc">FXは1,000通貨単位なら数千円の証拠金から始められます。計算式と金額別シミュレーションを使い、少額取引に必要な資金の…</span></a>
+  <a class="card" href="/spread-hikaku"><span class="card-cat">FX口座</span><strong>FXスプレッド比較｜主要FX会社の実質コストと選び方</strong><span class="card-desc">FXのスプレッドは実質的な取引コストです。DMM FXやFXTFなど国内FX会社のスプレッドの考え方、コスト計算の目安、…</span></a>
+  <a class="card" href="/fx-zeikin"><span class="card-cat">はじめ方ガイド</span><strong>FXの税金はいくらから？税率・申告ラインを解説</strong><span class="card-desc">FXの利益には申告分離課税20.315%が適用され、給与所得者は年間利益20万円超で確定申告が原則必要です。税率、申告ラ…</span></a>
+  <a class="card" href="/ea-jidoubaibai"><span class="card-cat">VPS・自動売買</span><strong>FX自動売買（EA）の始め方｜仕組み・リスク・必要な環境</strong><span class="card-desc">MT4/MT5で動くEA（自動売買プログラム）の仕組みとリスク、始めるのに必要な口座・VPS・EA本体の3点、導入手順5…</span></a>
+  <a class="card" href="/mac-mt4"><span class="card-cat">VPS・自動売買</span><strong>MacでMT4/MT5を使う方法｜現実的な3つの選択肢</strong><span class="card-desc">MacはMT4の公式サポート対象外です。VPS経由・MT5のMac版・WebTraderという3つの現実的な選択肢を、安…</span></a>
+  <a class="card" href="/tradingview-tsukaikata"><span class="card-cat">チャートツール</span><strong>TradingViewの使い方｜初心者が最初にやる設定5つ</strong><span class="card-desc">TradingView初心者向けに、最初にやる設定5つ、描画ツールやインジケーター・アラートの基本操作、スマホアプリの使…</span></a>
+  <a class="card" href="/lot-keisan"><span class="card-cat">ツール</span><strong>FXロット計算ツール（無料）</strong><span class="card-desc">口座資金・許容損失・損切り幅を入れるだけで、適正なロット（取引通貨量）と必要証拠金を自動計算。FX初心者が損失をコントロ…</span></a>
+</div>
 
-      <!-- Featured -->
-      <a class="featured reveal-scale" href="guide/kouza-ranking.html">
-        <div class="featured-banner" data-icon="ranking">
-          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <div class="fbody">
-          <span class="kicker">特集・口座比較</span>
-          <h3>国内FX口座おすすめ徹底比較【2026年6月】</h3>
-          <p>手数料・スプレッド・最小取引単位・キャンペーンを実数で整理。初心者が「最初の1社」を選ぶための比較ランキング。</p>
-          <span class="more">比較ランキングを見る</span>
-        </div>
-      </a>
+<h2 class="sec-title">FXを始める3ステップ</h2>
+<ol class="steps">
+  <li><strong>仕組みを知る</strong> — 通貨ペア・レバレッジ・スプレッドの基本を<a href="/fx-hajimekata">FXの始め方</a>で10分で把握します。</li>
+  <li><strong>口座を用意する</strong> — <a href="/fx-kouza-ranking">FX口座比較</a>で自分の資金量・使いたいツールに合う口座を選びます。口座開設は無料です。</li>
+  <li><strong>少額から試す</strong> — いきなり大きな金額を入れず、<a href="/fx-shogaku">少額FXの目安</a>と<a href="/lot-keisan">ロット計算ツール</a>で無理のない取引量から始めます。</li>
+</ol>
 
-      <!-- Latest Articles -->
-      <div class="section-title reveal">新着・注目の記事 <span class="en">LATEST</span></div>
-      <p class="section-lead reveal">検索意図のはっきりしたテーマを、出典付きで深掘り。</p>
-      <ul class="post-list">
-        <li class="reveal stagger-1"><a href="guide/fx-vps-hikaku.html">
-          <div class="pthumb" data-icon="vps"></div>
-          <span><span class="pcat">VPS・取引環境</span> <span class="badge new">NEW</span>
-          <span class="pt">FX VPSはどれが最安？料金・スペックを実数で客観比較【2026年6月】</span>
-          <span class="pmeta">ConoHa・XServer・お名前.comなどを横並びで比較</span></span>
-        </a></li>
-        <li class="reveal stagger-2"><a href="guide/ea-hajimekata.html">
-          <div class="pthumb" data-icon="ea"></div>
-          <span><span class="pcat">自動売買</span> <span class="badge new">NEW</span>
-          <span class="pt">FX自動売買（EA）の始め方｜国内で合法に始める手順とVPS環境</span>
-          <span class="pmeta">海外FXに頼らず、国内の環境で24時間動かす</span></span>
-        </a></li>
-        <li class="reveal stagger-3"><a href="guide/ikura-kara.html">
-          <div class="pthumb" data-icon="hajimete"></div>
-          <span><span class="pcat">はじめてのFX</span> <span class="badge new">NEW</span>
-          <span class="pt">FXはいくらから始められる？少額1000円〜の現実と失敗しない始め方</span>
-          <span class="pmeta">必要資金の目安と、最初にやるべきこと</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/tradingview-plan.html">
-          <div class="pthumb" data-icon="tradingview"></div>
-          <span><span class="pcat">チャート</span> <span class="badge new">NEW</span>
-          <span class="pt">TradingView有料プランは必要？無料との違いと一番お得な買い方</span>
-          <span class="pmeta">プラン比較とセール時期の考え方</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/mac-vps.html">
-          <div class="pthumb" data-icon="mac"></div>
-          <span><span class="pcat">VPS・取引環境</span> <span class="badge new">NEW</span>
-          <span class="pt">MacでFXは不利？MT5が使えない問題をVPSで解決する全手順</span>
-          <span class="pmeta">Mac×MT5のつまずきを、環境で解決</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/spread-hikaku.html">
-          <div class="pthumb" data-icon="spread"></div>
-          <span><span class="pcat">口座比較</span> <span class="badge new">NEW</span>
-          <span class="pt">FXスプレッド比較一覧表｜ドル円・主要通貨の取引コストを実数で整理</span>
-          <span class="pmeta">国内主要口座のスプレッドを横並び比較</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/swap-hikaku.html">
-          <div class="pthumb" data-icon="swap"></div>
-          <span><span class="pcat">口座比較</span> <span class="badge new">NEW</span>
-          <span class="pt">FXスワップポイント比較｜高金利通貨の受取額を国内口座で横並び整理</span>
-          <span class="pmeta">メキシコペソ・南アランド等の受取額を比較</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/demo-trade.html">
-          <div class="pthumb" data-icon="demo"></div>
-          <span><span class="pcat">はじめてのFX</span> <span class="badge new">NEW</span>
-          <span class="pt">FXデモトレードおすすめ比較｜無料で練習できるアプリと口座を整理</span>
-          <span class="pmeta">登録不要〜本番移行まで、練習環境を比較</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/chart-yomikata.html">
-          <div class="pthumb" data-icon="chart"></div>
-          <span><span class="pcat">チャート</span>
-          <span class="pt">FXチャートの見方入門｜ローソク足・移動平均線・RSIを初心者向けに図解</span>
-          <span class="pmeta">テクニカル分析の基本を視覚的に解説</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/gold-cfd.html">
-          <div class="pthumb" data-icon="gold"></div>
-          <span><span class="pcat">CFD</span>
-          <span class="pt">FXゴールド(XAUUSD)取引ガイド｜国内CFDで金を取引する仕組みとコスト</span>
-          <span class="pmeta">国内CFDでの金取引の始め方を整理</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/fx-fukugyou.html">
-          <div class="pthumb" data-icon="fukugyou"></div>
-          <span><span class="pcat">はじめてのFX</span>
-          <span class="pt">サラリーマンのFX副業ガイド｜届出・確定申告・口座選びの実務を整理</span>
-          <span class="pmeta">会社員がFXを始めるときの実務知識</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/leverage-guide.html">
-          <div class="pthumb" data-icon="leverage"></div>
-          <span><span class="pcat">はじめてのFX</span>
-          <span class="pt">FXのレバレッジとは？仕組み・計算方法・初心者向けの倍率設定を解説</span>
-          <span class="pmeta">必要証拠金の計算式とロスカットの関係を整理</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/order-types.html">
-          <div class="pthumb" data-icon="order"></div>
-          <span><span class="pcat">はじめてのFX</span>
-          <span class="pt">FXの注文方法一覧｜成行・指値・逆指値・OCOなど8種類の使い分けを図解</span>
-          <span class="pmeta">基本3注文から応用注文まで、使い分け早見表つき</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/fx-app-hikaku.html">
-          <div class="pthumb" data-icon="app"></div>
-          <span><span class="pcat">口座比較</span>
-          <span class="pt">FXアプリおすすめ比較｜初心者向けスマホ取引アプリの機能と使いやすさ</span>
-          <span class="pmeta">チャート機能・注文方法・デモ対応で国内5社を比較</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/currency-pairs.html">
-          <div class="pthumb" data-icon="currency"></div>
-          <span><span class="pcat">はじめてのFX</span>
-          <span class="pt">FX通貨ペアおすすめ｜初心者が選ぶべき通貨ペアと特徴を一覧で整理</span>
-          <span class="pmeta">メジャー・クロス円・高金利通貨の選び方ガイド</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/fx-hajimekata.html">
-          <div class="pthumb" data-icon="hajimete"></div>
-          <span><span class="pcat">はじめてのFX</span>
-          <span class="pt">FXの始め方 完全ガイド｜仕組み・必要資金・口座開設の流れ</span>
-          <span class="pmeta">「FXって何？」から最初の一歩まで</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/kakutei-shinkoku.html">
-          <div class="pthumb" data-icon="tax"></div>
-          <span><span class="pcat">税金・確定申告</span>
-          <span class="pt">FX・トレードの税金と確定申告ガイド（個別判断は税理士へ）</span>
-          <span class="pmeta">所得区分・経費・申告の一般知識を一次情報で</span></span>
-        </a></li>
-        <li class="reveal"><a href="guide/prop-no-risk.html">
-          <div class="pthumb" data-icon="risk"></div>
-          <span><span class="pcat">プロップファーム</span>
-          <span class="pt">「やめとけ・怪しい」と言われるプロップのリスクと失敗パターン</span>
-          <span class="pmeta">出金拒否・閉鎖・規約変更を直視して選別基準へ</span></span>
-        </a></li>
-      </ul>
-
-      <!-- Goal Cards -->
-      <div class="section-title reveal" style="margin-top:48px">目的から探す <span class="en">BY GOAL</span></div>
-      <div class="card-grid" style="margin-top:20px">
-        <a class="guide-card reveal stagger-1" href="guide/fx-hajimekata.html">
-          <div class="thumb-icon" data-icon="hajimete"></div>
-          <div class="body"><span class="kicker">はじめてのFX</span><h3>まずFXを知る・少額で始める</h3><p>仕組み・必要資金・用語・税金を、初心者目線でまとめて。</p></div>
-        </a>
-        <a class="guide-card reveal stagger-2" href="guide/vps.html">
-          <div class="thumb-icon" data-icon="vps"></div>
-          <div class="body"><span class="kicker">VPS・取引環境</span><h3>環境を整えて差をつける</h3><p>VPS・チャート・自動売買の土台。勝ち負け以前に環境で差がつく。</p></div>
-        </a>
-        <a class="guide-card reveal stagger-3" href="guide/kakutei-shinkoku.html">
-          <div class="thumb-icon" data-icon="tax"></div>
-          <div class="body"><span class="kicker">税金・確定申告</span><h3>利益が出たら税金を知る</h3><p>FXの所得区分・確定申告・経費の基本を一次情報で整理。個別判断は税理士へ。</p></div>
-        </a>
-      </div>
-    </div>
-
-    <!-- Sidebar -->
-    <aside class="home-side">
-      <div class="side-card">
-        <div class="side-h">人気の記事</div>
-        <ol class="rank-list">
-          <li><a href="guide/kouza-ranking.html">国内FX口座おすすめ比較</a></li>
-          <li><a href="guide/spread-hikaku.html">スプレッド比較一覧表</a></li>
-          <li><a href="guide/fx-vps-hikaku.html">FX VPS 最安・比較</a></li>
-          <li><a href="guide/demo-trade.html">デモトレードおすすめ比較</a></li>
-          <li><a href="guide/fx-hajimekata.html">FXの始め方 完全ガイド</a></li>
-          <li><a href="guide/swap-hikaku.html">スワップポイント比較</a></li>
-          <li><a href="guide/chart-yomikata.html">チャートの見方入門</a></li>
-          <li><a href="guide/leverage-guide.html">レバレッジとは</a></li>
-          <li><a href="guide/fx-app-hikaku.html">FXアプリ比較</a></li>
-        </ol>
-      </div>
-
-      <div class="side-card cta-card">
-        <div class="side-h" style="justify-content:center">無料の計算ツール</div>
-        <p>口座サイズと許容リスクから、安全ロットと損失上限を自動計算。登録不要・スマホ対応。</p>
-        <a class="btn btn-primary" href="tools/calculator.html">ツールを使う（無料）</a>
-      </div>
-
-      <div id="promos"></div>
-
-      <div class="side-card">
-        <div class="side-h">カテゴリ</div>
-        <div class="side-cats">
-          <a href="guide/fx-hajimekata.html">はじめてのFX</a>
-          <a href="guide/kouza-ranking.html">口座比較</a>
-          <a href="guide/vps.html">VPS・環境</a>
-          <a href="guide/tradingview.html">チャート</a>
-          <a href="tools/calculator.html">ツール</a>
-          <a href="guide/ftmo.html">プロップ</a>
-          <a href="guide/kakutei-shinkoku.html">税金</a>
-          <a href="guide/prop-yougo.html">用語集</a>
-        </div>
-      </div>
-    </aside>
-  </main>
-
-  <!-- ===== 3-STEP PROCESS ===== -->
-  <section class="process-section">
-    <div class="inner process-header reveal">
-      <h2>FXを始める<span class="text-gradient">3つのステップ</span></h2>
-      <p>口座開設から最初の取引まで、最短30分。難しい手続きは不要です。</p>
-    </div>
-    <div class="process-grid">
-      <div class="step-card reveal stagger-1">
-        <div class="step-num">1</div>
-        <h3>口座を選ぶ</h3>
-        <p>スプレッド・最小取引単位・ツールの使いやすさを比較して、自分に合う口座を選ぶ。</p>
-        <a class="step-link" href="guide/kouza-ranking.html">口座を比較する →</a>
-      </div>
-      <div class="step-card reveal stagger-2">
-        <div class="step-num">2</div>
-        <h3>口座開設＋入金</h3>
-        <p>本人確認書類を提出して口座開設。最短当日〜翌日。余裕資金を入金する。</p>
-        <a class="step-link" href="guide/fx-hajimekata.html">始め方を読む →</a>
-      </div>
-      <div class="step-card reveal stagger-3">
-        <div class="step-num">3</div>
-        <h3>少額でトレード開始</h3>
-        <p>まずはデモか1,000通貨の少額で操作に慣れる。いきなり大きく張らない。</p>
-        <a class="step-link" href="guide/demo-trade.html">デモで練習する →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TRUST BAND ===== -->
-  <section class="trust-band">
-    <div class="inner">
-      <div class="mascot-figure reveal-left">
-        <div class="m" id="trustMascot" aria-hidden="true"></div>
-        <div>
-          <h2>道案内は、コンパスくん。</h2>
-          <p>FXは情報が多すぎて、最初の一歩で迷子になりがち。だから当サイトには方位磁針のマスコット「コンパスくん」がいて、各ページで「今どこにいるか・次にどこへ行くか」を一言で案内します。</p>
-          <p style="margin:0"><a href="about.html">編集方針と運営者について →</a></p>
-        </div>
-      </div>
-      <div class="author-card reveal-right" style="margin:0;background:#fff">
-        <div class="face" id="trustEditor" aria-hidden="true"></div>
-        <div class="who">
-          <div class="role">編集長</div>
-          <div class="name">カイ</div>
-          <p>「勝てる手法」は約束しません。代わりに、一次情報の確認・出典の明示・誇張しないことを約束します。FXの"地図"を、正確に描き続けます。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA BANNER ===== -->
-  <section class="cta-banner">
-    <div class="inner reveal">
-      <h2>まずは口座比較から始めよう</h2>
-      <p>手数料・スプレッド・キャンペーンを実数で徹底比較。あなたに合った口座がきっと見つかる。</p>
-      <div class="cta-row" style="justify-content:center">
-        <a class="btn btn-primary btn-lg" href="guide/kouza-ranking.html">口座比較ランキングを見る</a>
-        <a class="btn btn-ghost btn-lg" href="tools/calculator.html">無料ツールを使う</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer" id="siteFooter"></footer>
-
-  <script src="assets/links.js?v=20260629"></script>
-  <script src="assets/site.js?v=20260629" data-root=""></script>
-  <script>
-    PropNavi.init({ promos: "promos", includeNote: true, page: "index" });
-    document.getElementById("heroArt").innerHTML = PropNavi.MASCOT_SVG;
-    document.getElementById("trustMascot").innerHTML = PropNavi.MASCOT_SVG;
-    document.getElementById("trustEditor").innerHTML = PropNavi.EDITOR_SVG;
-  </script>
+<p>FX取引には元本割れのリスクがあります。当サイトは特定の売買を推奨するものではなく、判断材料となる情報の提供に徹します。運営方針は<a href="/about">運営者情報</a>をご覧ください。</p>
+</article>
+</main>
+<footer class="ft">
+  <div class="ft-in">
+    <p class="ft-disc">当サイトは情報提供を目的としており、投資助言を行うものではありません。FX取引は元本を保証するものではなく、損失が生じるおそれがあります。最終的な判断はご自身の責任でお願いします。</p>
+    <nav class="ft-nav"><a href="/about">運営者情報</a><a href="/policy">免責事項・広告ポリシー</a><a href="/feed.xml">RSS</a></nav>
+    <p class="ft-copy">© 2026 はじめてFX</p>
+  </div>
+</footer>
 </body>
 </html>
