@@ -1,7 +1,5 @@
-# Cloudflare Pages redirects — リビルドv4（旧prop-navi構成 → はじめてFX構成）
-
-# www → apex（正規化）
-https://www.hajimete-fx.com/*  https://hajimete-fx.com/:splat  301
+# Cloudflare Workers static assets redirects — リビルドv4（旧prop-navi構成 → はじめてFX構成）
+# 注意: Workers版の_redirectsは相対URLのみ許可。www→apexはダッシュボードのリダイレクトルールで設定。
 
 # 旧GitHub Pagesパス
 /prop-navi/*  /  301
