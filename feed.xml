@@ -3,7 +3,7 @@
 <channel>
   <title>はじめてFX</title>
   <link>https://hajimete-fx.com/</link>
-  <description>FX初心者のための比較と始め方ガイド</description>
+  <description>FXは、100円から試せる時代。</description>
   <language>ja</language>
   <item>
     <title>DMM FXの評判とデメリット【2026年7月】初心者向け解説</title>
@@ -27,17 +27,17 @@
     <pubDate>2026-07-09T09:00:00+09:00</pubDate>
   </item>
   <item>
-    <title>FX口座おすすめ比較【2026年7月】初心者の選び方</title>
+    <title>FX口座おすすめ比較【2026年7月】目的別に4口座だけ紹介</title>
     <link>https://hajimete-fx.com/fx-kouza-ranking</link>
     <guid isPermaLink="true">https://hajimete-fx.com/fx-kouza-ranking</guid>
-    <description>FX初心者向けにDMM FXとFXTFを中心とした口座を比較します。最低取引単位・MT4対応・取引ツール・サポート体制の違いを整理し、自分の資金や取引スタイルに合う口座の選び方を具体的に解説します。</description>
-    <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+    <description>FX口座は「何をしたいか」で選ぶと失敗しません。100円から試すなら松井証券、スキャルピングならJFX、通貨ペア重視ならヒロセ通商、MT4ならFXTF。目的別マッチングで4口座を比較解説します。</description>
+    <pubDate>2026-06-13T09:00:00+09:00</pubDate>
   </item>
   <item>
-    <title>FXは少額から始められる？【2026年7月】1万円の目安</title>
+    <title>FXはいくらから？100円で始める方法と金額別の現実【2026年】</title>
     <link>https://hajimete-fx.com/fx-shogaku</link>
     <guid isPermaLink="true">https://hajimete-fx.com/fx-shogaku</guid>
-    <description>FXは1,000通貨単位なら数千円の証拠金から始められます。計算式と金額別シミュレーションを使い、少額取引に必要な資金の目安や少額対応口座、少額でも守るべきルールまで具体的に解説します。</description>
+    <description>FXは1通貨単位の口座なら約100円から始められます。100円・1,000円・1万円・10万円の金額別に「何ができて何を学べるか」をシミュレーションし、少額から段階的に進める具体的な手順を解説します。</description>
     <pubDate>2026-07-09T09:00:00+09:00</pubDate>
   </item>
   <item>
@@ -62,6 +62,20 @@
     <pubDate>2026-07-09T09:00:00+09:00</pubDate>
   </item>
   <item>
+    <title>ヒロセ通商LION FXの評判｜1000通貨と食品キャンペーンの実力</title>
+    <link>https://hajimete-fx.com/hirose</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/hirose</guid>
+    <description>ヒロセ通商のLION FXは1,000通貨取引・豊富な通貨ペア・名物の食品キャンペーンで知られる国内FX口座です。特徴とメリット、正直な注意点、向いている人を事実ベースで解説します。</description>
+    <pubDate>2026-07-17T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>JFXの評判｜スキャルピング公認・MATRIX TRADERの実力</title>
+    <link>https://hajimete-fx.com/jfx</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/jfx</guid>
+    <description>JFXはスキャルピング公認を明言する数少ない国内FX会社です。2026年オリコン顧客満足度FX総合1位（公称）の背景、MATRIX TRADERの特徴、名物キャンペーン、注意点まで事実ベースで解説します。</description>
+    <pubDate>2026-07-17T09:00:00+09:00</pubDate>
+  </item>
+  <item>
     <title>FXロット計算ツール｜資金と損切り幅から適正取引量を無料計算</title>
     <link>https://hajimete-fx.com/lot-keisan</link>
     <guid isPermaLink="true">https://hajimete-fx.com/lot-keisan</guid>
@@ -74,6 +88,13 @@
     <guid isPermaLink="true">https://hajimete-fx.com/mac-mt4</guid>
     <description>MacはMT4の公式サポート対象外です。VPS経由・MT5のMac版・WebTraderという3つの現実的な選択肢を、安定性・コスト・手間で比較して解説します。</description>
     <pubDate>2026-07-09T09:00:00+09:00</pubDate>
+  </item>
+  <item>
+    <title>松井証券FXの評判｜100円から取引できるMATSUI FXを解説</title>
+    <link>https://hajimete-fx.com/matsui-fx</link>
+    <guid isPermaLink="true">https://hajimete-fx.com/matsui-fx</guid>
+    <description>松井証券のMATSUI FXは1通貨単位＝約100円の証拠金からFXを始められる国内口座です。「100円からFX」の実際の意味、デモとの違い、メリット・注意点、向いている人を事実ベースで解説します。</description>
+    <pubDate>2026-07-17T09:00:00+09:00</pubDate>
   </item>
   <item>
     <title>FXスプレッド比較【2026年7月】主要3社の実質コスト</title>
