@@ -19,8 +19,8 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.json" />
 <link rel="alternate" type="application/rss+xml" title="はじめてFX" href="/feed.xml" />
-<link rel="stylesheet" href="/assets/site.css?v=20260717" />
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "FXロット計算ツール（無料）", "description": "口座資金・許容損失・損切り幅を入れるだけで、適正なロット（取引通貨量）と必要証拠金を自動計算。FX初心者が損失をコントロールするための無料ツールです。", "datePublished": "2026-07-09", "dateModified": "2026-07-17", "mainEntityOfPage": "https://hajimete-fx.com/lot-keisan", "image": "https://hajimete-fx.com/images/og-default.png", "author": {"@type": "Organization", "name": "はじめてFX編集部", "url": "https://hajimete-fx.com/about"}, "publisher": {"@type": "Organization", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "logo": {"@type": "ImageObject", "url": "https://hajimete-fx.com/images/apple-touch-icon.png"}}}</script>
+<link rel="stylesheet" href="/assets/site.css?v=20260722" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "FXロット計算ツール（無料）", "description": "口座資金・許容損失・損切り幅を入れるだけで、適正なロット（取引通貨量）と必要証拠金を自動計算。FX初心者が損失をコントロールするための無料ツールです。", "datePublished": "2026-07-09", "dateModified": "2026-07-22", "mainEntityOfPage": "https://hajimete-fx.com/lot-keisan", "image": "https://hajimete-fx.com/images/og-default.png", "author": {"@type": "Organization", "name": "はじめてFX編集部", "url": "https://hajimete-fx.com/about"}, "publisher": {"@type": "Organization", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "logo": {"@type": "ImageObject", "url": "https://hajimete-fx.com/images/apple-touch-icon.png"}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/"}, {"@type": "ListItem", "position": 2, "name": "ロット計算ツール", "item": "https://hajimete-fx.com/lot-keisan"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ロットとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "取引数量の単位です。国内FXでは1ロット=1万通貨の会社が多いですが、1,000通貨単位で取引できる会社もあります。数量が大きいほど1pipsあたりの損益も大きくなります。"}}, {"@type": "Question", "name": "許容損失は何％にすべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "一般に「1回の取引で口座資金の1〜2%まで」という考え方が広く知られています。当ツールの初期値は2%です。ご自身の状況に合わせて調整してください。"}}, {"@type": "Question", "name": "計算結果どおりに取引すれば安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。計算はあくまで損失を想定内に収めるための目安です。スリッページや急変動で想定を超える損失が出る可能性はあります。"}}, {"@type": "Question", "name": "クロス円以外の通貨ペアにも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "このツールは米ドル/円などのクロス円（1pips=0.01円）を前提にしています。それ以外のペアではpips価値が異なるため、目安としてのみご利用ください。"}}]}</script>
 </head>
@@ -38,12 +38,13 @@
 <nav class="bc" aria-label="パンくず"><a href="/">ホーム</a> › <span>ロット計算ツール</span></nav>
 <article>
 <h1>FXロット計算ツール（無料）</h1>
-<p class="art-meta">更新: 2026-07-17 ／ はじめてFX編集部</p>
+<p class="art-meta">更新: 2026-07-22 ／ はじめてFX編集部</p>
 <nav class="toc" aria-label="目次"><strong>目次</strong>
   <ol>
     <li><a href="#計算ツール">計算ツール</a></li>
     <li><a href="#このツールの考え方">このツールの考え方</a></li>
     <li><a href="#使うときの注意点">使うときの注意点</a></li>
+    <li><a href="#レバレッジ25倍とロスカットの関係">レバレッジ25倍とロスカットの関係</a></li>
   </ol>
 </nav>
 <p class="lead">口座資金・許容損失（%）・損切り幅（pips）を入力すると、<strong>適正な取引数量（ロット）と必要証拠金の目安</strong>を自動計算します。クロス円（米ドル/円など）前提・レバレッジ25倍の国内FX仕様です。</p>
@@ -117,6 +118,10 @@
   <li>スワップポイントや取引手数料は計算に含まれていません。</li>
 </ul>
 <p>取引量の管理とあわせて、口座選びの基準は<a href="/fx-kouza-ranking">FX口座比較</a>を、そもそもの手順は<a href="/fx-hajimekata">FXの始め方</a>を参照してください。</p>
+
+<h2 id="レバレッジ25倍とロスカットの関係">レバレッジ25倍とロスカットの関係</h2>
+<p>国内FX（個人）はレバレッジ上限25倍のため、必要証拠金は「取引量×レート÷25」で決まります。ここで注意したいのが<strong>ロスカット（強制決済）</strong>との距離です。多くの業者は「証拠金維持率が一定基準（50%や100%など・業者ごとに異なる）を下回ると強制決済」という仕組みを採用しています（基準は必ず各社公式サイトで確認してください）。</p>
+<p>考え方の目安として、口座資金10万円で1万通貨（必要証拠金約6万円・レート150円）を持つと、証拠金維持率は約166%からスタートします。含み損が増えるほど維持率は下がるため、<strong>本ツールの「許容損失2%」で計算した取引量なら、ロスカット基準までかなりの余裕を残した水準</strong>になります。逆に、資金ギリギリの取引量ではわずかな逆行でロスカットに達します。ロスカットは損失の拡大を防ぐ保護機能ですが、相場急変時には想定を超える水準で約定する可能性もあるため、頼りにする前提で取引量を決めないことが大切です。</p>
 <div class="bnr"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+5ZMCH" rel="nofollow"><img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=260621877253&wid=001&eno=01&mid=s00000022371001006000&mc=1"></a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B614L+46MOTU+4SM6+5ZMCH" alt=""></div>
 <section class="faq-sec"><h2 id="faq">よくある質問</h2><dl class="faq">
   <dt>ロットとは何ですか？</dt>
