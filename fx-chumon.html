@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FX注文方法の種類｜初心者が覚える3つの基本と自動化注文</title>
+<meta name="description" content="FXの注文方法は成行・指値・逆指値の3つを押さえれば実務で困りません。損切りと利益確定を自動で仕込むIFD・OCO・IFOの仕組みと、注文ミスを防ぐチェックポイントを解説します。" />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://hajimete-fx.com/fx-chumon" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="FX注文方法の種類｜初心者が覚える3つの基本と自動化注文" />
+<meta property="og:description" content="FXの注文方法は成行・指値・逆指値の3つを押さえれば実務で困りません。損切りと利益確定を自動で仕込むIFD・OCO・IFOの仕組みと、注文ミスを防ぐチェックポイントを解説します。" />
+<meta property="og:url" content="https://hajimete-fx.com/fx-chumon" />
+<meta property="og:site_name" content="はじめてFX" />
+<meta property="og:image" content="https://hajimete-fx.com/images/og-default.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#0b3a63" />
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<link rel="alternate" type="application/rss+xml" title="はじめてFX" href="/feed.xml" />
+<link rel="stylesheet" href="/assets/site.css?v=20260727" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "FXの注文方法の種類｜初心者はまず3つを覚えれば足ります", "description": "FXの注文方法は成行・指値・逆指値の3つを押さえれば実務で困りません。損切りと利益確定を自動で仕込むIFD・OCO・IFOの仕組みと、注文ミスを防ぐチェックポイントを解説します。", "datePublished": "2026-07-27", "dateModified": "2026-07-27", "mainEntityOfPage": "https://hajimete-fx.com/fx-chumon", "image": "https://hajimete-fx.com/images/og-default.png", "author": {"@type": "Organization", "name": "はじめてFX編集部", "url": "https://hajimete-fx.com/about"}, "publisher": {"@type": "Organization", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "logo": {"@type": "ImageObject", "url": "https://hajimete-fx.com/images/apple-touch-icon.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/"}, {"@type": "ListItem", "position": 2, "name": "注文方法の種類", "item": "https://hajimete-fx.com/fx-chumon"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "FXの注文方法は何種類ありますか？", "acceptedAnswer": {"@type": "Answer", "text": "会社によって呼び方は多少異なりますが、基本となるのは成行・指値・逆指値の3つです。これらを組み合わせたIFD・OCO・IFOという発注方法もあります。"}}, {"@type": "Question", "name": "指値と逆指値はどう違いますか？", "acceptedAnswer": {"@type": "Answer", "text": "指値は今より有利な価格になったら約定する注文、逆指値は指定した価格に達したら成行で発注される注文です。価格が動く方向の考え方が逆になります。"}}, {"@type": "Question", "name": "成行注文でスリッページが起きるのはなぜですか？", "acceptedAnswer": {"@type": "Answer", "text": "注文を出してから約定するまでのわずかな時間に相場が動くため、表示レートと実際の約定価格がずれることがあります。相場急変時は特に起こりやすくなります。"}}, {"@type": "Question", "name": "OCO注文を設定していれば損失は防げますか？", "acceptedAnswer": {"@type": "Answer", "text": "OCO注文は損切りと利益確定をあらかじめ自動化する仕組みですが、相場急変時は想定した価格で約定しないこともあり、損失をゼロにする保証ではありません。"}}]}</script>
+</head>
+<body>
+<header class="hd">
+  <div class="hd-in">
+    <a class="brand" href="/"><span class="brand-mark">FX</span>はじめてFX</a>
+    <button class="menu-btn" aria-label="メニュー" onclick="document.body.classList.toggle('nav-open')">☰</button>
+    <nav class="gnav"><a href="/matsui-fx">100円からFX</a><a href="/fx-kouza-ranking">口座比較</a><a href="/fx-vps-hikaku">VPS比較</a><a href="/fx-hajimekata">始め方</a><a href="/lot-keisan">計算ツール</a></nav>
+  </div>
+</header>
+<div class="pr-bar">本ページにはプロモーション（広告）が含まれます。<a href="/policy">広告ポリシー</a></div>
+<div class="wrap">
+<main class="main">
+<nav class="bc" aria-label="パンくず"><a href="/">ホーム</a> › <span>注文方法の種類</span></nav>
+<article>
+<h1>FXの注文方法の種類｜初心者はまず3つを覚えれば足ります</h1>
+<p class="art-meta">更新: 2026-07-27 ／ はじめてFX編集部</p>
+<nav class="toc" aria-label="目次"><strong>目次</strong>
+  <ol>
+    <li><a href="#結論注文方法は成行指値逆指値の3つで足りる">結論：注文方法は「成行・指値・逆指値」の3つで足りる</a></li>
+    <li><a href="#指値と逆指値の違いを混同しやすい理由">指値と逆指値の違いを混同しやすい理由</a></li>
+    <li><a href="#IFDOCOIFOで損切りと利益確定を自動で仕込">IFD・OCO・IFOで損切りと利益確定を自動で仕込む</a></li>
+    <li><a href="#注文ミスを防ぐ3つのチェックポイント">注文ミスを防ぐ3つのチェックポイント</a></li>
+    <li><a href="#注文方法は少額口座で体に覚えさせるのが近道">注文方法は少額口座で体に覚えさせるのが近道</a></li>
+  </ol>
+</nav>
+<p class="lead">FXの注文方法にはいくつも呼び方がありますが、初心者が最初に覚えるべきは<strong>成行・指値・逆指値の3つ</strong>で足ります。この3つを組み合わせたIFD・OCO・IFOという注文方法を使えば、損切りと利益確定をあらかじめ自動で仕込んでおくことも可能です。</p>
+
+<div class="bnr bnr-pc"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+626XT" rel="nofollow"><img border="0" width="720" height="300" alt="" src="https://www28.a8.net/svt/bgt?aid=260621877253&wid=001&eno=01&mid=s00000022371001018000&mc=1"></a><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4B614L+46MOTU+4SM6+626XT" alt=""></div><div class="bnr bnr-sp"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+5ZEMP" rel="nofollow"><img border="0" width="320" height="50" alt="" src="https://www26.a8.net/svt/bgt?aid=260621877253&wid=001&eno=01&mid=s00000022371001005000&mc=1"></a><img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4B614L+46MOTU+4SM6+5ZEMP" alt=""></div>
+
+<h2 id="結論注文方法は成行指値逆指値の3つで足りる">結論：注文方法は「成行・指値・逆指値」の3つで足りる</h2>
+<p>FXの発注画面にはさまざまな注文方法が並んでいますが、仕組みの土台になっているのは次の3つです。まずこの3つの役割を区別できれば、他の注文方法も「この3つの組み合わせ」として理解できます。</p>
+<div class="tbl-scroll">
+<table class="cmp">
+  <caption>基本の3注文の使い分け（2026年7月時点・詳細は各社公式サイトで要確認）</caption>
+  <thead><tr><th scope="col">注文方法</th><th scope="col">主な使いどころ</th><th scope="col">注意点</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">成行注文</th><td>今すぐ売買を成立させたいとき</td><td>表示レートと約定価格がずれる（スリッページ）ことがある</td></tr>
+    <tr><th scope="row">指値注文</th><td>今より有利な価格になったら売買したいとき</td><td>指定価格まで届かなければ約定しない</td></tr>
+    <tr><th scope="row">逆指値注文</th><td>損切りや、想定した方向に値が動いたら乗りたいとき</td><td>指定価格到達で成行発注されるため、不利な価格で約定することがある</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="cta">
+  <p class="cta-note">1通貨単位なら約100円から。3つの注文方法を実際のお金で操作しながら覚えられます。</p>
+  <a class="btn-cta" href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+61C2Q" rel="sponsored nofollow noopener" target="_blank">松井証券 MATSUI FX 公式サイトへ</a>
+</div>
+
+<h2 id="指値と逆指値の違いを混同しやすい理由">指値と逆指値の違いを混同しやすい理由</h2>
+<p>指値と逆指値はどちらも「価格を指定する注文」であるため、初心者が混同しやすいポイントです。違いはトリガーの向きにあります。指値は「指定した価格より有利になったら約定する」注文で、逆指値は「指定した価格に達したら成行で発注される」注文です。</p>
+<p>たとえば米ドル/円が150円のとき、149円の指値注文（新規買い）は「今より安い価格で新規に取得したい」という注文です。一方、151円の逆指値注文（新規買い）は「151円まで上がったら、その時点の成行で取得する」という注文になります。損切り注文の多くは逆指値の仕組みを使っています。特定の価格帯での売買を推奨する趣旨ではなく、あくまで仕組みの説明です。</p>
+<p>また、指値・逆指値は新規注文だけでなく決済注文にも使えます。ポジションを保有した後、「この価格まで戻ったら利益を確定したい」という決済指値や、「この価格まで逆行したら損切りしたい」という決済逆指値を組み合わせて使うのが一般的な運用です。</p>
+
+<h2 id="IFDOCOIFOで損切りと利益確定を自動で仕込">IFD・OCO・IFOで損切りと利益確定を自動で仕込む</h2>
+<p>基本の3注文を組み合わせると、あらかじめ決めたルールを機械的に実行させる注文が作れます。チャートに張り付けない人ほど活用価値がある仕組みです。</p>
+<ul>
+<li><strong>IFD（イフダン）</strong>: 新規注文が約定したら、決済注文を自動的に発注する仕組みです。新規注文の成立を条件に、あらかじめ決めておいた価格での決済を予約しておけます。</li>
+<li><strong>OCO（オーシーオー）</strong>: 2つの注文を同時に出し、どちらか一方が約定したらもう片方は自動キャンセルされます。利益確定と損切りを同時に設定する使い方が代表的です。</li>
+<li><strong>IFO（イフオー）</strong>: IFDとOCOを組み合わせたもので、新規注文の約定と同時に、利益確定と損切りのOCO注文が自動でセットされます。</li>
+</ul>
+<div class="tbl-scroll">
+<table class="cmp">
+  <caption>IFD・OCO・IFOが自動化する内容の比較</caption>
+  <thead><tr><th scope="col">注文方法</th><th scope="col">自動化する内容</th><th scope="col">主な使いどころ</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">IFD</th><td>新規注文の約定を条件に決済注文を発注</td><td>新規と決済をまとめて予約したいとき</td></tr>
+    <tr><th scope="row">OCO</th><td>2つの注文のどちらか一方が成立したらもう片方を自動キャンセル</td><td>保有中のポジションに利益確定と損切りを同時設定したいとき</td></tr>
+    <tr><th scope="row">IFO</th><td>IFD成立後、自動でOCO（利益確定・損切り）をセット</td><td>新規注文から決済までを一括で仕込みたいとき</td></tr>
+  </tbody>
+</table>
+</div>
+<p>これらはいずれも「決めたルールを実行する仕組み」であり、勝率を上げる手法ではありません。どの価格に設定すべきかという判断はこの記事の範囲外です。取引量そのものの管理方法は<a href="/lot-keisan">ロット計算ツール</a>で解説しています。</p>
+<div class="bnr"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+5ZMCH" rel="nofollow"><img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=260621877253&wid=001&eno=01&mid=s00000022371001006000&mc=1"></a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B614L+46MOTU+4SM6+5ZMCH" alt=""></div>
+
+<h2 id="注文ミスを防ぐ3つのチェックポイント">注文ミスを防ぐ3つのチェックポイント</h2>
+<p>注文方法の意味を理解していても、発注画面での操作ミスは起こり得ます。発注前に次の3点を確認する習慣をつけておくと、単純ミスによる損失を減らせます。</p>
+<ul>
+<li><strong>数量の桁</strong>: 1,000通貨のつもりが1万通貨になっていないか。桁が1つ違うだけで損益の規模は10倍変わります。</li>
+<li><strong>売買方向</strong>: 買い（新規買）と売り（新規売）を取り違えていないか。決済注文の場合は「新規」か「決済」かの区別も確認します。</li>
+<li><strong>指値・逆指値の価格</strong>: 特にスマホでは誤タップで価格が1桁ずれることがあります。発注ボタンを押す前に確認画面の数字を見直します。</li>
+<li><strong>口座区分・通貨ペア</strong>: 複数の口座区分や通貨ペアを扱っている場合、意図した口座・通貨ペアで発注しているかも確認します。</li>
+</ul>
+<p>数量の桁ミスは特に影響が大きい失敗です。たとえば資金10万円で1,000通貨のつもりが1万通貨で発注されていた場合、想定していた損益の規模がそのまま10倍になり、あらかじめ決めていた資金管理の前提が崩れてしまいます。発注確認画面で数量の単位まで目を通す習慣が、こうした失敗を防ぐ最も基本的な方法です。</p>
+<div class="warn">FXは元本が保証された取引ではありません。レバレッジをかけると利益だけでなく損失も拡大します。注文方法を正しく使っても、相場急変時のスリッページなどにより想定と異なる価格で約定することがあります。</div>
+
+<h2 id="注文方法は少額口座で体に覚えさせるのが近道">注文方法は少額口座で体に覚えさせるのが近道</h2>
+<p>注文方法は説明を読むだけでなく、実際に発注画面を操作してみると理解が早まります。とはいえ、いきなり大きな金額で操作を練習するのはリスクが伴います。<a href="/fx-shogaku">少額から始める考え方</a>を踏まえ、まずは1通貨単位で約100円から取引できる口座で、成行・指値・逆指値・OCOを一通り触ってみるのが現実的な近道です。</p>
+<p>操作に慣れる目的であれば<a href="/fx-demo">デモトレード</a>も選択肢ですが、本番口座と操作画面が異なることもあるため、最終的には少額の実取引で確認しておくと安心です。全体の始め方は<a href="/fx-hajimekata">FXの始め方5ステップ</a>、専門用語が不安な場合は<a href="/fx-yougo">FX用語の基本</a>もあわせて確認してください。また、早朝や指標発表時はスプレッドが広がりやすく注文が不利な価格で約定することもあるため、<a href="/fx-jikan">FXの取引時間帯の特徴</a>もあわせて確認しておくと安心です。</p>
+
+<div class="cta">
+  <p class="cta-note">成行・指値・逆指値・OCOまで、1通貨単位の少額から実際の操作で練習できます。</p>
+  <a class="btn-cta" href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+61C2Q" rel="sponsored nofollow noopener" target="_blank">松井証券 MATSUI FX 公式サイトへ</a>
+</div>
+<section class="faq-sec"><h2 id="faq">よくある質問</h2><dl class="faq">
+  <dt>FXの注文方法は何種類ありますか？</dt>
+  <dd>会社によって呼び方は多少異なりますが、基本となるのは成行・指値・逆指値の3つです。これらを組み合わせたIFD・OCO・IFOという発注方法もあります。</dd>
+  <dt>指値と逆指値はどう違いますか？</dt>
+  <dd>指値は今より有利な価格になったら約定する注文、逆指値は指定した価格に達したら成行で発注される注文です。価格が動く方向の考え方が逆になります。</dd>
+  <dt>成行注文でスリッページが起きるのはなぜですか？</dt>
+  <dd>注文を出してから約定するまでのわずかな時間に相場が動くため、表示レートと実際の約定価格がずれることがあります。相場急変時は特に起こりやすくなります。</dd>
+  <dt>OCO注文を設定していれば損失は防げますか？</dt>
+  <dd>OCO注文は損切りと利益確定をあらかじめ自動化する仕組みですが、相場急変時は想定した価格で約定しないこともあり、損失をゼロにする保証ではありません。</dd>
+</dl></section>
+<section class="related"><h2>あわせて読みたい</h2><div class="rel-grid">
+  <a class="rel-card" href="/fx-hajimekata"><span class="rel-cat">はじめ方ガイド</span>FXの始め方｜初心者がやるべき5ステップ</a>
+  <a class="rel-card" href="/lot-keisan"><span class="rel-cat">ツール</span>FXロット計算ツール（無料）</a>
+  <a class="rel-card" href="/fx-demo"><span class="rel-cat">はじめ方ガイド</span>FXデモトレードのおすすめの使い方｜心理の練習にはならない理由</a>
+</div></section>
+</article>
+</main>
+<aside class="rail"><div class="bnr"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+60WN5" rel="nofollow"><img border="0" width="160" height="600" alt="" src="https://www27.a8.net/svt/bgt?aid=260621877253&wid=001&eno=01&mid=s00000022371001012000&mc=1"></a><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4B614L+46MOTU+4SM6+60WN5" alt=""></div><div class="bnr"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+48EZN6+25B2+62MDD" rel="nofollow"><img border="0" width="160" height="600" alt="" src="https://www24.a8.net/svt/bgt?aid=260621877256&wid=001&eno=01&mid=s00000010019001020000&mc=1"></a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B614L+48EZN6+25B2+62MDD" alt=""></div></aside>
+</div>
+<footer class="ft">
+  <div class="ft-in">
+    <p class="ft-disc">当サイトは情報提供を目的としており、投資助言を行うものではありません。FX取引は元本を保証するものではなく、損失が生じるおそれがあります。最終的な判断はご自身の責任でお願いします。</p>
+    <nav class="ft-nav"><a href="/about">運営者情報</a><a href="/policy">免責事項・広告ポリシー</a><a href="/feed.xml">RSS</a><a href="https://yametemo-ii.com/" target="_blank" rel="noopener">運営サイト: やめてもいい.com（退職代行比較）</a></nav>
+    <p class="ft-copy">© 2026 はじめてFX</p>
+  </div>
+</footer>
+<div class="sticky-cta"><span class="s-label">PR</span><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+61C2Q" rel="sponsored nofollow noopener" target="_blank">100円からFXを試す（松井証券 公式）</a></div>
+</body>
+</html>
