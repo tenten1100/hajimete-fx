@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.json" />
 <link rel="alternate" type="application/rss+xml" title="はじめてFX" href="/feed.xml" />
-<link rel="stylesheet" href="/assets/site.css?v=20260807" />
+<link rel="stylesheet" href="/assets/site.css?v=20260808" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "FXロット計算ツール（無料）", "description": "口座資金・許容損失・損切り幅を入れるだけで、適正なロット（取引通貨量）と必要証拠金を自動計算。FX初心者が損失をコントロールするための無料ツールです。", "datePublished": "2026-07-09", "dateModified": "2026-07-22", "mainEntityOfPage": "https://hajimete-fx.com/lot-keisan", "image": "https://hajimete-fx.com/images/og-default.png", "author": {"@type": "Organization", "name": "はじめてFX編集部", "url": "https://hajimete-fx.com/about"}, "publisher": {"@type": "Organization", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "logo": {"@type": "ImageObject", "url": "https://hajimete-fx.com/images/apple-touch-icon.png"}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/"}, {"@type": "ListItem", "position": 2, "name": "ロット計算ツール", "item": "https://hajimete-fx.com/lot-keisan"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ロットとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "取引数量の単位です。国内FXでは1ロット=1万通貨の会社が多いですが、1,000通貨単位で取引できる会社もあります。数量が大きいほど1pipsあたりの損益も大きくなります。"}}, {"@type": "Question", "name": "許容損失は何％にすべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "一般に「1回の取引で口座資金の1〜2%まで」という考え方が広く知られています。当ツールの初期値は2%です。ご自身の状況に合わせて調整してください。"}}, {"@type": "Question", "name": "計算結果どおりに取引すれば安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。計算はあくまで損失を想定内に収めるための目安です。スリッページや急変動で想定を超える損失が出る可能性はあります。"}}, {"@type": "Question", "name": "クロス円以外の通貨ペアにも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "このツールは米ドル/円などのクロス円（1pips=0.01円）を前提にしています。それ以外のペアではpips価値が異なるため、目安としてのみご利用ください。"}}]}</script>
@@ -108,7 +108,7 @@
   <li>適正取引量（通貨）= 許容損失額 ÷（損切り幅pips × 0.01円）</li>
   <li>必要証拠金 = 取引量 × レート ÷ 25（国内FXの個人向けレバレッジ上限は25倍）</li>
 </ul>
-<p>たとえば資金10万円・許容損失2%（2,000円）・損切り幅20pipsなら、適正取引量は10,000通貨です。この場合、1,000通貨から取引できる口座なら資金1万円程度からでも同じ考え方で管理できます。詳しくは<a href="/fx-shogaku">FXはいくらから始められるか</a>で解説しています。</p>
+<p>たとえば資金10万円・許容損失2%（2,000円）・損切り幅20pipsなら、適正取引量は10,000通貨です。この場合、1,000通貨から取引できる口座なら資金1万円程度からでも同じ考え方で管理できます。詳しくは<a href="/fx-shogaku">FXはいくらから始められるか</a>で解説しています。損切り幅（pips）自体をどう決めるかについては<a href="/fx-sonkiri">FXの損切り、決め方は？初心者向け3つの考え方</a>で整理しています。</p>
 
 <h2 id="使うときの注意点">使うときの注意点</h2>
 <ul>
