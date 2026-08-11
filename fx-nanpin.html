@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ナンピンとは？FXで危険と言われる理由をわかりやすく解説</title>
+<meta name="description" content="FXのナンピンとは、含み損を抱えたポジションに追加で買い増し・売り増しをする手法です。平均取得価格が下がる仕組みと、危険とされる理由（損失拡大・証拠金維持率の低下）を計算例つきで解説します。" />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://hajimete-fx.com/fx-nanpin" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="ナンピンとは？FXで危険と言われる理由をわかりやすく解説" />
+<meta property="og:description" content="FXのナンピンとは、含み損を抱えたポジションに追加で買い増し・売り増しをする手法です。平均取得価格が下がる仕組みと、危険とされる理由（損失拡大・証拠金維持率の低下）を計算例つきで解説します。" />
+<meta property="og:url" content="https://hajimete-fx.com/fx-nanpin" />
+<meta property="og:site_name" content="はじめてFX" />
+<meta property="og:image" content="https://hajimete-fx.com/images/og-default.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#0b3a63" />
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.json" />
+<link rel="alternate" type="application/rss+xml" title="はじめてFX" href="/feed.xml" />
+<link rel="stylesheet" href="/assets/site.css?v=20260811" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ナンピンとは？FXで「危険」と言われる理由と仕組み", "description": "FXのナンピンとは、含み損を抱えたポジションに追加で買い増し・売り増しをする手法です。平均取得価格が下がる仕組みと、危険とされる理由（損失拡大・証拠金維持率の低下）を計算例つきで解説します。", "datePublished": "2026-08-11", "dateModified": "2026-08-11", "mainEntityOfPage": "https://hajimete-fx.com/fx-nanpin", "image": "https://hajimete-fx.com/images/og-default.png", "author": {"@type": "Organization", "name": "はじめてFX編集部", "url": "https://hajimete-fx.com/about"}, "publisher": {"@type": "Organization", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "logo": {"@type": "ImageObject", "url": "https://hajimete-fx.com/images/apple-touch-icon.png"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/"}, {"@type": "ListItem", "position": 2, "name": "ナンピンの仕組みとリスク", "item": "https://hajimete-fx.com/fx-nanpin"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ナンピンとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "含み損を抱えているポジションに対し、同じ方向へさらに買い増し・売り増しをして平均取得価格を有利な方向にずらす手法です。「難平（なんぴん）」とも表記されます。"}}, {"@type": "Question", "name": "ナンピンはなぜ危険とされるのですか？", "acceptedAnswer": {"@type": "Answer", "text": "含み損が出ている、つまり相場が想定と逆に動いている局面で取引量を増やすため、その後も逆行が続いた場合の損失が単純なポジション維持より大きくなりやすいためです。証拠金維持率の低下も早まります。"}}, {"@type": "Question", "name": "ナンピンは絶対にやってはいけない手法ですか？", "acceptedAnswer": {"@type": "Answer", "text": "本記事は特定の手法の優劣を判断するものではありません。ただし当初の根拠なく含み損を理由にだけ買い増しする行動は、損失拡大のリスクを構造的に高めるため注意が必要とされています。"}}, {"@type": "Question", "name": "ナンピンと損切りはどちらを優先すべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "どちらが優れているかを断定することはできません。重要なのは、含み損を抱えた後に感情でどちらかを選ぶのではなく、注文前にどちらの対応を取るかをルールとして決めておくことです。"}}]}</script>
+</head>
+<body>
+<header class="hd">
+  <div class="hd-in">
+    <a class="brand" href="/"><span class="brand-mark">FX</span>はじめてFX</a>
+    <button class="menu-btn" aria-label="メニュー" onclick="document.body.classList.toggle('nav-open')">☰</button>
+    <nav class="gnav"><a href="/matsui-fx">100円からFX</a><a href="/fx-kouza-ranking">口座比較</a><a href="/fx-vps-hikaku">VPS比較</a><a href="/fx-hajimekata">始め方</a><a href="/lot-keisan">計算ツール</a></nav>
+  </div>
+</header>
+<div class="pr-bar">本ページにはプロモーション（広告）が含まれます。<a href="/policy">広告ポリシー</a></div>
+<div class="wrap">
+<main class="main">
+<nav class="bc" aria-label="パンくず"><a href="/">ホーム</a> › <span>ナンピンの仕組みとリスク</span></nav>
+<article>
+<h1>ナンピンとは？FXで「危険」と言われる理由と仕組み</h1>
+<p class="art-meta">更新: 2026-08-11 ／ はじめてFX編集部</p>
+<nav class="toc" aria-label="目次"><strong>目次</strong>
+  <ol>
+    <li><a href="#ナンピンとは何か">ナンピンとは何か</a></li>
+    <li><a href="#ナンピンが危険とされる仕組み">ナンピンが危険とされる仕組み</a></li>
+    <li><a href="#証拠金維持率にも影響する">証拠金維持率にも影響する</a></li>
+    <li><a href="#なぜ損切りの代わりに使われやすいのか">なぜ「損切りの代わり」に使われやすいのか</a></li>
+    <li><a href="#ナンピンと損切りはどちらが正しいのか">ナンピンと損切りはどちらが正しいのか</a></li>
+    <li><a href="#ナンピンを検討する場合に最低限確認しておきたいこ">ナンピンを検討する場合に最低限確認しておきたいこと</a></li>
+    <li><a href="#まとめナンピンは危険な手法ではなく感度が上がる手">まとめ — ナンピンは「危険な手法」ではなく「感度が上がる手法」</a></li>
+  </ol>
+</nav>
+<p class="lead">FXの「ナンピン」とは、含み損を抱えたポジションに同じ方向でさらに買い増し・売り増しを行い、平均取得価格を有利な方向へずらす手法です。<strong>相場が想定と逆に動いている局面で取引量を増やす</strong>という構造上、その後も逆行が続いた場合の損失は単純にポジションを維持するより大きくなりやすく、この仕組みが「危険」と言われる理由です。</p>
+
+<div class="bnr bnr-pc"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+626XT" rel="nofollow"><img border="0" width="720" height="300" alt="" src="https://www28.a8.net/svt/bgt?aid=260621877253&wid=001&eno=01&mid=s00000022371001018000&mc=1"></a><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4B614L+46MOTU+4SM6+626XT" alt=""></div><div class="bnr bnr-sp"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+5ZEMP" rel="nofollow"><img border="0" width="320" height="50" alt="" src="https://www26.a8.net/svt/bgt?aid=260621877253&wid=001&eno=01&mid=s00000022371001005000&mc=1"></a><img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4B614L+46MOTU+4SM6+5ZEMP" alt=""></div>
+
+<h2 id="ナンピンとは何か">ナンピンとは何か</h2>
+<p>結論として、ナンピン（難平）とは、含み損のあるポジションに対して同じ方向へ追加のポジションを持ち、平均取得価格を現在の相場に近づける手法です。例えば1ドル=150円で買ったポジションが148円まで下落した場合、148円で同量を買い増すと平均取得価格は149円になります。その後150円まで戻れば、買い増しをしなかった場合より早く含み益に転じる、という考え方が背景にあります。</p>
+<p>この「平均取得価格が下がる（有利になる）」という一点だけを見ると合理的に感じられますが、後述するように前提となる条件が崩れると損失は逆に拡大します。</p>
+
+<h2 id="ナンピンが危険とされる仕組み">ナンピンが危険とされる仕組み</h2>
+<p>結論として、危険とされる最大の理由は、含み損が出ている＝相場が想定と逆方向に動いているタイミングでポジション量を増やすため、逆行がさらに続いた場合の損失額が単純な保有より大きくなる点にあります。取引量が増えれば、同じ値幅の逆行でも金額換算の損失は比例して大きくなります。</p>
+<div class="tbl-scroll">
+<table class="cmp">
+  <caption>ナンピンの計算例（USD/JPYを1万通貨で保有した場合の試算・実際の損益を保証するものではありません）</caption>
+  <thead><tr><th scope="col">状況</th><th scope="col">平均取得価格</th><th scope="col">保有数量</th><th scope="col">148円まで下落時の含み損目安</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">150円で1万通貨のみ保有</th><td>150円</td><td>1万通貨</td><td>約2万円</td></tr>
+    <tr><th scope="row">150円→148円で1万通貨ずつナンピン（計2万通貨）</th><td>149円</td><td>2万通貨</td><td>（148円時点で0円）さらに1円下落で約2万円</td></tr>
+  </tbody>
+</table>
+</div>
+<p>上の例のとおり、平均取得価格が下がることで148円時点の含み損は縮小しますが、保有数量が2倍になっているため、そこからさらに逆行した場合の損失スピードも2倍になります。ナンピンは「含み損を今すぐ小さく見せる」代わりに「その後の値動きに対する感度」を上げる取引だと理解しておく必要があります。</p>
+<div class="bnr"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+5ZMCH" rel="nofollow"><img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=260621877253&wid=001&eno=01&mid=s00000022371001006000&mc=1"></a><img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B614L+46MOTU+4SM6+5ZMCH" alt=""></div>
+
+<h2 id="証拠金維持率にも影響する">証拠金維持率にも影響する</h2>
+<p>結論として、ナンピンで保有数量が増えると必要証拠金も増えるため、資金に対する証拠金維持率は低下しやすくなります。維持率が一定水準を下回ると、口座を守るための強制決済（ロスカット）が執行される可能性があります。ナンピンを繰り返すほど、少ない値動きでロスカット水準に近づく構造になる点は見落とされがちです。</p>
+<p>取引量と資金に対する許容損失の関係は、<a href="/lot-keisan">ロット計算ツール</a>で数量を計算する際にも意識しておくと、ナンピン前後で維持率がどう変わるかを事前に把握しやすくなります。</p>
+
+<h2 id="なぜ損切りの代わりに使われやすいのか">なぜ「損切りの代わり」に使われやすいのか</h2>
+<p>結論として、ナンピンが多用される背景には、含み損を確定させたくないという心理があります。損切りは損失をその場で確定させる行為である一方、ナンピンは「平均取得価格が下がった」という事実によって、あたかも状況が改善したかのように感じられやすい特徴があります。しかし保有数量が増えている以上、実際にはリスクが縮小したわけではありません。</p>
+<p>この心理的な仕組みは、損切りを先送りしたりラインを動かしたりする行動とも共通しています。関連する失敗パターンは<a href="/fx-shippai">FX初心者がやりがちな失敗7パターン</a>でも取り上げています。</p>
+
+<h2 id="ナンピンと損切りはどちらが正しいのか">ナンピンと損切りはどちらが正しいのか</h2>
+<p>結論として、本記事はナンピンと損切りのどちらが優れているかを判断するものではありません。ナンピンは平均取得価格を動かす取引方法の一つであり、損切りは損失を確定させる取引方法の一つで、目的が異なります。重要なのは、含み損を抱えてから感情でどちらかを選ぶのではなく、注文を出す前に「逆行した場合にどう対応するか」をあらかじめ決めておくことです。損切りラインの決め方の考え方は<a href="/fx-sonkiri">FXの損切り、決め方は？初心者向け3つの考え方</a>で解説しています。</p>
+
+<div class="warn">FXは元本が保証された取引ではありません。レバレッジをかけると利益だけでなく損失も拡大します。ナンピンは平均取得価格を動かす手法であり、損失を防ぐ、あるいは利益を保証する手法ではありません。特定の通貨ペアや売買タイミングを本記事で推奨するものではありません。</div>
+
+<h2 id="ナンピンを検討する場合に最低限確認しておきたいこ">ナンピンを検討する場合に最低限確認しておきたいこと</h2>
+<p>結論として、ナンピンを行うかどうかにかかわらず、追加のポジションを持つ前に資金に対する許容損失と保有数量の上限を先に決めておくことが基本になります。当初の根拠と無関係に「含み損が出たから」という理由だけで買い増しを繰り返す行動は、取引量の管理が働かなくなりやすい点に注意が必要です。</p>
+<ul>
+  <li>追加後の合計保有数量と、そこからさらに逆行した場合の金額損失を事前に計算しておく</li>
+  <li>追加後の証拠金維持率がどの水準まで下がるかを確認しておく</li>
+  <li>「含み損が出たから」以外に、追加する根拠があるかを言語化しておく</li>
+</ul>
+<p>1通貨単位から取引数量を細かく調整できる<a href="/matsui-fx">MATSUI FX</a>のような口座であれば、少額のうちにこうした計算を実際の注文で試しながら感覚をつかみやすくなります。</p>
+
+<div class="cta">
+  <p class="cta-note">まずは小さな取引数量で、平均取得価格と証拠金維持率の関係を計算しながら確認できます。</p>
+  <a class="btn-cta" href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+61C2Q" rel="sponsored nofollow noopener" target="_blank">松井証券 MATSUI FX 公式サイトで詳細を見る</a>
+</div>
+
+<h2 id="まとめナンピンは危険な手法ではなく感度が上がる手">まとめ — ナンピンは「危険な手法」ではなく「感度が上がる手法」</h2>
+<p>結論として、ナンピンそのものが一律に禁止すべき手法というわけではなく、平均取得価格を動かす代わりに保有数量とその後の値動きへの感度を上げる取引だと理解することが重要です。危険とされるのは、根拠のないまま含み損を理由に繰り返すケースであり、事前にルールを決めて使う場合とは性質が異なります。全体の資金管理の考え方は<a href="/fx-hajimekata">FXの始め方5ステップ</a>にまとめています。</p>
+
+<div class="cta">
+  <p class="cta-note">1通貨単位なら、ナンピン後の証拠金維持率の変化も小さな金額で体験できます。</p>
+  <a class="btn-cta" href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+61C2Q" rel="sponsored nofollow noopener" target="_blank">松井証券 MATSUI FX 公式サイトへ</a>
+</div>
+<section class="faq-sec"><h2 id="faq">よくある質問</h2><dl class="faq">
+  <dt>ナンピンとは何ですか？</dt>
+  <dd>含み損を抱えているポジションに対し、同じ方向へさらに買い増し・売り増しをして平均取得価格を有利な方向にずらす手法です。「難平（なんぴん）」とも表記されます。</dd>
+  <dt>ナンピンはなぜ危険とされるのですか？</dt>
+  <dd>含み損が出ている、つまり相場が想定と逆に動いている局面で取引量を増やすため、その後も逆行が続いた場合の損失が単純なポジション維持より大きくなりやすいためです。証拠金維持率の低下も早まります。</dd>
+  <dt>ナンピンは絶対にやってはいけない手法ですか？</dt>
+  <dd>本記事は特定の手法の優劣を判断するものではありません。ただし当初の根拠なく含み損を理由にだけ買い増しする行動は、損失拡大のリスクを構造的に高めるため注意が必要とされています。</dd>
+  <dt>ナンピンと損切りはどちらを優先すべきですか？</dt>
+  <dd>どちらが優れているかを断定することはできません。重要なのは、含み損を抱えた後に感情でどちらかを選ぶのではなく、注文前にどちらの対応を取るかをルールとして決めておくことです。</dd>
+</dl></section>
+<section class="related"><h2>あわせて読みたい</h2><div class="rel-grid">
+  <a class="rel-card" href="/fx-shippai"><span class="rel-cat">はじめ方ガイド</span>FX初心者がやりがちな失敗7パターン｜資金を溶かす前に知っておきたいこと</a>
+  <a class="rel-card" href="/fx-sonkiri"><span class="rel-cat">はじめ方ガイド</span>FXの損切り、決め方は？初心者向け3つの考え方</a>
+  <a class="rel-card" href="/lot-keisan"><span class="rel-cat">ツール</span>FXロット計算ツール（無料）</a>
+</div></section>
+</article>
+</main>
+<aside class="rail"><div class="bnr"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+46MOTU+4SM6+60WN5" rel="nofollow"><img border="0" width="160" height="600" alt="" src="https://www27.a8.net/svt/bgt?aid=260621877253&wid=001&eno=01&mid=s00000022371001012000&mc=1"></a><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4B614L+46MOTU+4SM6+60WN5" alt=""></div><div class="bnr"><a href="https://px.a8.net/svt/ejp?a8mat=4B614L+48EZN6+25B2+62MDD" rel="nofollow"><img border="0" width="160" height="600" alt="" src="https://www24.a8.net/svt/bgt?aid=260621877256&wid=001&eno=01&mid=s00000010019001020000&mc=1"></a><img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B614L+48EZN6+25B2+62MDD" alt=""></div></aside>
+</div>
+<footer class="ft">
+  <div class="ft-in">
+    <p class="ft-disc">当サイトは情報提供を目的としており、投資助言を行うものではありません。FX取引は元本を保証するものではなく、損失が生じるおそれがあります。最終的な判断はご自身の責任でお願いします。</p>
+    <nav class="ft-nav"><a href="/about">運営者情報</a><a href="/policy">免責事項・広告ポリシー</a><a href="/feed.xml">RSS</a><a href="https://yametemo-ii.com/" target="_blank" rel="noopener">運営サイト: やめてもいい.com（退職代行比較）</a></nav>
+    <p class="ft-copy">© 2026 はじめてFX</p>
+  </div>
+</footer>
+
+</body>
+</html>
