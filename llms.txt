@@ -5,7 +5,7 @@
 ## 主要ページ
 - [はじめてFX](https://hajimete-fx.com/): FXは100円から試せる時代。はじめてFXは、少額からのFXの始め方・目的別の口座比較・自動売買のVPS環境までを事実ベースで解説する初心者向けサイトです。怖さを小さく、学びを大きく。
 - [FX口座おすすめ比較｜目的別に「4つだけ」](https://hajimete-fx.com/fx-kouza-ranking): FX口座は「何をしたいか」で選ぶと失敗しません。100円から試すなら松井証券、スキャルピングならJFX、通貨ペア重視ならヒロセ通商、MT4ならFXTF。初心者向けに目的別マッチングで4口座を比較解説します。
-- [FX用VPS徹底比較｜ConoHa・XServer・お名前.comの選び方](https://hajimete-fx.com/fx-vps-hikaku): FX用VPSのConoHa・XServer・お名前.comを比較。MT4/MT5導入のしやすさ、VPSが必要になる条件、選び方3基準を2026年7月時点の公式情報をもとに整理しました。
+- [FX用VPS徹底比較｜ConoHa・XServer・お名前.comの選び方](https://hajimete-fx.com/fx-vps-hikaku): FX VPSの比較とおすすめの選び方を解説。ConoHa・XServer・お名前.comのMT4/MT5導入のしやすさ、無料で使えるケース、VPSが必要になる条件を2026年8月時点の公式情報をもとに整理しました。
 - [松井証券 MATSUI FXの評判｜「100円からFX」の実際](https://hajimete-fx.com/matsui-fx): 松井証券のMATSUI FXは1通貨単位＝約100円の証拠金からFXを始められる国内口座です。「100円からFX」の実際の意味、デモとの違い、メリット・注意点、向いている人を事実ベースで解説します。
 - [FXTFの評判｜国内で使えるMT4口座](https://hajimete-fx.com/fxtf): FXTF（ゴールデンウェイ・ジャパン）の特徴を解説します。国内でMT4が使える数少ない口座で、1,000通貨から取引できる点や、メリット・デメリット、向いている人を具体的に紹介します。
 - [ヒロセ通商 LION FXの評判｜1,000通貨から・名物キャンペーンの口座](https://hajimete-fx.com/hirose): ヒロセ通商のLION FXは1,000通貨取引・豊富な通貨ペア・名物の食品キャンペーンで知られる国内FX口座です。特徴とメリット、正直な注意点、向いている人を事実ベースで解説します。
