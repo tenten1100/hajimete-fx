@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.json" />
 <link rel="alternate" type="application/rss+xml" title="はじめてFX" href="/feed.xml" />
-<link rel="stylesheet" href="/assets/site.css?v=20260827" />
+<link rel="stylesheet" href="/assets/site.css?v=20260828" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "FX自動売買（EA）の始め方｜仕組み・リスク・必要な環境", "description": "MT4/MT5で動くEA（自動売買プログラム）の仕組みとリスク、始めるのに必要な口座・VPS・EA本体の3点、導入手順5ステップを解説します。", "datePublished": "2026-07-09", "dateModified": "2026-07-17", "mainEntityOfPage": "https://hajimete-fx.com/ea-jidoubaibai", "image": "https://hajimete-fx.com/images/og-default.png", "author": {"@type": "Organization", "name": "はじめてFX編集部", "url": "https://hajimete-fx.com/about"}, "publisher": {"@type": "Organization", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "logo": {"@type": "ImageObject", "url": "https://hajimete-fx.com/images/apple-touch-icon.png"}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/"}, {"@type": "ListItem", "position": 2, "name": "EA自動売買の始め方", "item": "https://hajimete-fx.com/ea-jidoubaibai"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "EAとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "EAはExpert Advisorの略で、MT4やMT5上で動作する自動売買プログラムです。あらかじめ設定されたロジックに沿って発注・決済を自動で行います。"}}, {"@type": "Question", "name": "EAを使えば利益が出やすくなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "そのような保証はありません。バックテストの成績は過去データに基づくもので、将来の相場での成果を保証するものではありません。"}}, {"@type": "Question", "name": "EAを動かすのにVPSは必須ですか？", "acceptedAnswer": {"@type": "Answer", "text": "必須ではありませんが、24時間稼働させたい場合はパソコンを常時起動する代わりにVPSを使うのが一般的です。"}}, {"@type": "Question", "name": "EAはどこで入手しますか？", "acceptedAnswer": {"@type": "Answer", "text": "自作するか、配布・販売されているものを利用する方法があります。成果を保証するものではないため、内容の理解と自己責任での選定が必要です。"}}]}</script>
@@ -55,7 +55,7 @@
 <div class="bnr"><a href="https://px.a8.net/svt/ejp?a8mat=4B5UW4+DXB04Y+50+4YNR7L" rel="nofollow"><img border="0" width="300" height="250" alt="" src="https://www26.a8.net/svt/bgt?aid=260613796842&wid=001&eno=01&mid=s00000000018030008000&mc=1"></a><img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4B5UW4+DXB04Y+50+4YNR7L" alt=""></div>
 
 <h2 id="EAとは何か">EAとは何か</h2>
-<p>EAは、あらかじめ設定された売買ロジックに沿って、注文の発注・決済までを自動で行うプログラムです。MT4またはMT5にEAファイルを設置して動かします。裁量トレードのように画面を見ながら都度判断する必要がない一方で、ロジックの中身を理解しないまま使うと、想定外の場面で意図しない挙動をしても気づけないという特徴があります。</p>
+<p>EAは、あらかじめ設定された売買ロジックに沿って、注文の発注・決済までを自動で行うプログラムです。MT4またはMT5にEAファイルを設置して動かします。裁量トレードのように画面を見ながら都度判断する必要がない一方で、ロジックの中身を理解しないまま使うと、想定外の場面で意図しない挙動をしても気づけないという特徴があります。MT4向け（MQL4）とMT5向け（MQL5）ではEAのプログラム言語が異なり互換性がないため、どちらの環境で始めるかは<a href="/fx-mt4-mt5-chigai">MT4とMT5の違い</a>を先に確認しておくとスムーズです。</p>
 
 <h2 id="EAと裁量トレードの違い">EAと裁量トレードの違い</h2>
 <p>裁量トレードは、自分でチャートを見て売買の判断をする方法です。相場の状況に応じて柔軟に対応できる一方、判断のたびに時間と集中力が必要で、感情に左右されやすいという面もあります。EAはあらかじめ決めたロジックを機械的に実行するため、感情による判断のブレは起きませんが、あらかじめ想定していない相場展開には対応できません。どちらが優れているという単純な話ではなく、仕組みの違いを理解したうえで、自分の取引スタイルに合うかを検討する必要があります。</p>
