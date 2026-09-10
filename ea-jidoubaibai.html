@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>FX自動売買（EA）の始め方｜仕組みとリスク・必要な環境</title>
-<meta name="description" content="MT4/MT5で動くEA（自動売買プログラム）の仕組みとリスク、始めるのに必要な口座・VPS・EA本体の3点、導入手順5ステップを解説します。" />
+<title>EA自動売買の始め方｜初心者が最初に用意する3つとリスク</title>
+<meta name="description" content="FXのEA（自動売買）を始めたい初心者向けに、最初に用意する3つ（口座・24時間稼働環境・EA本体）と仕組み・リスク、EAタイプ別の確認ポイントを解説します。" />
 <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 <link rel="canonical" href="https://hajimete-fx.com/ea-jidoubaibai" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="FX自動売買（EA）の始め方｜仕組みとリスク・必要な環境" />
-<meta property="og:description" content="MT4/MT5で動くEA（自動売買プログラム）の仕組みとリスク、始めるのに必要な口座・VPS・EA本体の3点、導入手順5ステップを解説します。" />
+<meta property="og:title" content="EA自動売買の始め方｜初心者が最初に用意する3つとリスク" />
+<meta property="og:description" content="FXのEA（自動売買）を始めたい初心者向けに、最初に用意する3つ（口座・24時間稼働環境・EA本体）と仕組み・リスク、EAタイプ別の確認ポイントを解説します。" />
 <meta property="og:url" content="https://hajimete-fx.com/ea-jidoubaibai" />
 <meta property="og:site_name" content="はじめてFX" />
 <meta property="og:image" content="https://hajimete-fx.com/images/og-default.png" />
@@ -19,10 +19,10 @@
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 <link rel="manifest" href="/manifest.json" />
 <link rel="alternate" type="application/rss+xml" title="はじめてFX" href="/feed.xml" />
-<link rel="stylesheet" href="/assets/site.css?v=20260909" />
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "FX自動売買（EA）の始め方｜仕組み・リスク・必要な環境", "description": "MT4/MT5で動くEA（自動売買プログラム）の仕組みとリスク、始めるのに必要な口座・VPS・EA本体の3点、導入手順5ステップを解説します。", "datePublished": "2026-07-09", "dateModified": "2026-07-17", "mainEntityOfPage": "https://hajimete-fx.com/ea-jidoubaibai", "image": "https://hajimete-fx.com/images/og-default.png", "author": {"@type": "Organization", "name": "はじめてFX編集部", "url": "https://hajimete-fx.com/about"}, "publisher": {"@type": "Organization", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "logo": {"@type": "ImageObject", "url": "https://hajimete-fx.com/images/apple-touch-icon.png"}}}</script>
+<link rel="stylesheet" href="/assets/site.css?v=20260910" />
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "EA自動売買の始め方｜初心者が最初に用意する3つとリスク", "description": "FXのEA（自動売買）を始めたい初心者向けに、最初に用意する3つ（口座・24時間稼働環境・EA本体）と仕組み・リスク、EAタイプ別の確認ポイントを解説します。", "datePublished": "2026-07-09", "dateModified": "2026-09-10", "mainEntityOfPage": "https://hajimete-fx.com/ea-jidoubaibai", "image": "https://hajimete-fx.com/images/og-default.png", "author": {"@type": "Organization", "name": "はじめてFX編集部", "url": "https://hajimete-fx.com/about"}, "publisher": {"@type": "Organization", "name": "はじめてFX", "url": "https://hajimete-fx.com/", "logo": {"@type": "ImageObject", "url": "https://hajimete-fx.com/images/apple-touch-icon.png"}}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://hajimete-fx.com/"}, {"@type": "ListItem", "position": 2, "name": "EA自動売買の始め方", "item": "https://hajimete-fx.com/ea-jidoubaibai"}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "EAとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "EAはExpert Advisorの略で、MT4やMT5上で動作する自動売買プログラムです。あらかじめ設定されたロジックに沿って発注・決済を自動で行います。"}}, {"@type": "Question", "name": "EAを使えば利益が出やすくなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "そのような保証はありません。バックテストの成績は過去データに基づくもので、将来の相場での成果を保証するものではありません。"}}, {"@type": "Question", "name": "EAを動かすのにVPSは必須ですか？", "acceptedAnswer": {"@type": "Answer", "text": "必須ではありませんが、24時間稼働させたい場合はパソコンを常時起動する代わりにVPSを使うのが一般的です。"}}, {"@type": "Question", "name": "EAはどこで入手しますか？", "acceptedAnswer": {"@type": "Answer", "text": "自作するか、配布・販売されているものを利用する方法があります。成果を保証するものではないため、内容の理解と自己責任での選定が必要です。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "EAとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "EAはExpert Advisorの略で、MT4やMT5上で動作する自動売買プログラムです。あらかじめ設定されたロジックに沿って発注・決済を自動で行います。"}}, {"@type": "Question", "name": "EAを使えば利益が出やすくなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "そのような保証はありません。バックテストの成績は過去データに基づくもので、将来の相場での成果を保証するものではありません。"}}, {"@type": "Question", "name": "EAを動かすのにVPSは必須ですか？", "acceptedAnswer": {"@type": "Answer", "text": "必須ではありませんが、24時間稼働させたい場合はパソコンを常時起動する代わりにVPSを使うのが一般的です。"}}, {"@type": "Question", "name": "EAはどこで入手しますか？", "acceptedAnswer": {"@type": "Answer", "text": "自作するか、配布・販売されているものを利用する方法があります。成果を保証するものではないため、内容の理解と自己責任での選定が必要です。"}}, {"@type": "Question", "name": "EAは初心者でも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "操作自体は初心者でも可能ですが、ロジックの中身を理解しないまま使うのは推奨されません。対応通貨ペアや売買条件を自分で把握したうえで、デモ口座での検証を経てから実弾に進む姿勢が前提になります。"}}]}</script>
 </head>
 <body>
 <header class="hd">
@@ -37,13 +37,14 @@
 <main class="main">
 <nav class="bc" aria-label="パンくず"><a href="/">ホーム</a> › <span>EA自動売買の始め方</span></nav>
 <article>
-<h1>FX自動売買（EA）の始め方｜仕組み・リスク・必要な環境</h1>
-<p class="art-meta">更新: 2026-07-17 ／ はじめてFX編集部</p>
+<h1>EA自動売買の始め方｜初心者が最初に用意する3つとリスク</h1>
+<p class="art-meta">更新: 2026-09-10 ／ はじめてFX編集部</p>
 <nav class="toc" aria-label="目次"><strong>目次</strong>
   <ol>
     <li><a href="#EAとは何か">EAとは何か</a></li>
     <li><a href="#EAと裁量トレードの違い">EAと裁量トレードの違い</a></li>
     <li><a href="#EAの仕組みとリスク">EAの仕組みとリスク</a></li>
+    <li><a href="#EAを使えば本当に利益が出やすくなるのか">EAを使えば本当に利益が出やすくなるのか</a></li>
     <li><a href="#EAを始めるのに必要なもの3点">EAを始めるのに必要なもの3点</a></li>
     <li><a href="#EAを始める手順5ステップ">EAを始める手順5ステップ</a></li>
     <li><a href="#費用感の考え方">費用感の考え方</a></li>
@@ -70,6 +71,18 @@
   <li><strong>連続稼働のリスク</strong>：EAは人が寝ている間や外出中も動き続けます。相場が想定外の値動きをした場合、気づかないうちに含み損が拡大していることもあり得ます。定期的な確認を怠らないことが前提になります。</li>
 </ul>
 
+<h2 id="EAを使えば本当に利益が出やすくなるのか">EAを使えば本当に利益が出やすくなるのか</h2>
+<p>結論として、EAを使うこと自体が利益の出やすさを保証するわけではありません。バックテストの勝率や損益は過去の一定期間・一定条件での結果であり、将来の相場や自分の口座環境で同じ結果になるとは限りません。EAの中身は大きく3つのタイプに分かれ、タイプごとに確認すべきリスクが異なります。</p>
+<table>
+  <thead><tr><th>EAのタイプ</th><th>特徴</th><th>確認したいリスク</th></tr></thead>
+  <tbody>
+    <tr><td>トレンドフォロー型</td><td>値動きの方向性を捉えてエントリーする</td><td>レンジ相場（方向感のない相場）が続くと損失が積み重なりやすい</td></tr>
+    <tr><td>レンジ逆張り型</td><td>一定の値幅の中での反発を狙う</td><td>強いトレンドが出ると想定外の含み損に発展しやすい</td></tr>
+    <tr><td>ナンピン（難平）型</td><td>含み損が出た方向にさらに追加発注して平均取得価格を調整する</td><td>一方向への値動きが続くと必要証拠金が急増しやすい。仕組みは<a href="/fx-nanpin">ナンピンのリスク解説</a>を先に確認</td></tr>
+  </tbody>
+</table>
+<p>導入前に配布元がどのタイプのロジックかを明示しているか、明示していなければ自分でバックテストの条件（検証期間・通貨ペア・時間足）を確認できるかをチェックしておくと、想定外の挙動に気づきやすくなります。</p>
+
 <h2 id="EAを始めるのに必要なもの3点">EAを始めるのに必要なもの3点</h2>
 <ol>
   <li><strong>MT4が使える国内FX口座</strong>：国内でMT4を使える口座は限られており、代表的な選択肢が<a href="/fxtf">FXTF</a>です。海外の無登録業者の口座は利用しません。口座によって最低取引単位や証拠金のルールが異なるため、事前に公式サイトで確認します。</li>
@@ -86,13 +99,13 @@
 <ol>
   <li>MT4が使える国内FX口座を開設する。開設審査には数日かかる場合があるため、余裕を持って申し込みます。</li>
   <li>パソコンにMT4をインストールする。Macを使っている場合は環境構築の考え方が異なるため<a href="/mac-mt4">MacでMT4を使う方法</a>を先に確認します。</li>
-  <li>EAファイルをMT4所定のフォルダに設置し、チャート上に適用する。設置時にはEAの動作条件（対応する通貨ペア・時間足など）も合わせて確認します。</li>
+  <li>EAファイルをMT4所定のフォルダに設置し、チャート上に適用する。設置時にはEAの動作条件（対応する<a href="/tsuka-pair">通貨ペア</a>・時間足など）も合わせて確認します。</li>
   <li>まずはデモ口座で一定期間動かし、注文が意図通りに入るか、証拠金の減り方に無理がないかを確認する。実弾（実際の資金）を投入するのは、この検証を経てからでも遅くありません。</li>
   <li>問題がなければ、VPSにMT4環境を移して24時間稼働に切り替える。稼働後も定期的にログを確認し、想定外の挙動がないかをチェックします。</li>
 </ol>
 
 <h2 id="費用感の考え方">費用感の考え方</h2>
-<p>国内FX口座の開設自体は無料としているところが多いですが、口座ごとに条件が異なるため公式サイトで確認してください。VPSは月額料金が発生します（金額は各サービスの公式サイトで要確認、2026年7月時点）。EA本体は無料で配布されているものから有料のものまで幅があり、価格と中身の妥当性は個別に確認が必要です。有料のEAだから成果が出やすい、無料のEAだから劣るといった単純な関係にはならない点も踏まえ、価格だけで判断しない姿勢が大切です。継続的にかかる費用はVPS利用料が中心になるため、始める前に月々どの程度の固定費が発生するかを整理しておくと、後から資金計画が崩れにくくなります。</p>
+<p>国内FX口座の開設自体は無料としているところが多いですが、口座ごとに条件が異なるため公式サイトで確認してください。VPSは月額料金が発生します（金額は各サービスの公式サイトで要確認、2026年9月時点）。EA本体は無料で配布されているものから有料のものまで幅があり、価格と中身の妥当性は個別に確認が必要です。有料のEAだから成果が出やすい、無料のEAだから劣るといった単純な関係にはならない点も踏まえ、価格だけで判断しない姿勢が大切です。継続的にかかる費用はVPS利用料が中心になるため、始める前に月々どの程度の固定費が発生するかを整理しておくと、後から資金計画が崩れにくくなります。</p>
 
 <h2 id="よくある失敗">よくある失敗</h2>
 <ul>
@@ -116,6 +129,8 @@
   <dd>必須ではありませんが、24時間稼働させたい場合はパソコンを常時起動する代わりにVPSを使うのが一般的です。</dd>
   <dt>EAはどこで入手しますか？</dt>
   <dd>自作するか、配布・販売されているものを利用する方法があります。成果を保証するものではないため、内容の理解と自己責任での選定が必要です。</dd>
+  <dt>EAは初心者でも使えますか？</dt>
+  <dd>操作自体は初心者でも可能ですが、ロジックの中身を理解しないまま使うのは推奨されません。対応通貨ペアや売買条件を自分で把握したうえで、デモ口座での検証を経てから実弾に進む姿勢が前提になります。</dd>
 </dl></section>
 <section class="related"><h2>あわせて読みたい</h2><div class="rel-grid">
   <a class="rel-card" href="/fx-vps-hikaku"><span class="rel-cat">VPS・自動売買</span>FX用VPS徹底比較｜ConoHa・XServer・お名前.comの選び方</a>
